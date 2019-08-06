@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>健康優良不良プログラマ</title>
+  
+  
+  <link rel="stylesheet" href="https://blog.seiichirou.jp/sass/main.css" />
+  <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+  <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+  <div class="container">
+    <header>
+      <nav class="navbar pt-4 pb-4">
+        <a class="navbar-brand text-dark font-weight-bold" href="/">健康優良不良プログラマ</a>
+      </nav>
+    </header>
+    <main role="main">
+      <div class="container">
+        
+<article class="mt-4">
+  <header>
+    <h3>Flutterのサンプル</h3>
+    <small class="text-muted"><time
+        datetime="2019-07-18T18:32:20&#43;09:00">2019-07-18</time></small>
+  </header>
+  <aside class="mt-1 mb-4 pt-2 border-top"></aside>
+  <section class="content"><p>flutter_webで実装したサンプルの置き場です。</p>
+
+<p>Nativeアプリ用に公開されているflutterの実装例をflutter_web用に書き直してビルドgithubのproject page上に公開しているものです。</p>
+
+<p>flutter_webのバグかiframeの影響かクリックが反応し辛い場合があるのでその時は別窓リンクから試してみてください。</p>
+
+<div class="card bg-light mt-4 mb-5">
+  <div class="row no-gutters">
+    <div class="col-md-4 flutter_web_wrapper">
+      <iframe class="card-img flutter_web" src='https://seiichi3141.github.io/columnrowsample'
+        style="min-height: 500px; height: 100%;" border="0">
+      </iframe>
+    </div>
+    <div class="col-md-8">
+      <div class="card-header">
+        ColumnRowSample
+        <a class="ml-2" href='https://seiichi3141.github.io/columnrowsample' target="_blank">
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a class="ml-2" href='https://github.com/seiichi3141/columnrowsample.git' target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="card-body">
+        <p>ColumnとRowによる子Widgetの配置を確認できるサンプル。</p>
+
+<p>WidgetでColumnとRowの切り替えができる。</p>
+
+<p>MainAxisAlignmanet/MainAxisSize/CrossAxisAlignmentのパラメータを変えるとScaffold.body直下にColulmn or Rowを配置したときにどう見えるかがわかりやすいと思う。</p>
+
+<p>主な使用Widget: Column / Row / BottomAppBar / PageView</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card bg-light mt-4 mb-5">
+  <div class="row no-gutters">
+    <div class="col-md-4 flutter_web_wrapper">
+      <iframe class="card-img flutter_web" src='https://seiichi3141.github.io/animatedlistsample'
+        style="min-height: 400px; height: 100%;" border="0">
+      </iframe>
+    </div>
+    <div class="col-md-8">
+      <div class="card-header">
+        AnimatedListSample
+        <a class="ml-2" href='https://seiichi3141.github.io/animatedlistsample' target="_blank">
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a class="ml-2" href='https://github.com/seiichi3141/animatedlistsample.git' target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="card-body">
+        <p>AnimatedList Widgetを使用したサンプル。<a href="https://flutter.dev/docs/catalog/samples/animated-list" target="_blank">公式のサンプルコード</a>の改変。</p>
+
+<p>AnimatedListはListViewのアイテム挿入と削除のアニメーション実装できる。</p>
+
+<ul>
+<li><p>アイテム未選択で⊕ボタンを押すと一番下にItemを追加。</p></li>
+
+<li><p>アイテム選択で⊕ボタンを押すと一つ上にItemを挿入。</p></li>
+
+<li><p>アイテム選択で⊖ボタンを押すと選択中のItemを削除。</p></li>
+</ul>
+
+<p>主な使用Widget: AnimatedList / IconButton / GestureDetector / Card</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card bg-light mt-4 mb-5">
+  <div class="row no-gutters">
+    <div class="col-md-4 flutter_web_wrapper">
+      <iframe class="card-img flutter_web" src='https://seiichi3141.github.io/zero_to_one'
+        style="min-height: 280px; height: 100%;" border="0">
+      </iframe>
+    </div>
+    <div class="col-md-8">
+      <div class="card-header">
+        Zero_To_One
+        <a class="ml-2" href='https://seiichi3141.github.io/zero_to_one' target="_blank">
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a class="ml-2" href='https://github.com/seiichi3141/zero_to_one.git' target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="card-body">
+        <p>CustomPainterとTweenを使ってチャートを描画するサンプル。</p>
+
+<p>以下の記事からの実装例。flutterのアニメーション実装をゼロから。</p>
+
+<p>Zero to One with Flutter <a href="https://medium.com/flutter/zero-to-one-with-flutter-43b13fd7b354" target="_blank">Part1</a> <a href="https://medium.com/flutter/zero-to-one-with-flutter-part-two-5aa2f06655cb" target="_blank">Part2</a></p>
+
+<p>これがマスターできれば自由な描画でアニメーションが可能になりそう。</p>
+
+<p>主な使用Widget: AnimationController / Tween / CustomPainter</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card bg-light mt-4 mb-5">
+  <div class="row no-gutters">
+    <div class="col-md-4 flutter_web_wrapper">
+      <iframe class="card-img flutter_web" src='https://seiichi3141.github.io/themesample'
+        style="min-height: 400px; height: 100%;" border="0">
+      </iframe>
+    </div>
+    <div class="col-md-8">
+      <div class="card-header">
+        ThemeSample
+        <a class="ml-2" href='https://seiichi3141.github.io/themesample' target="_blank">
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a class="ml-2" href='https://github.com/seiichi3141/themesample.git' target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="card-body">
+        <p>Themeを動的に変更するサンプルアプリ。Light/Darkボタンをクリックするとテーマが変わる。</p>
+
+<p>Blocパターンの簡単な実装もしている。StreamBuilderでThemeの変更を監視しMaterialApp.themeを変更する。</p>
+
+<p>主な使用Widget: MaterialApp / StreamBuilder / InheritedWidget</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+</article>
+
+      </div>
+    </main>
+    <footer>
+      <div class="container text-center text-muted mt-4 mb-3">
+        <small>
+          
+          &copy; 2018
+          
+          - 2019
+          seiichi3141
+          
+        </small>
+      </div>
+    </footer>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-145195127-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+
+</html>
