@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html><head>
-	<meta name="generator" content="Hugo 0.58.3" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,36 +25,82 @@
     </div>
   </nav>
 </header><main role="main">
-<article class="mt-4">
-  <section>
-    <div class="card-columns">
-      
-      <div class="card">
-        
-        
-        
-        <img class="card-img-top img-thumbnail" src="https://blog.seiichirou.jp/img/appbar_widget.png" alt="AppBar Widgetの使い方">
-        <div class="card-body">
-          <h5 class="card-title">AppBar Widgetの使い方</h5>
-          <p class="card-text">基本 AppBar Class(APIリファレンス) マテリアルデザインのアプリバーを実装するためのWidget。アプリバーはツールバーと、場合によってはT</p>
+<article class="row">
+  <div class="mt-4 col-md-9">
+    <header>
+      <div class="row">
+        <div class="col-12 col-sm-4">
+          
+          
+          
+          <img class="img-fluid img-thumbnail" src="https://blog.seiichirou.jp/img/appbar_widget.png" alt="">
         </div>
-        <a href="https://blog.seiichirou.jp/posts/appbar-widget/" class="stretched-link"></a>
+        <div class="col-12 col-sm-8 mt-3 mt-sm-0">
+          <h1>AppBar Widgetの使い方</h1>
+        </div>
       </div>
-      
+    </header>
+    <section class="content">
+
+<h2 id="基本">基本</h2>
+
+<p><a href="https://api.flutter.dev/flutter/material/AppBar-class.html" target="_blank">AppBar Class(APIリファレンス)</a></p>
+
+<p>マテリアルデザインのアプリバーを実装するためのWidget。アプリバーはツールバーと、場合によってはTabBarやFlexibleSpaceBarなどの他のWidgetで構成される。</p>
+
+<h2 id="ツールバー">ツールバー</h2>
+
+<p>leadingとtitleとactionsの実装例。</p>
+
+<ul>
+<li>loadingにIcon Widgetを設定</li>
+<li>titleにはText Widgetを設定</li>
+<li>actionsにはIconButton Widgetを設定。押すとSnackBarが表示される</li>
+</ul>
+
+<div class="card mb-4">
+  <div class="card-header">
+    <div class="text-muted small d-inline">
+      <i class="far fa-file-code mr-2"></i>main.dart
     </div>
-  </section>
-</article><footer>
-  <div class="container text-center text-muted mb-5">
-    <small>
-      
-      &copy; 2018
-      
-      - 2019
-      seiichi3141
-      
-    </small>
+    <div class="float-right">
+      <a class="mr-2" href='https://seiichi3141.github.io/appbar_widget' target="_blank">
+        <i class="fas fa-external-link-alt"></i>
+      </a>
+      <a href='https://github.com/seiichi3141/appbar_widget.git' target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
   </div>
-</footer>
+  <div class="card-body p-0">
+    <script src='https://gist.github.com/seiichi3141/2a7a12b429dfdfef3b13b2e594bf0e34.js'></script>
+  </div>
+  <iframe class="flutter_web"
+  src='https://seiichi3141.github.io/appbar_widget' style='height: 200px;' border="0"></iframe>
+</div>
+
+<h2 id="tabbar">TabBar</h2>
+
+<h2 id="flexiblespacebar">FlexibleSpaceBar</h2>
+</section>
+  </div>
+  <div class="d-none d-md-block col-md-3">
+    <aside class="toc border">
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#基本">基本</a></li>
+<li><a href="#ツールバー">ツールバー</a></li>
+<li><a href="#tabbar">TabBar</a></li>
+<li><a href="#flexiblespacebar">FlexibleSpaceBar</a></li>
+</ul></li>
+</ul>
+</nav>
+    </aside>
+  </div>
+</article>
+
     </main>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
