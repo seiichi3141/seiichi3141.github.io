@@ -7,43 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>seiichi3141</copyright>
-    <lastBuildDate>Thu, 18 Jul 2019 18:32:20 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.seiichirou.jp/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Flutterのサンプル</title>
-      <link>https://blog.seiichirou.jp/posts/flutter-samples/</link>
-      <pubDate>Thu, 18 Jul 2019 18:32:20 +0900</pubDate>
-      
-      <guid>https://blog.seiichirou.jp/posts/flutter-samples/</guid>
-      <description>flutter_webで実装したサンプルの置き場です。
-Nativeアプリ用に公開されているflutterの実装例をflutter_web用に書き直してビルドgithubのproject page上に公開しているものです。
-flutter_webのバグかiframeの影響かクリックが反応し辛い場合があるのでその時は別窓リンクから試してみてください。
-  ColumnRowSample      ColumnとRowによる子Widgetの配置を確認できるサンプル。
-WidgetでColumnとRowの切り替えができる。
-MainAxisAlignmanet/MainAxisSize/CrossAxisAlignmentのパラメータを変えるとScaffold.body直下にColulmn or Rowを配置したときにどう見えるかがわかりやすいと思う。
-主な使用Widget: Column / Row / BottomAppBar / PageView
-      AnimatedListSample      AnimatedList Widgetを使用したサンプル。公式のサンプルコードの改変。
-AnimatedListはListViewのアイテム挿入と削除のアニメーション実装できる。
- アイテム未選択で⊕ボタンを押すと一番下にItemを追加。
- アイテム選択で⊕ボタンを押すと一つ上にItemを挿入。
- アイテム選択で⊖ボタンを押すと選択中のItemを削除。
-  主な使用Widget: AnimatedList / IconButton / GestureDetector / Card
-      Zero_To_One      CustomPainterとTweenを使ってチャートを描画するサンプル。
-以下の記事からの実装例。flutterのアニメーション実装をゼロから。</description>
-    </item>
-    
-    <item>
-      <title>Flutterの学習</title>
-      <link>https://blog.seiichirou.jp/posts/flutter-study/</link>
-      <pubDate>Wed, 17 Jul 2019 18:46:57 +0900</pubDate>
-      
-      <guid>https://blog.seiichirou.jp/posts/flutter-study/</guid>
-      <description>Flutterの効率の良い学び方 とりあえず以下のリンク先の記事に沿ってやっていけば間違いないです。
-Flutterの効率の良い学び方</description>
-    </item>
     
   </channel>
 </rss>

@@ -3,35 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.seiichirou.jp/posts/flutter-samples/</loc>
-    <lastmod>2019-07-18T18:32:20+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/posts/</loc>
-    <lastmod>2019-07-18T18:32:20+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/</loc>
-    <lastmod>2019-07-18T18:32:20+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/posts/flutter-study/</loc>
-    <lastmod>2019-07-17T18:46:57+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.seiichirou.jp/categories/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.seiichirou.jp/tags/</loc>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/</loc>
   </url>
   
 </urlset>
