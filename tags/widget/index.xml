@@ -18,7 +18,7 @@
       <pubDate>Mon, 30 Sep 2019 20:00:00 +0900</pubDate>
       
       <guid>https://blog.seiichirou.jp/posts/appbar-widget/</guid>
-      <description>基本 AppBar Class(APIリファレンス) マテリアルデザインのアプリバーを実装するためのWidget。アプリバーはツールバーと、場合によってはT</description>
+      <description>マテリアルデザインのアプリバーを実装するためのWidget。アプリバーはツールバーと、場合によってはTabBarやFlexibleSpace</description>
     </item>
     
   </channel>
