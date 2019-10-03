@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html><head>
+  <meta lang="ja">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="seiichi3141" />
+  <meta name="description" content="Programming and Flutter related information" />
+  <meta name="keywords" content="Programming,Flutter,Dart">
+  <title>GOOD FOR HEALTH, BAD FOR PROGRAMMER</title>
+  
+  
+  <link rel="stylesheet" href="https://blog.seiichirou.jp/sass/main.css" />
+  <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+  <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+</head><body>
+  <div class="container"><header>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand font-weight-bold" href="/en/">
+      <i class="fas fa-blog text-light d-inline-block align-top lead mr-3"></i>GOOD FOR HEALTH, BAD FOR PROGRAMMER
+    </a>
+    <div>
+      <i class="fab fa-github text-light mr-1"></i>
+      <i class="fab fa-facebook text-light mr-1"></i>
+      <i class="fab fa-twitter text-light"></i>
+    </div>
+  </nav>
+</header><main role="main">
+<article class="row">
+  <div class="mt-4 col-md-9">
+    <header>
+      <div class="row">
+        <div class="col-12 col-sm-4">
+          
+          
+          
+          <img class="img-fluid img-thumbnail" src="https://blog.seiichirou.jp/img/appbar_widget.png" alt="">
+        </div>
+        <div class="col-12 col-sm-8 mt-3 mt-sm-0">
+          <h1 class="font-weight-lighter">How to use AppBar Widget</h1>
+        </div>
+      </div>
+    </header>
+    <section class="content">
+
+<p>Widget to implement the material design app bar. The app bar consists of a toolbar and possibly other widgets such as TabBar and FlexibleSpaceBar.</p>
+
+<p><a href="https://api.flutter.dev/flutter/material/AppBar-class.html" target="_blank">AppBar class(API reference)</a></p>
+
+<h2 id="toolbar">Toolbar</h2>
+
+<p>Implementation example of leading, title, and actions.</p>
+
+<ul>
+<li>Set Icon widget for leading</li>
+<li>Set Text widget for title</li>
+<li>Set IconButton widget for actions. SnackBar is displayed when you press the button</li>
+</ul>
+
+<div class="card mb-4">
+  <div class="card-header">
+    <div class="text-muted small d-inline">
+      <i class="far fa-file-code mr-2"></i>main.dart
+    </div>
+    <div class="float-right">
+      <a class="mr-2" href='https://seiichi3141.github.io/appbar_widget' target="_blank">
+        <i class="fas fa-external-link-alt"></i>
+      </a>
+      <a href='https://github.com/seiichi3141/appbar_widget.git' target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </div>
+  <div class="card-body gist p-0">
+    <script src='https://gist.github.com/seiichi3141/2a7a12b429dfdfef3b13b2e594bf0e34.js'></script>
+  </div>
+  <iframe class="flutter_web shadow"
+  src='https://seiichi3141.github.io/appbar_widget' style='height: 200px;' border="0"></iframe>
+</div>
+
+<h2 id="tabbar">TabBar</h2>
+
+<p>Case of adding TabBar to AppBar.</p>
+
+<ul>
+<li>Use DefaultTabController as TabController</li>
+<li>Three tabs are set: Icon only, Text only, Icon &amp; Text</li>
+</ul>
+
+<div class="card mb-4">
+  <div class="card-header">
+    <div class="text-muted small d-inline">
+      <i class="far fa-file-code mr-2"></i>main.dart
+    </div>
+    <div class="float-right">
+      <a class="mr-2" href='https://seiichi3141.github.io/appbar_widget_tabbar' target="_blank">
+        <i class="fas fa-external-link-alt"></i>
+      </a>
+      <a href='https://github.com/seiichi3141/appbar_widget_tabbar.git' target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </div>
+  <div class="card-body gist p-0">
+    <script src='https://gist.github.com/seiichi3141/47a058f4876aa6c141baa9263c3a8dc5.js'></script>
+  </div>
+  <iframe class="flutter_web shadow"
+  src='https://seiichi3141.github.io/appbar_widget_tabbar' style='height: 200px;' border="0"></iframe>
+</div>
+
+<h2 id="flexiblespacebar">FlexibleSpaceBar</h2>
+</section><footer>
+  <div class="container mb-5">
+    <small>
+      <ul class="nav justify-content-center">
+        <li class="nav-item"><a class="nav-link text-muted" href="https://twitter.com/seiichi3141">seiichi3141@</a></li>
+        
+        <li class="nav-item"><a class="nav-link text-muted" href="https://blog.seiichirou.jp/posts/appbar-widget/">日本語</a></li>
+        
+      </ul>
+    </small>
+  </div>
+</footer></div>
+  <div class="d-none d-md-block col-md-3">
+    <aside class="toc border">
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#toolbar">Toolbar</a></li>
+<li><a href="#tabbar">TabBar</a></li>
+<li><a href="#flexiblespacebar">FlexibleSpaceBar</a></li>
+</ul></li>
+</ul>
+</nav>
+    </aside>
+  </div>
+</article>
+
+    </main>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-145195127-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+
+</html>

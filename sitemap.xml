@@ -1,70 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/tags/appbar/</loc>
-    <lastmod>2019-09-30T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/posts/appbar-widget/</loc>
-    <lastmod>2019-09-30T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/tags/basics/</loc>
-    <lastmod>2019-09-30T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/categories/</loc>
-    <lastmod>2019-09-30T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/tags/column/</loc>
-    <lastmod>2019-09-30T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/posts/column-widget/</loc>
-    <lastmod>2019-09-30T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/tags/flutter/</loc>
-    <lastmod>2019-09-30T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/categories/flutter/</loc>
-    <lastmod>2019-09-30T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/posts/</loc>
-    <lastmod>2019-09-30T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/tags/tabbar/</loc>
-    <lastmod>2019-09-30T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/tags/</loc>
-    <lastmod>2019-09-30T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/tags/widget/</loc>
-    <lastmod>2019-09-30T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/</loc>
-    <lastmod>2019-09-30T20:00:00+09:00</lastmod>
-  </url>
-  
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	
+	<sitemap>
+	   	<loc>https://blog.seiichirou.jp/ja/sitemap.xml</loc>
+		
+	   	<lastmod>2019-09-30T20:00:00+09:00</lastmod>
+		
+	</sitemap>
+	
+	<sitemap>
+	   	<loc>https://blog.seiichirou.jp/en/sitemap.xml</loc>
+		
+	   	<lastmod>2019-09-30T20:00:00+09:00</lastmod>
+		
+	</sitemap>
+	
+</sitemapindex>
