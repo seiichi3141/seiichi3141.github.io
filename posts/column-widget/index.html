@@ -33,27 +33,29 @@
           
           
           
-          <img class="img-fluid img-thumbnail" src="https://blog.seiichirou.jp/img/appbar_widget.png" alt="">
+          <img class="img-fluid img-thumbnail" src="https://blog.seiichirou.jp/img/column_widget.png" alt="">
         </div>
         <div class="col-12 col-sm-8 mt-3 mt-sm-0">
-          <h1 class="font-weight-lighter">AppBar Widgetの使い方</h1>
+          <h1 class="font-weight-lighter">Column Widgetの使い方</h1>
         </div>
       </div>
     </header>
     <section class="content">
 
-<p>マテリアルデザインのアプリバーを実装するためのWidget。アプリバーはツールバーと、場合によってはTabBarやFlexibleSpaceBarなどの他のWidgetで構成される。</p>
+<p>子Widgetを垂直方向に並べるWidget。</p>
 
-<p><a href="https://api.flutter.dev/flutter/material/AppBar-class.html" target="_blank">AppBar class(APIリファレンス)</a></p>
+<p>利用可能なスペースを埋めるためには子WidgetをExpandedでラップする。</p>
 
-<h2 id="ツールバー">ツールバー</h2>
+<p>Columnはスクロールしない。スクロールするリストが必要ならListViewを使うことを検討したほうがいい。</p>
 
-<p>leadingとtitleとactionsの実装例。</p>
+<p><a href="https://api.flutter.dev/flutter/widgets/Column-class.html" target="_blank">Column class(APIリファレンス)</a></p>
+
+<h2 id="基本">基本</h2>
+
+<p>三つの子Widgetを縦に並べるだけの例。</p>
 
 <ul>
-<li>leadingにIcon Widgetを設定</li>
-<li>titleにはText Widgetを設定</li>
-<li>actionsにはIconButton Widgetを設定。押すとSnackBarが表示される</li>
+<li>childrenに自作のカラーボックスを3個設定する</li>
 </ul>
 
 <div class="card mb-4">
@@ -62,29 +64,22 @@
       <i class="far fa-file-code mr-2"></i>main.dart
     </div>
     <div class="float-right">
-      <a class="mr-2" href='https://seiichi3141.github.io/appbar_widget' target="_blank">
+      <a class="mr-2" href='https://seiichi3141.github.io/column_widget' target="_blank">
         <i class="fas fa-external-link-alt"></i>
       </a>
-      <a href='https://github.com/seiichi3141/appbar_widget.git' target="_blank">
+      <a href='https://github.com/seiichi3141/column_widget.git' target="_blank">
         <i class="fab fa-github"></i>
       </a>
     </div>
   </div>
   <div class="card-body gist p-0">
-    <script src='https://gist.github.com/seiichi3141/2a7a12b429dfdfef3b13b2e594bf0e34.js'></script>
+    <script src='https://gist.github.com/seiichi3141/e718e1f107080ee1d82716f8ae2443c3.js'></script>
   </div>
   <iframe class="flutter_web shadow"
-  src='https://seiichi3141.github.io/appbar_widget' style='height: 200px;' border="0"></iframe>
+  src='https://seiichi3141.github.io/column_widget' style='height: 300px;' border="0"></iframe>
 </div>
 
-<h2 id="tabbar">TabBar</h2>
-
-<p>AppBarにTabBarを追加する場合。</p>
-
-<ul>
-<li>TabControllerにはDefaultTabControllerを使用</li>
-<li>アイコンのみ、テキストのみ、アイコン&amp;テキストの3種のタブを設定</li>
-</ul>
+<h2 id="各種パラメータの設定">各種パラメータの設定</h2>
 
 <div class="card mb-4">
   <div class="card-header">
@@ -92,26 +87,20 @@
       <i class="far fa-file-code mr-2"></i>main.dart
     </div>
     <div class="float-right">
-      <a class="mr-2" href='https://seiichi3141.github.io/appbar_widget_tabbar' target="_blank">
+      <a class="mr-2" href='https://seiichi3141.github.io/column_widget_flexible' target="_blank">
         <i class="fas fa-external-link-alt"></i>
       </a>
-      <a href='https://github.com/seiichi3141/appbar_widget_tabbar.git' target="_blank">
+      <a href='https://github.com/seiichi3141/column_widget_flexible.git' target="_blank">
         <i class="fab fa-github"></i>
       </a>
     </div>
   </div>
   <div class="card-body gist p-0">
-    <script src='https://gist.github.com/seiichi3141/47a058f4876aa6c141baa9263c3a8dc5.js'></script>
+    <script src='https://gist.github.com/seiichi3141/68fbe09430785fe41c7d139367bd1226.js'></script>
   </div>
   <iframe class="flutter_web shadow"
-  src='https://seiichi3141.github.io/appbar_widget_tabbar' style='height: 200px;' border="0"></iframe>
+  src='https://seiichi3141.github.io/column_widget_flexible' style='height: 450px;' border="0"></iframe>
 </div>
-
-<h2 id="flexiblespacebar">FlexibleSpaceBar</h2>
-
-<h2 id="背景色の変更">背景色の変更</h2>
-
-<h2 id="背景色をグラデーションにする">背景色をグラデーションにする</h2>
 </section>
   </div>
   <div class="d-none d-md-block col-md-3">
@@ -120,11 +109,8 @@
 <ul>
 <li>
 <ul>
-<li><a href="#ツールバー">ツールバー</a></li>
-<li><a href="#tabbar">TabBar</a></li>
-<li><a href="#flexiblespacebar">FlexibleSpaceBar</a></li>
-<li><a href="#背景色の変更">背景色の変更</a></li>
-<li><a href="#背景色をグラデーションにする">背景色をグラデーションにする</a></li>
+<li><a href="#基本">基本</a></li>
+<li><a href="#各種パラメータの設定">各種パラメータの設定</a></li>
 </ul></li>
 </ul>
 </nav>

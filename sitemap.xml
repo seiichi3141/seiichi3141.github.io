@@ -23,7 +23,12 @@
   </url>
   
   <url>
-    <loc>https://blog.seiichirou.jp/categories/flutter/</loc>
+    <loc>https://blog.seiichirou.jp/tags/column/</loc>
+    <lastmod>2019-09-30T20:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/posts/column-widget/</loc>
     <lastmod>2019-09-30T20:00:00+09:00</lastmod>
   </url>
   
@@ -33,7 +38,17 @@
   </url>
   
   <url>
+    <loc>https://blog.seiichirou.jp/categories/flutter/</loc>
+    <lastmod>2019-09-30T20:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.seiichirou.jp/posts/</loc>
+    <lastmod>2019-09-30T20:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/tags/tabbar/</loc>
     <lastmod>2019-09-30T20:00:00+09:00</lastmod>
   </url>
   
