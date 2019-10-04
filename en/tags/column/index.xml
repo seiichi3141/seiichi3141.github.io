@@ -18,11 +18,8 @@
       <pubDate>Mon, 30 Sep 2019 20:00:00 +0900</pubDate>
       
       <guid>https://blog.seiichirou.jp/en/posts/column-widget/</guid>
-      <description> Widget that displays children vertically.
-To fill the available vertical space, wrap the child widget with Expanded widget. Column does not scroll. If you need a scrolling list, consider using ListView.
-Column class(API reference)
-Basic An example of displays three child widgets vertically.
- Set 3 custom color boxes for children  main.dart            Setting various parameters main.dart            </description>
+      <description>Widget that displays children vertically.
+To fill the available vertical space, wrap the child widget with Expanded widget. Column does not scroll. If you need a scrolling list, consider using ListView.</description>
     </item>
     
   </channel>

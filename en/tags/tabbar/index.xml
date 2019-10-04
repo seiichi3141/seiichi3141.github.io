@@ -20,8 +20,7 @@
       <guid>https://blog.seiichirou.jp/en/posts/appbar-widget/</guid>
       <description>Widget to implement the material design app bar. The app bar consists of a toolbar and possibly other widgets such as TabBar and FlexibleSpaceBar.
 AppBar class(API reference)
-Toolbar Implementation example of leading, title, and actions.
- Set Icon widget for leading Set Text widget for title Set IconButton widget for actions. SnackBar is displayed when you press the button  main.dart            TabBar Case of adding TabBar to AppBar.</description>
+Toolbar Implementation example of leading, title, and actions.</description>
     </item>
     
   </channel>
