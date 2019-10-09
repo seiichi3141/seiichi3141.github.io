@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>seiichi3141@</copyright>
-    <lastBuildDate>Fri, 04 Oct 2019 20:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Oct 2019 20:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.seiichirou.jp/tags/basics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Flutter for WebをGithubのProject Pagesで公開する</title>
+      <link>https://blog.seiichirou.jp/posts/flutter-web-github/</link>
+      <pubDate>Mon, 07 Oct 2019 20:00:00 +0900</pubDate>
+      
+      <guid>https://blog.seiichirou.jp/posts/flutter-web-github/</guid>
+      <description>Flutterのバージョン1.9からFlutter for Webを正式にサポートしたのでGithubのProject Pagesで公開してみたい。F</description>
+    </item>
     
     <item>
       <title>FlutterのThemeを動的に変更する</title>

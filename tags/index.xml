@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>seiichi3141@</copyright>
-    <lastBuildDate>Fri, 04 Oct 2019 20:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Oct 2019 20:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.seiichirou.jp/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Basics</title>
       <link>https://blog.seiichirou.jp/tags/basics/</link>
-      <pubDate>Fri, 04 Oct 2019 20:00:00 +0900</pubDate>
+      <pubDate>Mon, 07 Oct 2019 20:00:00 +0900</pubDate>
       
       <guid>https://blog.seiichirou.jp/tags/basics/</guid>
       <description></description>
@@ -24,9 +24,27 @@
     <item>
       <title>Flutter</title>
       <link>https://blog.seiichirou.jp/tags/flutter/</link>
-      <pubDate>Fri, 04 Oct 2019 20:00:00 +0900</pubDate>
+      <pubDate>Mon, 07 Oct 2019 20:00:00 +0900</pubDate>
       
       <guid>https://blog.seiichirou.jp/tags/flutter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>https://blog.seiichirou.jp/tags/github/</link>
+      <pubDate>Mon, 07 Oct 2019 20:00:00 +0900</pubDate>
+      
+      <guid>https://blog.seiichirou.jp/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Widget</title>
+      <link>https://blog.seiichirou.jp/tags/widget/</link>
+      <pubDate>Mon, 07 Oct 2019 20:00:00 +0900</pubDate>
+      
+      <guid>https://blog.seiichirou.jp/tags/widget/</guid>
       <description></description>
     </item>
     
@@ -36,15 +54,6 @@
       <pubDate>Fri, 04 Oct 2019 20:00:00 +0900</pubDate>
       
       <guid>https://blog.seiichirou.jp/tags/theme/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Widget</title>
-      <link>https://blog.seiichirou.jp/tags/widget/</link>
-      <pubDate>Fri, 04 Oct 2019 20:00:00 +0900</pubDate>
-      
-      <guid>https://blog.seiichirou.jp/tags/widget/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html><head>
+  <meta lang="ja">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="seiichi3141" />
+  <meta name="description" content="プログラミングやFlutter関連の情報" />
+  <meta name="keywords" content="プログラミング,Flutter,Dart">
+  <title>健康優良不良プログラマ</title>
+  
+  
+  <link rel="stylesheet" href="https://blog.seiichirou.jp/sass/main.css" />
+  <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+  <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+</head><body><header class="bg-dark">
+  <div class="container">
+    <nav class="navbar navbar-dark pr-0 pl-0">
+      <a class="navbar-brand font-weight-bold" href="/">
+        <i class="fas fa-blog text-light d-inline-block align-top lead mr-3"></i>健康優良不良プログラマ
+      </a>
+      <div>
+        <a href="https://github.com/seiichi3141"><i class="fab fa-github text-light mr-1"></i></a>
+        <a href="https://www.facebook.com/seiichirou.tanaka"><i class="fab fa-facebook text-light mr-1"></i></a>
+        <a href="https://twitter.com/seiichi3141"><i class="fab fa-twitter text-light"></i></a>
+      </div>
+    </nav>
+  </div>
+</header><main role="main">
+    <div class="container">
+<article class="row">
+  <div class="pt-5 col-md-9">
+    <header>
+      <div class="row">
+        <div class="col-12 col-sm-4">
+          
+          
+          
+          <img class="img-fluid img-thumbnail" src="https://blog.seiichirou.jp/img/flutter_logo.png" alt="">
+        </div>
+        <div class="col-12 col-sm-8 mt-3 mt-sm-0">
+          
+          <p class="small mb-1">
+            <i class="fas fa-folder mr-1 text-muted"></i>
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/categories/flutter/">Flutter</a>
+            
+            
+          </p>
+          
+          <h1 class="font-weight-bold">Flutter for WebをGithubのProject Pagesで公開する</h1>
+          
+          <p class="small mb-1">
+            <i class="fas fa-tag text-muted mr-1"></i>
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/flutter/"><span class="badge badge-secondary align-middle">Flutter</span></a>
+            
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/widget/"><span class="badge badge-secondary align-middle">Widget</span></a>
+            
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/basics/"><span class="badge badge-secondary align-middle">Basics</span></a>
+            
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/github/"><span class="badge badge-secondary align-middle">Github</span></a>
+            
+            
+          </p>
+          
+        </div>
+      </div>
+    </header>
+    <section class="content">
+
+<p>Flutterのバージョン1.9からFlutter for Webを正式にサポートしたのでGithubのProject Pagesで公開してみたい。Flutterのexamplesに含まれるFlutter galleryをそのまま公開する手順です。</p>
+
+<h2 id="環境">環境</h2>
+
+<pre><code>flutter --version
+Flutter 1.10.8-pre.21 • channel master • https://github.com/flutter/flutter.git
+Framework • revision fa7340a328 (6 days ago) • 2019-10-02 19:04:50 -0400
+Engine • revision 73dd5a33d9
+Tools • Dart 2.6.0 (build 2.6.0-dev.4.0 eaf1c308ab)
+</code></pre>
+
+<h2 id="flutter-galleryのビルド">Flutter galleryのビルド</h2>
+
+<p>Flutter galleryのパスへ移動</p>
+
+<pre><code>cd [:flutterのパス]/examples/flutter_gallery
+</code></pre>
+
+<p>依存ライブラリの取得</p>
+
+<pre><code>flutter pub get
+Running &quot;flutter pub get&quot; in flutter_gallery...                    XX.Xs
+</code></pre>
+
+<p>Flutter for Webのビルド</p>
+
+<pre><code>flutter build web
+Compiling lib\main.dart for the Web...                             XX.Xs
+</code></pre>
+
+<p>成果物をdocsフォルダへ移動</p>
+
+<pre><code>mv build/web docs
+</code></pre>
+
+<h2 id="githubのリポジトリの作成とpush">Githubのリポジトリの作成とpush</h2>
+
+<p>Githubにflutter_galleryリポジトリをpublicで作成</p>
+
+<p><img src="/img/create_flutter_gallery.jpg#fig" alt="リポジトリ作成" /></p>
+
+<p>リポジトリの初期化</p>
+
+<pre><code>git init
+</code></pre>
+
+<p>.gitignoreの作成</p>
+
+<pre><code>echo .dart_tool/ &gt;&gt; .gitignore
+echo build/ &gt;&gt; .gitignore
+echo .flutter-plugins &gt;&gt; .gitignore
+echo .packages &gt;&gt; .gitignore
+</code></pre>
+
+<p>コミット</p>
+
+<pre><code>git add .
+git commit -m &quot;init&quot;
+</code></pre>
+
+<p>リモートリポジトリの追加とpush</p>
+
+<pre><code>git remote add origin https://github.com/seiichi3141/flutter_gallery.git
+git push origin master
+</code></pre>
+
+<h2 id="github-procject-pagesの公開">Github Procject Pagesの公開</h2>
+
+<p>GithubのリポジトリのSettingsから、下のほうにあるGithub Pages設定を変更する。</p>
+
+<p><img src="/img/github_pages_settings.png#fig" alt="設定変更" /></p>
+
+<p>ページを開いて公開できているかを確認する。</p>
+
+<p><a href="http://blog.seiichirou.jp/flutter_gallery/" target="_blank">http://blog.seiichirou.jp/flutter_gallery/</a></p>
+
+<p>iframeのsrcとして指定するとウェブサイトに埋め込むことも可能になる。</p>
+
+<pre><code>&lt;iframe src=&quot;http://blog.seiichirou.jp/flutter_gallery/&quot;&gt;&lt;/iframe&gt;
+</code></pre>
+
+<iframe width="100%" height="480px" src="http://blog.seiichirou.jp/flutter_gallery/"></iframe>
+</section><footer>
+  <div class="container mb-5">
+    <small>
+      <ul class="nav justify-content-center">
+        <li class="nav-item"><a class="nav-link text-muted" href="https://twitter.com/seiichi3141">seiichi3141@</a></li>
+        
+      </ul>
+    </small>
+  </div>
+</footer></div>
+  <div class="d-none d-md-block col-md-3 border-left border-right">
+    <aside class="toc pt-5">
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#環境">環境</a></li>
+<li><a href="#flutter-galleryのビルド">Flutter galleryのビルド</a></li>
+<li><a href="#githubのリポジトリの作成とpush">Githubのリポジトリの作成とpush</a></li>
+<li><a href="#github-procject-pagesの公開">Github Procject Pagesの公開</a></li>
+</ul></li>
+</ul>
+</nav>
+    </aside>
+  </div>
+</article>
+
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-145195127-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+</body>
+
+</html>

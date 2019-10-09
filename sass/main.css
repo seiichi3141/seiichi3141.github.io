@@ -393,7 +393,7 @@ mark,
   max-width: 100%;
   height: auto; }
 
-.img-thumbnail {
+.img-thumbnail, img[src*="#fig"] {
   padding: 0.25rem;
   background-color: #fff;
   border: 1px solid #dee2e6;
@@ -4729,7 +4729,7 @@ button.bg-dark:focus {
 .d-inline-block {
   display: inline-block !important; }
 
-.d-block {
+.d-block, img[src*="#fig"] {
   display: block !important; }
 
 .d-table {
@@ -5366,7 +5366,7 @@ button.bg-dark:focus {
 .shadow-sm {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important; }
 
-.shadow {
+.shadow, img[src*="#fig"] {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; }
 
 .shadow-lg {
@@ -5765,7 +5765,8 @@ button.bg-dark:focus {
   margin-top: auto !important; }
 
 .mr-auto,
-.mx-auto {
+.mx-auto,
+img[src*="#fig"] {
   margin-right: auto !important; }
 
 .mb-auto,
@@ -5773,7 +5774,8 @@ button.bg-dark:focus {
   margin-bottom: auto !important; }
 
 .ml-auto,
-.mx-auto {
+.mx-auto,
+img[src*="#fig"] {
   margin-left: auto !important; }
 
 @media (min-width: 576px) {
@@ -7083,6 +7085,12 @@ header h1 {
   font-family: Consolas;
   color: #005cc5;
   font-size: inherit; }
+
+.content pre {
+  background-color: #e9ecef;
+  padding: 0.5rem 0.5rem; }
+  .content pre code {
+    font-family: Consolas; }
 
 /* gist */
 .sample-app {
