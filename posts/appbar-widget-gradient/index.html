@@ -5,9 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="seiichi3141" />
-  <meta name="description" content="Programming and Flutter related information" />
-  <meta name="keywords" content="Programming,Flutter,Dart">
-  <title>GOOD FOR HEALTH, BAD FOR PROGRAMMER</title>
+  <meta name="description" content="プログラミングやFlutter関連の情報" />
+  <meta name="keywords" content="プログラミング,Flutter,Dart">
+  <title>健康優良不良プログラマ</title>
   
   
   <link rel="stylesheet" href="https://blog.seiichirou.jp/sass/main.css" />
@@ -16,8 +16,8 @@
 </head><body><header class="bg-dark">
   <div class="container">
     <nav class="navbar navbar-dark pr-0 pl-0">
-      <a class="navbar-brand font-weight-bold" href="/en/">
-        <i class="fas fa-blog text-light d-inline-block align-top lead mr-3"></i>GOOD FOR HEALTH, BAD FOR PROGRAMMER
+      <a class="navbar-brand font-weight-bold" href="/">
+        <i class="fas fa-blog text-light d-inline-block align-top lead mr-3"></i>健康優良不良プログラマ
       </a>
       <div>
         <a href="https://github.com/seiichi3141"><i class="fab fa-github text-light mr-1"></i></a>
@@ -36,7 +36,7 @@
           
           
           
-          <img class="img-fluid img-thumbnail" src="https://blog.seiichirou.jp/img/column_widget.png" alt="">
+          <img class="img-fluid img-thumbnail" src="https://blog.seiichirou.jp/img/appbar_widget_gradient.png" alt="">
         </div>
         <div class="col-12 col-sm-8 mt-3 mt-sm-0">
           
@@ -44,29 +44,29 @@
             <i class="fas fa-folder mr-1 text-muted"></i>
             
             
-            <a class="text-muted" href="https://blog.seiichirou.jp/en/categories/flutter/">Flutter</a>
+            <a class="text-muted" href="https://blog.seiichirou.jp/categories/flutter/">Flutter</a>
             
             
           </p>
           
-          <h1 class="font-weight-bold">How to use Column Widget</h1>
+          <h1 class="font-weight-bold">AppBarの背景をグラデーションにする</h1>
           
           <p class="small mb-1">
             
             
-            <a class="text-muted" href="https://blog.seiichirou.jp/en/tags/flutter/"><span class="badge badge-secondary">Flutter</span></a>
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/flutter/"><span class="badge badge-secondary">Flutter</span></a>
             
             
             
-            <a class="text-muted" href="https://blog.seiichirou.jp/en/tags/widget/"><span class="badge badge-secondary">Widget</span></a>
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/widget/"><span class="badge badge-secondary">Widget</span></a>
             
             
             
-            <a class="text-muted" href="https://blog.seiichirou.jp/en/tags/basics/"><span class="badge badge-secondary">Basics</span></a>
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/basics/"><span class="badge badge-secondary">Basics</span></a>
             
             
             
-            <a class="text-muted" href="https://blog.seiichirou.jp/en/tags/column/"><span class="badge badge-secondary">Column</span></a>
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/appbar/"><span class="badge badge-secondary">AppBar</span></a>
             
             
           </p>
@@ -76,52 +76,34 @@
     </header>
     <section class="content">
 
-<p>Widget that displays children vertically.</p>
+<p>AppBarでは背景色を指定できるが、それにグラデーションを効かせたい。しかし、AppBarのcolorにはGradientを設定できないのでAppBarをラップしたGradientAppBar Widgetを実装してみる。</p>
 
-<p>To fill the available vertical space, wrap the child widget with Expanded widget. Column does not scroll. If you need a scrolling list, consider using ListView.</p>
+<h2 id="preferredsizewidget">PreferredSizeWidget</h2>
 
-<p><a href="https://api.flutter.dev/flutter/widgets/Column-class.html" target="_blank">Column class(API reference)</a></p>
+<p>StatelessWidgetをextendsした新しいクラスを定義したいが、ScaffoldのappBarのクラスはPreferredSizeWidgetで宣言されているため、PreferredSizeWidgetのinterfaceを実装しておく必要がある。</p>
 
-<h2 id="basic">Basic</h2>
+<p>そこでGradientAppBar classはPreferredSizeWidgetをimplementsしてpreferredSizeをoverrideする。GradientとAppBarをメンバ変数とし、指定できるようにする。preferredSizeはAppBarのpreferredSizeをそのまま使う。</p>
 
-<p>An example of displays three child widgets vertically.</p>
+<script src="https://gist.github.com/seiichi3141/8fc45c7f4486b904d87252405f2fc515.js"></script>
 
-<ul>
-<li>Set 3 custom color boxes for children</li>
-</ul>
+<h2 id="gradientappbarの使用例">GradientAppBarの使用例</h2>
 
-<div class="sample-app mb-4">
-  <div class="gist">
-    <script src='https://gist.github.com/seiichi3141/e718e1f107080ee1d82716f8ae2443c3.js'></script>
-  </div>
-  <div class="flutter_web">
-    <iframe class="shadow" src='https://seiichi3141.github.io/column_widget' style='height: 300px;'
-      border="0"></iframe>
-    <div class="text-muted">
-      <div class="float-right">
-        <a class="mr-2" href='https://seiichi3141.github.io/column_widget' target="_blank"><i
-            class="fas fa-external-link-alt"></i></a>
-        <a class="mr-2" href='https://github.com/seiichi3141/column_widget.git' target="_blank"><i
-            class="fab fa-github"></i></a>
-      </div>
-    </div>
-  </div>
-</div>
+<p>GradientAppBarを実際に使ってみた例。</p>
 
-<h2 id="setting-various-parameters">Setting various parameters</h2>
+<p>gradientにLinearGradientをtopCenterからtopBottomへのグラデーションとし、カラーを二色設定した。</p>
 
 <div class="sample-app mb-4">
   <div class="gist">
-    <script src='https://gist.github.com/seiichi3141/68fbe09430785fe41c7d139367bd1226.js'></script>
+    <script src='https://gist.github.com/seiichi3141/209aaeb23a33fb41157957a327078f08.js'></script>
   </div>
   <div class="flutter_web">
-    <iframe class="shadow" src='https://seiichi3141.github.io/column_widget_flexible' style='height: 450px;'
+    <iframe class="shadow" src='https://seiichi3141.github.io/appbar_widget_gradient' style='height: 250px;'
       border="0"></iframe>
     <div class="text-muted">
       <div class="float-right">
-        <a class="mr-2" href='https://seiichi3141.github.io/column_widget_flexible' target="_blank"><i
+        <a class="mr-2" href='https://seiichi3141.github.io/appbar_widget_gradient' target="_blank"><i
             class="fas fa-external-link-alt"></i></a>
-        <a class="mr-2" href='https://github.com/seiichi3141/column_widget_flexible.git' target="_blank"><i
+        <a class="mr-2" href='https://github.com/seiichi3141/appbar_widget_gradient.git' target="_blank"><i
             class="fab fa-github"></i></a>
       </div>
     </div>
@@ -133,8 +115,6 @@
       <ul class="nav justify-content-center">
         <li class="nav-item"><a class="nav-link text-muted" href="https://twitter.com/seiichi3141">seiichi3141@</a></li>
         
-        <li class="nav-item"><a class="nav-link text-muted" href="https://blog.seiichirou.jp/posts/column-widget/">日本語</a></li>
-        
       </ul>
     </small>
   </div>
@@ -145,8 +125,8 @@
 <ul>
 <li>
 <ul>
-<li><a href="#basic">Basic</a></li>
-<li><a href="#setting-various-parameters">Setting various parameters</a></li>
+<li><a href="#preferredsizewidget">PreferredSizeWidget</a></li>
+<li><a href="#gradientappbarの使用例">GradientAppBarの使用例</a></li>
 </ul></li>
 </ul>
 </nav>

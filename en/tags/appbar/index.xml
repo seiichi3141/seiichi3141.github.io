@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>seiichi3141@</copyright>
-    <lastBuildDate>Mon, 30 Sep 2019 20:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 01 Oct 2019 20:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.seiichirou.jp/en/tags/appbar/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>How to use AppBar Widget</title>
       <link>https://blog.seiichirou.jp/en/posts/appbar-widget/</link>
-      <pubDate>Mon, 30 Sep 2019 20:00:00 +0900</pubDate>
+      <pubDate>Tue, 01 Oct 2019 20:00:00 +0900</pubDate>
       
       <guid>https://blog.seiichirou.jp/en/posts/appbar-widget/</guid>
       <description>Widget to implement the material design app bar. The app bar consists of a toolbar and possibly other widgets such as TabBar and FlexibleSpaceBar.

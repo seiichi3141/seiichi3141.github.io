@@ -29,7 +29,7 @@
 </header><main role="main">
     <div class="container">
 <article class="row">
-  <div class="pt-3 col-md-9">
+  <div class="pt-5 col-md-9">
     <header>
       <div class="row">
         <div class="col-12 col-sm-4">
@@ -50,81 +50,100 @@
           </p>
           
           <h1 class="font-weight-bold">AppBar Widgetの使い方</h1>
+          
+          <p class="small mb-1">
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/flutter/"><span class="badge badge-secondary">Flutter</span></a>
+            
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/widget/"><span class="badge badge-secondary">Widget</span></a>
+            
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/basics/"><span class="badge badge-secondary">Basics</span></a>
+            
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/appbar/"><span class="badge badge-secondary">AppBar</span></a>
+            
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/tabbar/"><span class="badge badge-secondary">TabBar</span></a>
+            
+            
+          </p>
+          
         </div>
       </div>
     </header>
     <section class="content">
 
-<p>マテリアルデザインのアプリバーを実装するためのWidget。アプリバーはツールバーと、場合によってはTabBarやFlexibleSpaceBarなどの他のWidgetで構成される。</p>
+<p>マテリアルデザインのアプリバーを実装するためのWidget。アプリバーは基本的なツールバーと、場合によってはTabBarやFlexibleSpaceBarなどの他のWidgetで構成される。</p>
 
 <p><a href="https://api.flutter.dev/flutter/material/AppBar-class.html" target="_blank">AppBar class(APIリファレンス)</a></p>
 
 <h2 id="ツールバー">ツールバー</h2>
 
-<p>leadingとtitleとactionsの実装例。</p>
+<p>leadingとtitleとactionsの実装例。通常、leadingはアイコン、titleにはテキスト、actionsにはIconButtonが設定される。しかし、すべては結局Widgetなのでアプリ次第で好きなものを設定できる。</p>
+
+<p>以下の例では基本的な操作を実装した。</p>
 
 <ul>
 <li>leadingにIcon Widgetを設定</li>
 <li>titleにはText Widgetを設定</li>
-<li>actionsにはIconButton Widgetを設定。押すとSnackBarが表示される</li>
+<li>actionsにはIconButton Widgetを設定。押すとSnackBarが表示する</li>
 </ul>
 
-<div class="card mb-4">
-  <div class="card-header">
-    <div class="text-muted small d-inline">
-      <i class="far fa-file-code mr-2"></i>main.dart
-    </div>
-    <div class="float-right">
-      <a class="mr-2" href='https://seiichi3141.github.io/appbar_widget' target="_blank">
-        <i class="fas fa-external-link-alt"></i>
-      </a>
-      <a href='https://github.com/seiichi3141/appbar_widget.git' target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-  </div>
-  <div class="card-body gist p-0">
+<div class="sample-app mb-4">
+  <div class="gist">
     <script src='https://gist.github.com/seiichi3141/2a7a12b429dfdfef3b13b2e594bf0e34.js'></script>
   </div>
-  <iframe class="flutter_web shadow"
-  src='https://seiichi3141.github.io/appbar_widget' style='height: 200px;' border="0"></iframe>
+  <div class="flutter_web">
+    <iframe class="shadow" src='https://seiichi3141.github.io/appbar_widget' style='height: 200px;'
+      border="0"></iframe>
+    <div class="text-muted">
+      <div class="float-right">
+        <a class="mr-2" href='https://seiichi3141.github.io/appbar_widget' target="_blank"><i
+            class="fas fa-external-link-alt"></i></a>
+        <a class="mr-2" href='https://github.com/seiichi3141/appbar_widget.git' target="_blank"><i
+            class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <h2 id="tabbar">TabBar</h2>
 
-<p>AppBarにTabBarを追加する場合。</p>
+<p>AppBarのbottomにTabBarを追加するケース。TabBarにはTabControllerが必要。Tabにはアイコンとテキスト、もしくはどちらか一方を設定できる。</p>
 
 <ul>
 <li>TabControllerにはDefaultTabControllerを使用</li>
 <li>アイコンのみ、テキストのみ、アイコン&amp;テキストの3種のタブを設定</li>
 </ul>
 
-<div class="card mb-4">
-  <div class="card-header">
-    <div class="text-muted small d-inline">
-      <i class="far fa-file-code mr-2"></i>main.dart
-    </div>
-    <div class="float-right">
-      <a class="mr-2" href='https://seiichi3141.github.io/appbar_widget_tabbar' target="_blank">
-        <i class="fas fa-external-link-alt"></i>
-      </a>
-      <a href='https://github.com/seiichi3141/appbar_widget_tabbar.git' target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-  </div>
-  <div class="card-body gist p-0">
+<div class="sample-app mb-4">
+  <div class="gist">
     <script src='https://gist.github.com/seiichi3141/47a058f4876aa6c141baa9263c3a8dc5.js'></script>
   </div>
-  <iframe class="flutter_web shadow"
-  src='https://seiichi3141.github.io/appbar_widget_tabbar' style='height: 200px;' border="0"></iframe>
+  <div class="flutter_web">
+    <iframe class="shadow" src='https://seiichi3141.github.io/appbar_widget_tabbar' style='height: 200px;'
+      border="0"></iframe>
+    <div class="text-muted">
+      <div class="float-right">
+        <a class="mr-2" href='https://seiichi3141.github.io/appbar_widget_tabbar' target="_blank"><i
+            class="fas fa-external-link-alt"></i></a>
+        <a class="mr-2" href='https://github.com/seiichi3141/appbar_widget_tabbar.git' target="_blank"><i
+            class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <h2 id="flexiblespacebar">FlexibleSpaceBar</h2>
 
 <h2 id="背景色の変更">背景色の変更</h2>
-
-<h2 id="背景色をグラデーションにする">背景色をグラデーションにする</h2>
 </section><footer>
   <div class="container mb-5">
     <small>
@@ -137,8 +156,8 @@
     </small>
   </div>
 </footer></div>
-  <div class="d-none d-md-block col-md-3 pt-3 border-left border-right">
-    <aside class="toc">
+  <div class="d-none d-md-block col-md-3 border-left border-right">
+    <aside class="toc pt-5">
       <nav id="TableOfContents">
 <ul>
 <li>
@@ -147,7 +166,6 @@
 <li><a href="#tabbar">TabBar</a></li>
 <li><a href="#flexiblespacebar">FlexibleSpaceBar</a></li>
 <li><a href="#背景色の変更">背景色の変更</a></li>
-<li><a href="#背景色をグラデーションにする">背景色をグラデーションにする</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -167,19 +185,19 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   
+  
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-145195127-1', 'auto');
 	
 	ga('send', 'pageview');
 }
 </script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+  
 </body>
 
 </html>

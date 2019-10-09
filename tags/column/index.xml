@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>seiichi3141@</copyright>
-    <lastBuildDate>Mon, 30 Sep 2019 20:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Oct 2019 20:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.seiichirou.jp/tags/column/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Column Widgetの使い方</title>
       <link>https://blog.seiichirou.jp/posts/column-widget/</link>
-      <pubDate>Mon, 30 Sep 2019 20:00:00 +0900</pubDate>
+      <pubDate>Wed, 02 Oct 2019 20:00:00 +0900</pubDate>
       
       <guid>https://blog.seiichirou.jp/posts/column-widget/</guid>
       <description>子Widgetを垂直方向に並べるWidget。 利用可能なスペースを埋めるためには子WidgetをExpandedでラップする。Columnは</description>

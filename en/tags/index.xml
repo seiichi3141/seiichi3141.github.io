@@ -7,24 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>seiichi3141@</copyright>
-    <lastBuildDate>Mon, 30 Sep 2019 20:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Oct 2019 20:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.seiichirou.jp/en/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>AppBar</title>
-      <link>https://blog.seiichirou.jp/en/tags/appbar/</link>
-      <pubDate>Mon, 30 Sep 2019 20:00:00 +0900</pubDate>
-      
-      <guid>https://blog.seiichirou.jp/en/tags/appbar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Basics</title>
       <link>https://blog.seiichirou.jp/en/tags/basics/</link>
-      <pubDate>Mon, 30 Sep 2019 20:00:00 +0900</pubDate>
+      <pubDate>Wed, 02 Oct 2019 20:00:00 +0900</pubDate>
       
       <guid>https://blog.seiichirou.jp/en/tags/basics/</guid>
       <description></description>
@@ -33,7 +24,7 @@
     <item>
       <title>Column</title>
       <link>https://blog.seiichirou.jp/en/tags/column/</link>
-      <pubDate>Mon, 30 Sep 2019 20:00:00 +0900</pubDate>
+      <pubDate>Wed, 02 Oct 2019 20:00:00 +0900</pubDate>
       
       <guid>https://blog.seiichirou.jp/en/tags/column/</guid>
       <description></description>
@@ -42,27 +33,36 @@
     <item>
       <title>Flutter</title>
       <link>https://blog.seiichirou.jp/en/tags/flutter/</link>
-      <pubDate>Mon, 30 Sep 2019 20:00:00 +0900</pubDate>
+      <pubDate>Wed, 02 Oct 2019 20:00:00 +0900</pubDate>
       
       <guid>https://blog.seiichirou.jp/en/tags/flutter/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>TabBar</title>
-      <link>https://blog.seiichirou.jp/en/tags/tabbar/</link>
-      <pubDate>Mon, 30 Sep 2019 20:00:00 +0900</pubDate>
+      <title>Widget</title>
+      <link>https://blog.seiichirou.jp/en/tags/widget/</link>
+      <pubDate>Wed, 02 Oct 2019 20:00:00 +0900</pubDate>
       
-      <guid>https://blog.seiichirou.jp/en/tags/tabbar/</guid>
+      <guid>https://blog.seiichirou.jp/en/tags/widget/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Widget</title>
-      <link>https://blog.seiichirou.jp/en/tags/widget/</link>
-      <pubDate>Mon, 30 Sep 2019 20:00:00 +0900</pubDate>
+      <title>AppBar</title>
+      <link>https://blog.seiichirou.jp/en/tags/appbar/</link>
+      <pubDate>Tue, 01 Oct 2019 20:00:00 +0900</pubDate>
       
-      <guid>https://blog.seiichirou.jp/en/tags/widget/</guid>
+      <guid>https://blog.seiichirou.jp/en/tags/appbar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TabBar</title>
+      <link>https://blog.seiichirou.jp/en/tags/tabbar/</link>
+      <pubDate>Tue, 01 Oct 2019 20:00:00 +0900</pubDate>
+      
+      <guid>https://blog.seiichirou.jp/en/tags/tabbar/</guid>
       <description></description>
     </item>
     

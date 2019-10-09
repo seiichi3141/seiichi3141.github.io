@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Theme on 健康優良不良プログラマ</title>
+    <link>https://blog.seiichirou.jp/tags/theme/</link>
+    <description>Recent content in Theme on 健康優良不良プログラマ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>seiichi3141@</copyright>
+    <lastBuildDate>Fri, 04 Oct 2019 20:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://blog.seiichirou.jp/tags/theme/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FlutterのThemeを動的に変更する</title>
+      <link>https://blog.seiichirou.jp/posts/dynamic-theme/</link>
+      <pubDate>Fri, 04 Oct 2019 20:00:00 +0900</pubDate>
+      
+      <guid>https://blog.seiichirou.jp/posts/dynamic-theme/</guid>
+      <description>Flutterにはアプリ全体のカラーリングを設定できるTheme Widgetがある。 基本的にMaterialAppのthemeに自作のThe</description>
+    </item>
+    
+  </channel>
+</rss>
