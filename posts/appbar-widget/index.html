@@ -52,25 +52,26 @@
           <h1 class="font-weight-bold">AppBar Widgetの使い方</h1>
           
           <p class="small mb-1">
+            <i class="fas fa-tag text-muted mr-1"></i>
             
             
-            <a class="text-muted" href="https://blog.seiichirou.jp/tags/flutter/"><span class="badge badge-secondary">Flutter</span></a>
-            
-            
-            
-            <a class="text-muted" href="https://blog.seiichirou.jp/tags/widget/"><span class="badge badge-secondary">Widget</span></a>
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/flutter/"><span class="badge badge-secondary align-middle">Flutter</span></a>
             
             
             
-            <a class="text-muted" href="https://blog.seiichirou.jp/tags/basics/"><span class="badge badge-secondary">Basics</span></a>
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/widget/"><span class="badge badge-secondary align-middle">Widget</span></a>
             
             
             
-            <a class="text-muted" href="https://blog.seiichirou.jp/tags/appbar/"><span class="badge badge-secondary">AppBar</span></a>
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/basics/"><span class="badge badge-secondary align-middle">Basics</span></a>
             
             
             
-            <a class="text-muted" href="https://blog.seiichirou.jp/tags/tabbar/"><span class="badge badge-secondary">TabBar</span></a>
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/appbar/"><span class="badge badge-secondary align-middle">AppBar</span></a>
+            
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/tabbar/"><span class="badge badge-secondary align-middle">TabBar</span></a>
             
             
           </p>
@@ -80,20 +81,20 @@
     </header>
     <section class="content">
 
-<p>マテリアルデザインのアプリバーを実装するためのWidget。アプリバーは基本的なツールバーと、場合によってはTabBarやFlexibleSpaceBarなどの他のWidgetで構成される。</p>
+<p>マテリアルデザインのアプリバーを実装するためのWidget。アプリバーは基本的なツールバーと、場合によっては<code>TabBar</code>や<code>FlexibleSpaceBar</code>などの他のWidgetで構成される。</p>
 
 <p><a href="https://api.flutter.dev/flutter/material/AppBar-class.html" target="_blank">AppBar class(APIリファレンス)</a></p>
 
 <h2 id="ツールバー">ツールバー</h2>
 
-<p>leadingとtitleとactionsの実装例。通常、leadingはアイコン、titleにはテキスト、actionsにはIconButtonが設定される。しかし、すべては結局Widgetなのでアプリ次第で好きなものを設定できる。</p>
+<p><code>leading</code>と<code>title</code>と<code>actions</code>の実装例。通常、<code>leading</code>はアイコン、<code>title</code>にはテキスト、<code>actions</code>には<code>IconButton</code>が設定される。しかし、すべては結局Widgetなのでアプリ次第で好きなものを設定できる。</p>
 
 <p>以下の例では基本的な操作を実装した。</p>
 
 <ul>
-<li>leadingにIcon Widgetを設定</li>
-<li>titleにはText Widgetを設定</li>
-<li>actionsにはIconButton Widgetを設定。押すとSnackBarが表示する</li>
+<li><code>leading</code>に<code>Icon</code>を設定</li>
+<li><code>title</code>には<code>Text</code>を設定</li>
+<li><code>actions</code>には<code>IconButton</code>を設定。押すとSnackBarが表示する</li>
 </ul>
 
 <div class="sample-app mb-4">
@@ -116,10 +117,10 @@
 
 <h2 id="tabbar">TabBar</h2>
 
-<p>AppBarのbottomにTabBarを追加するケース。TabBarにはTabControllerが必要。Tabにはアイコンとテキスト、もしくはどちらか一方を設定できる。</p>
+<p><code>AppBar</code>の<code>bottom</code>に<code>TabBar</code>を追加するケース。<code>TabBar</code>には<code>TabController</code>が必要。<code>Tab</code>にはアイコンとテキスト、もしくはどちらか一方を設定できる。</p>
 
 <ul>
-<li>TabControllerにはDefaultTabControllerを使用</li>
+<li><code>TabController</code>には<code>DefaultTabController</code>を使用</li>
 <li>アイコンのみ、テキストのみ、アイコン&amp;テキストの3種のタブを設定</li>
 </ul>
 

@@ -52,21 +52,22 @@
           <h1 class="font-weight-bold">FlutterのThemeを動的に変更する</h1>
           
           <p class="small mb-1">
+            <i class="fas fa-tag text-muted mr-1"></i>
             
             
-            <a class="text-muted" href="https://blog.seiichirou.jp/tags/flutter/"><span class="badge badge-secondary">Flutter</span></a>
-            
-            
-            
-            <a class="text-muted" href="https://blog.seiichirou.jp/tags/widget/"><span class="badge badge-secondary">Widget</span></a>
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/flutter/"><span class="badge badge-secondary align-middle">Flutter</span></a>
             
             
             
-            <a class="text-muted" href="https://blog.seiichirou.jp/tags/basics/"><span class="badge badge-secondary">Basics</span></a>
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/widget/"><span class="badge badge-secondary align-middle">Widget</span></a>
             
             
             
-            <a class="text-muted" href="https://blog.seiichirou.jp/tags/theme/"><span class="badge badge-secondary">Theme</span></a>
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/basics/"><span class="badge badge-secondary align-middle">Basics</span></a>
+            
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/theme/"><span class="badge badge-secondary align-middle">Theme</span></a>
             
             
           </p>
@@ -76,15 +77,15 @@
     </header>
     <section class="content">
 
-<p>Flutterにはアプリ全体のカラーリングを設定できるTheme Widgetがある。</p>
+<p>Flutterにはアプリ全体のカラーリングを設定できる<code>Theme</code>Widgetがある。</p>
 
-<p>基本的にMaterialAppのthemeに自作のThemeDataを渡すことで配下のMaterial Component全体のテーマを変更できるのだが、これをStatefulWidgetで動的に変更できるようにするとアニメーションを加えて変えてくれる機能までついている。</p>
+<p>基本的に<code>MaterialApp</code>の<code>theme</code>に自作の<code>ThemeData</code>を渡すことで配下の<code>Material</code>Component全体のテーマを変更できるのだが、これを<code>StatefulWidget</code>で動的に変更できるようにするとアニメーションを加えて変えてくれる機能までついている。</p>
 
-<h2 id="動的なthemeの変更">動的なThemeの変更</h2>
+<h2 id="動的なthemeの変更の実装例">動的なThemeの変更の実装例</h2>
 
-<p>MaterialAppのthemeにprimarySwatchとbrightnessを動的に変更できるようにしてみた例。</p>
+<p><code>MaterialApp</code>の<code>theme</code>に<code>primarySwatch</code>と<code>brightness</code>を動的に変更できるようにしてみた例。</p>
 
-<p>primarySwatchにはMaterialColorのリストから選べるように、brightnessにはダークテーマにするかをSwitchで選べるようにした。色やダークテーマの変更を行うとアニメーション付きで切り替わってくれる。</p>
+<p><code>primarySwatch</code>には<code>MaterialColor</code>のリストから選べるように、<code>brightness</code>にはダークテーマにするかを<code>Switch</code>で選べるようにした。色やダークテーマの変更を行うとアニメーション付きで切り替わってくれる。</p>
 
 <div class="sample-app mb-4">
   <div class="gist">
@@ -119,7 +120,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#動的なthemeの変更">動的なThemeの変更</a></li>
+<li><a href="#動的なthemeの変更の実装例">動的なThemeの変更の実装例</a></li>
 </ul></li>
 </ul>
 </nav>

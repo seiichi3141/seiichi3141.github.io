@@ -33,21 +33,6 @@
   </url>
   
   <url>
-    <loc>https://blog.seiichirou.jp/categories/flutter/</loc>
-    <lastmod>2019-10-04T20:00:00+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.seiichirou.jp/en/categories/flutter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://blog.seiichirou.jp/categories/flutter/"
-                />
-  </url>
-  
-  <url>
     <loc>https://blog.seiichirou.jp/tags/flutter/</loc>
     <lastmod>2019-10-04T20:00:00+09:00</lastmod>
     <xhtml:link
@@ -59,6 +44,21 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://blog.seiichirou.jp/tags/flutter/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/categories/flutter/</loc>
+    <lastmod>2019-10-04T20:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/categories/flutter/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/categories/flutter/"
                 />
   </url>
   

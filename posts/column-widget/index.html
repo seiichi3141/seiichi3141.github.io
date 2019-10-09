@@ -52,21 +52,22 @@
           <h1 class="font-weight-bold">Column Widgetの使い方</h1>
           
           <p class="small mb-1">
+            <i class="fas fa-tag text-muted mr-1"></i>
             
             
-            <a class="text-muted" href="https://blog.seiichirou.jp/tags/flutter/"><span class="badge badge-secondary">Flutter</span></a>
-            
-            
-            
-            <a class="text-muted" href="https://blog.seiichirou.jp/tags/widget/"><span class="badge badge-secondary">Widget</span></a>
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/flutter/"><span class="badge badge-secondary align-middle">Flutter</span></a>
             
             
             
-            <a class="text-muted" href="https://blog.seiichirou.jp/tags/basics/"><span class="badge badge-secondary">Basics</span></a>
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/widget/"><span class="badge badge-secondary align-middle">Widget</span></a>
             
             
             
-            <a class="text-muted" href="https://blog.seiichirou.jp/tags/column/"><span class="badge badge-secondary">Column</span></a>
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/basics/"><span class="badge badge-secondary align-middle">Basics</span></a>
+            
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/column/"><span class="badge badge-secondary align-middle">Column</span></a>
             
             
           </p>
@@ -78,7 +79,7 @@
 
 <p>子Widgetを垂直方向に並べるWidget。</p>
 
-<p>利用可能なスペースを埋めるためには子WidgetをExpandedでラップする。Columnはスクロールしない。スクロールするリストが必要ならListViewを使うことを検討したほうがいい。</p>
+<p>利用可能なスペースを埋めるためには子Widgetを<code>Expanded</code>でラップする。<code>Column</code>はスクロールしない。スクロールするリストが必要なら<code>ListView</code>を使うことを検討したほうがいい。</p>
 
 <p><a href="https://api.flutter.dev/flutter/widgets/Column-class.html" target="_blank">Column class(APIリファレンス)</a></p>
 
@@ -87,7 +88,7 @@
 <p>三つの子Widgetを縦に並べるだけの例。</p>
 
 <ul>
-<li>childrenに自作のカラーボックスを3個設定する</li>
+<li><code>children</code>に自作のカラーボックスを3個設定する</li>
 </ul>
 
 <div class="sample-app mb-4">
@@ -110,9 +111,9 @@
 
 <h2 id="各種パラメータの設定">各種パラメータの設定</h2>
 
-<p>Column WidgetにはmainAxisAlignment/mainAxisSize/crossAxisAlignmentの三つのパラメータが設定できる。</p>
+<p><code>Column</code>には<code>mainAxisAlignment</code>/<code>mainAxisSize</code>/<code>crossAxisAlignment</code>の三つのパラメータが設定できる。</p>
 
-<p>以下はScaffold下にColumnを置いたときに、各パラメータの変更がColumn Widgetの動作にどう影響を与えるか確認ができる実装例。</p>
+<p>以下は<code>Scaffold</code>下に<code>Column</code>を置いたときに、各パラメータの変更が<code>Column</code>の動作にどう影響を与えるか確認ができる実装例。</p>
 
 <div class="sample-app mb-4">
   <div class="gist">
