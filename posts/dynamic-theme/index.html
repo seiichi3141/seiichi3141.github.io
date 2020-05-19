@@ -75,35 +75,12 @@
         </div>
       </div>
     </header>
-    <section class="content">
-
-<p>Flutterにはアプリ全体のカラーリングを設定できる<code>Theme</code>Widgetがある。</p>
-
+    <section class="content"><p>Flutterにはアプリ全体のカラーリングを設定できる<code>Theme</code>Widgetがある。</p>
 <p>基本的な使い方は<code>MaterialApp</code>の<code>theme</code>に自作の<code>ThemeData</code>を渡すこと。これだけで配下の<code>Material</code>Component全体のテーマを変更できるのだが、さらに<code>StatefulWidget</code>で<code>ThemeData</code>を動的に変更できるようにするとアニメーションを加えた上でテーマを変えてくれる機能までついている。</p>
-
 <h2 id="動的なthemeの変更の実装例">動的なThemeの変更の実装例</h2>
-
 <p><code>MaterialApp</code>の<code>theme</code>に<code>primarySwatch</code>と<code>brightness</code>を動的に変更できるようにしてみた例。</p>
-
 <p><code>primarySwatch</code>には<code>MaterialColor</code>のリストから選べるように、<code>brightness</code>にはダークテーマにするかを<code>Switch</code>で選べるようにした。色やダークテーマの変更を行うとアニメーション付きで切り替わってくれる。</p>
-
-<div class="sample-app mb-4">
-  <div class="gist">
-    <script src='https://gist.github.com/seiichi3141/e1e19ca128f87285d93bb31c136d85c6.js'></script>
-  </div>
-  <div class="flutter_web">
-    <iframe class="shadow" src='https://seiichi3141.github.io/dynamic_theme' style='height: 500px;'
-      border="0"></iframe>
-    <div class="text-muted">
-      <div class="float-right">
-        <a class="mr-2" href='https://seiichi3141.github.io/dynamic_theme' target="_blank"><i
-            class="fas fa-external-link-alt"></i></a>
-        <a class="mr-2" href='https://github.com/seiichi3141/dynamic_theme.git' target="_blank"><i
-            class="fab fa-github"></i></a>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- raw HTML omitted -->
 </section><footer>
   <div class="container mb-5">
     <small>
@@ -117,12 +94,9 @@
   <div class="d-none d-md-block col-md-3 border-left border-right">
     <aside class="toc pt-5">
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#動的なthemeの変更の実装例">動的なThemeの変更の実装例</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#動的なthemeの変更の実装例">動的なThemeの変更の実装例</a></li>
+  </ul>
 </nav>
     </aside>
   </div>

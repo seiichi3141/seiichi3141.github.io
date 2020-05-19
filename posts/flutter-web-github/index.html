@@ -75,88 +75,46 @@
         </div>
       </div>
     </header>
-    <section class="content">
-
-<p>Flutterのバージョン1.9からFlutter for Webを正式にサポートしたのでGithubのProject Pagesで公開してみたい。Flutterのexamplesに含まれるFlutter galleryをそのまま公開する手順です。</p>
-
+    <section class="content"><p>Flutterのバージョン1.9からFlutter for Webを正式にサポートしたのでGithubのProject Pagesで公開してみたい。Flutterのexamplesに含まれるFlutter galleryをそのまま公開する手順です。</p>
 <h2 id="環境">環境</h2>
-
 <pre><code>flutter --version
 Flutter 1.10.8-pre.21 • channel master • https://github.com/flutter/flutter.git
 Framework • revision fa7340a328 (6 days ago) • 2019-10-02 19:04:50 -0400
 Engine • revision 73dd5a33d9
 Tools • Dart 2.6.0 (build 2.6.0-dev.4.0 eaf1c308ab)
-</code></pre>
-
-<h2 id="flutter-galleryのビルド">Flutter galleryのビルド</h2>
-
+</code></pre><h2 id="flutter-galleryのビルド">Flutter galleryのビルド</h2>
 <p>Flutter galleryのパスへ移動</p>
-
 <pre><code>cd [:flutterのパス]/examples/flutter_gallery
-</code></pre>
-
-<p>依存ライブラリの取得</p>
-
+</code></pre><p>依存ライブラリの取得</p>
 <pre><code>flutter pub get
-</code></pre>
-
-<p>Flutter for Webのビルド</p>
-
+</code></pre><p>Flutter for Webのビルド</p>
 <pre><code>flutter build web
-</code></pre>
-
-<p>成果物をdocsフォルダへ移動</p>
-
+</code></pre><p>成果物をdocsフォルダへ移動</p>
 <pre><code>mv build/web docs
-</code></pre>
-
-<h2 id="githubのリポジトリの作成とpush">Githubのリポジトリの作成とpush</h2>
-
+</code></pre><h2 id="githubのリポジトリの作成とpush">Githubのリポジトリの作成とpush</h2>
 <p>Githubにflutter_galleryリポジトリをpublicで作成</p>
-
-<p><img src="/img/create_flutter_gallery.jpg#fig" alt="リポジトリ作成" /></p>
-
+<p><img src="/img/create_flutter_gallery.jpg#fig" alt="リポジトリ作成"></p>
 <p>リポジトリの初期化</p>
-
 <pre><code>git init
-</code></pre>
-
-<p>.gitignoreの作成</p>
-
+</code></pre><p>.gitignoreの作成</p>
 <pre><code>echo .dart_tool/ &gt;&gt; .gitignore
 echo build/ &gt;&gt; .gitignore
 echo .flutter-plugins &gt;&gt; .gitignore
 echo .packages &gt;&gt; .gitignore
-</code></pre>
-
-<p>コミット</p>
-
+</code></pre><p>コミット</p>
 <pre><code>git add .
 git commit -m &quot;init&quot;
-</code></pre>
-
-<p>リモートリポジトリの追加とpush</p>
-
+</code></pre><p>リモートリポジトリの追加とpush</p>
 <pre><code>git remote add origin https://github.com/seiichi3141/flutter_gallery.git
 git push origin master
-</code></pre>
-
-<h2 id="github-procject-pagesの公開">Github Procject Pagesの公開</h2>
-
+</code></pre><h2 id="github-procject-pagesの公開">Github Procject Pagesの公開</h2>
 <p>GithubのリポジトリのSettingsから、下のほうにあるGithub Pages設定を変更する。</p>
-
-<p><img src="/img/github_pages_settings.png#fig" alt="設定変更" /></p>
-
+<p><img src="/img/github_pages_settings.png#fig" alt="設定変更"></p>
 <p>ページを開いて公開できているかを確認する。</p>
-
-<p><a href="https://blog.seiichirou.jp/flutter_gallery/" target="_blank">https://blog.seiichirou.jp/flutter_gallery/</a></p>
-
+<p><a href="https://blog.seiichirou.jp/flutter_gallery/">https://blog.seiichirou.jp/flutter_gallery/</a></p>
 <p>iframeのsrcとして指定するとウェブサイトに埋め込むことも可能になる。</p>
-
 <pre><code>&lt;iframe src=&quot;http://blog.seiichirou.jp/flutter_gallery/&quot;&gt;&lt;/iframe&gt;
-</code></pre>
-
-<iframe width="100%" height="480px" src="https://blog.seiichirou.jp/flutter_gallery/"></iframe>
+</code></pre><!-- raw HTML omitted -->
 </section><footer>
   <div class="container mb-5">
     <small>
@@ -170,15 +128,12 @@ git push origin master
   <div class="d-none d-md-block col-md-3 border-left border-right">
     <aside class="toc pt-5">
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#環境">環境</a></li>
-<li><a href="#flutter-galleryのビルド">Flutter galleryのビルド</a></li>
-<li><a href="#githubのリポジトリの作成とpush">Githubのリポジトリの作成とpush</a></li>
-<li><a href="#github-procject-pagesの公開">Github Procject Pagesの公開</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#環境">環境</a></li>
+    <li><a href="#flutter-galleryのビルド">Flutter galleryのビルド</a></li>
+    <li><a href="#githubのリポジトリの作成とpush">Githubのリポジトリの作成とpush</a></li>
+    <li><a href="#github-procject-pagesの公開">Github Procject Pagesの公開</a></li>
+  </ul>
 </nav>
     </aside>
   </div>

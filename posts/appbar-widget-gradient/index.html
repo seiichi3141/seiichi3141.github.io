@@ -75,41 +75,15 @@
         </div>
       </div>
     </header>
-    <section class="content">
-
-<p><code>AppBar</code>では背景色を指定できるが、それにグラデーションを効かせたい。しかし、<code>AppBar</code>の<code>color</code>には<code>Gradient</code>を設定できないので<code>AppBar</code>をラップした<code>GradientAppBar</code>を実装してみる。</p>
-
+    <section class="content"><p><code>AppBar</code>では背景色を指定できるが、それにグラデーションを効かせたい。しかし、<code>AppBar</code>の<code>color</code>には<code>Gradient</code>を設定できないので<code>AppBar</code>をラップした<code>GradientAppBar</code>を実装してみる。</p>
 <h2 id="preferredsizewidget">PreferredSizeWidget</h2>
-
 <p><code>StatelessWidget</code>を<code>extends</code>した新しいクラスを定義したいが、<code>Scaffold</code>の<code>appBar</code>のクラスは<code>PreferredSizeWidget</code>で宣言されているため、<code>PreferredSizeWidget</code>の<code>interface</code>を実装しておく必要がある。</p>
-
 <p>そこで<code>GradientAppBar</code>classは<code>PreferredSizeWidget</code>を<code>implements</code>して<code>preferredSize</code>を<code>override</code>する。<code>Gradient</code>と<code>AppBar</code>をメンバ変数とし、指定できるようにする。<code>preferredSize</code>は<code>AppBar</code>の<code>preferredSize</code>をそのまま使う。</p>
-
-<script src="https://gist.github.com/seiichi3141/8fc45c7f4486b904d87252405f2fc515.js"></script>
-
+<!-- raw HTML omitted -->
 <h2 id="gradientappbarの使用例">GradientAppBarの使用例</h2>
-
 <p><code>GradientAppBar</code>を実際に使ってみた例。</p>
-
 <p><code>gradient</code>に<code>LinearGradient</code>を<code>topCenter</code>から<code>topBottom</code>へのグラデーションとし、カラーを二色設定した。</p>
-
-<div class="sample-app mb-4">
-  <div class="gist">
-    <script src='https://gist.github.com/seiichi3141/209aaeb23a33fb41157957a327078f08.js'></script>
-  </div>
-  <div class="flutter_web">
-    <iframe class="shadow" src='https://seiichi3141.github.io/appbar_widget_gradient' style='height: 250px;'
-      border="0"></iframe>
-    <div class="text-muted">
-      <div class="float-right">
-        <a class="mr-2" href='https://seiichi3141.github.io/appbar_widget_gradient' target="_blank"><i
-            class="fas fa-external-link-alt"></i></a>
-        <a class="mr-2" href='https://github.com/seiichi3141/appbar_widget_gradient.git' target="_blank"><i
-            class="fab fa-github"></i></a>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- raw HTML omitted -->
 </section><footer>
   <div class="container mb-5">
     <small>
@@ -123,13 +97,10 @@
   <div class="d-none d-md-block col-md-3 border-left border-right">
     <aside class="toc pt-5">
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#preferredsizewidget">PreferredSizeWidget</a></li>
-<li><a href="#gradientappbarの使用例">GradientAppBarの使用例</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#preferredsizewidget">PreferredSizeWidget</a></li>
+    <li><a href="#gradientappbarの使用例">GradientAppBarの使用例</a></li>
+  </ul>
 </nav>
     </aside>
   </div>

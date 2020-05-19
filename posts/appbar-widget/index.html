@@ -79,71 +79,25 @@
         </div>
       </div>
     </header>
-    <section class="content">
-
-<p>マテリアルデザインのアプリバーを実装するためのWidget。アプリバーは基本的なツールバーと、場合によっては<code>TabBar</code>や<code>FlexibleSpaceBar</code>などの他のWidgetで構成される。</p>
-
-<p><a href="https://api.flutter.dev/flutter/material/AppBar-class.html" target="_blank">AppBar class(APIリファレンス)</a></p>
-
+    <section class="content"><p>マテリアルデザインのアプリバーを実装するためのWidget。アプリバーは基本的なツールバーと、場合によっては<code>TabBar</code>や<code>FlexibleSpaceBar</code>などの他のWidgetで構成される。</p>
+<p><a href="https://api.flutter.dev/flutter/material/AppBar-class.html">AppBar class(APIリファレンス)</a></p>
 <h2 id="ツールバー">ツールバー</h2>
-
 <p><code>leading</code>と<code>title</code>と<code>actions</code>の実装例。通常、<code>leading</code>はアイコン、<code>title</code>にはテキスト、<code>actions</code>には<code>IconButton</code>が設定される。しかし、すべては結局Widgetなのでアプリ次第で好きなものを設定できる。</p>
-
 <p>以下の例では基本的な操作を実装した。</p>
-
 <ul>
 <li><code>leading</code>に<code>Icon</code>を設定</li>
 <li><code>title</code>には<code>Text</code>を設定</li>
 <li><code>actions</code>には<code>IconButton</code>を設定。押すとSnackBarが表示する</li>
 </ul>
-
-<div class="sample-app mb-4">
-  <div class="gist">
-    <script src='https://gist.github.com/seiichi3141/2a7a12b429dfdfef3b13b2e594bf0e34.js'></script>
-  </div>
-  <div class="flutter_web">
-    <iframe class="shadow" src='https://seiichi3141.github.io/appbar_widget' style='height: 200px;'
-      border="0"></iframe>
-    <div class="text-muted">
-      <div class="float-right">
-        <a class="mr-2" href='https://seiichi3141.github.io/appbar_widget' target="_blank"><i
-            class="fas fa-external-link-alt"></i></a>
-        <a class="mr-2" href='https://github.com/seiichi3141/appbar_widget.git' target="_blank"><i
-            class="fab fa-github"></i></a>
-      </div>
-    </div>
-  </div>
-</div>
-
+<!-- raw HTML omitted -->
 <h2 id="tabbar">TabBar</h2>
-
 <p><code>AppBar</code>の<code>bottom</code>に<code>TabBar</code>を追加するケース。<code>TabBar</code>には<code>TabController</code>が必要。<code>Tab</code>にはアイコンとテキスト、もしくはどちらか一方を設定できる。</p>
-
 <ul>
 <li><code>TabController</code>には<code>DefaultTabController</code>を使用</li>
 <li>アイコンのみ、テキストのみ、アイコン&amp;テキストの3種のタブを設定</li>
 </ul>
-
-<div class="sample-app mb-4">
-  <div class="gist">
-    <script src='https://gist.github.com/seiichi3141/47a058f4876aa6c141baa9263c3a8dc5.js'></script>
-  </div>
-  <div class="flutter_web">
-    <iframe class="shadow" src='https://seiichi3141.github.io/appbar_widget_tabbar' style='height: 200px;'
-      border="0"></iframe>
-    <div class="text-muted">
-      <div class="float-right">
-        <a class="mr-2" href='https://seiichi3141.github.io/appbar_widget_tabbar' target="_blank"><i
-            class="fas fa-external-link-alt"></i></a>
-        <a class="mr-2" href='https://github.com/seiichi3141/appbar_widget_tabbar.git' target="_blank"><i
-            class="fab fa-github"></i></a>
-      </div>
-    </div>
-  </div>
-</div>
-
+<!-- raw HTML omitted -->
 <h2 id="flexiblespacebar">FlexibleSpaceBar</h2>
-
 <h2 id="背景色の変更">背景色の変更</h2>
 </section><footer>
   <div class="container mb-5">
@@ -160,15 +114,12 @@
   <div class="d-none d-md-block col-md-3 border-left border-right">
     <aside class="toc pt-5">
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#ツールバー">ツールバー</a></li>
-<li><a href="#tabbar">TabBar</a></li>
-<li><a href="#flexiblespacebar">FlexibleSpaceBar</a></li>
-<li><a href="#背景色の変更">背景色の変更</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#ツールバー">ツールバー</a></li>
+    <li><a href="#tabbar">TabBar</a></li>
+    <li><a href="#flexiblespacebar">FlexibleSpaceBar</a></li>
+    <li><a href="#背景色の変更">背景色の変更</a></li>
+  </ul>
 </nav>
     </aside>
   </div>
