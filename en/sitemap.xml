@@ -3,6 +3,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.seiichirou.jp/en/apps/</loc>
+    <lastmod>2020-05-19T21:25:04+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/apps/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/apps/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/en/apps/cube_lbl_memo/privacypolicy/</loc>
+    <lastmod>2020-05-19T21:25:04+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/apps/cube_lbl_memo/privacypolicy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/apps/cube_lbl_memo/privacypolicy/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/en/</loc>
+    <lastmod>2020-05-19T21:25:04+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/"
+                />
+  </url>
+  
+  <url>
     <loc>https://blog.seiichirou.jp/en/tags/basics/</loc>
     <lastmod>2019-10-02T20:00:00+09:00</lastmod>
     <xhtml:link
@@ -74,21 +119,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://blog.seiichirou.jp/en/categories/flutter/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/en/</loc>
-    <lastmod>2019-10-02T20:00:00+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://blog.seiichirou.jp/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.seiichirou.jp/en/"
                 />
   </url>
   

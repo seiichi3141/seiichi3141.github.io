@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apps on GOOD FOR HEALTH, BAD FOR PROGRAMMER</title>
+    <link>https://blog.seiichirou.jp/en/apps/</link>
+    <description>Recent content in Apps on GOOD FOR HEALTH, BAD FOR PROGRAMMER</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>seiichi3141@</copyright>
+    <lastBuildDate>Tue, 19 May 2020 21:25:04 +0900</lastBuildDate>
+    
+	<atom:link href="https://blog.seiichirou.jp/en/apps/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CFOP Mothod Memo Privacy Policy</title>
+      <link>https://blog.seiichirou.jp/en/apps/cube_lbl_memo/privacypolicy/</link>
+      <pubDate>Tue, 19 May 2020 21:25:04 +0900</pubDate>
+      
+      <guid>https://blog.seiichirou.jp/en/apps/cube_lbl_memo/privacypolicy/</guid>
+      <description>About Advertising This application uses AdMob (Google Inc.) as an ad serving tool, and AdMob may automatically acquire user information. Please refer to the links below for the application privacy policy of the ad service providers for information about the information they collect, the purpose of use, and the provision of such information to third parties.</description>
+    </item>
+    
+  </channel>
+</rss>

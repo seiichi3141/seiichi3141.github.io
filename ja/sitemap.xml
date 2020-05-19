@@ -3,6 +3,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.seiichirou.jp/apps/</loc>
+    <lastmod>2020-05-19T21:25:04+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/apps/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/apps/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/apps/cube_lbl_memo/privacypolicy/</loc>
+    <lastmod>2020-05-19T21:25:04+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/apps/cube_lbl_memo/privacypolicy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/apps/cube_lbl_memo/privacypolicy/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/</loc>
+    <lastmod>2020-05-19T21:25:04+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/"
+                />
+  </url>
+  
+  <url>
     <loc>https://blog.seiichirou.jp/tags/basics/</loc>
     <lastmod>2019-10-07T20:00:00+09:00</lastmod>
     <xhtml:link
@@ -114,21 +159,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://blog.seiichirou.jp/tags/widget/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/</loc>
-    <lastmod>2019-10-07T20:00:00+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.seiichirou.jp/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://blog.seiichirou.jp/"
                 />
   </url>
   
