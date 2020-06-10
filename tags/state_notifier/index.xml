@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>state_notifier on 健康優良不良プログラマ</title>
+    <link>https://blog.seiichirou.jp/tags/state_notifier/</link>
+    <description>Recent content in state_notifier on 健康優良不良プログラマ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>seiichi3141@</copyright>
+    <lastBuildDate>Wed, 10 Jun 2020 21:49:03 +0900</lastBuildDate>
+    
+	<atom:link href="https://blog.seiichirou.jp/tags/state_notifier/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Flutterとstate_notifierとfreezedで作るTodoアプリ</title>
+      <link>https://blog.seiichirou.jp/posts/state_notifier_todo/</link>
+      <pubDate>Wed, 10 Jun 2020 21:49:03 +0900</pubDate>
+      
+      <guid>https://blog.seiichirou.jp/posts/state_notifier_todo/</guid>
+      <description>今まではflutter_blocを使っていたんですが、state_notifierとfreezedのコンボでだいぶ記述量が減ると知って試して</description>
+    </item>
+    
+  </channel>
+</rss>

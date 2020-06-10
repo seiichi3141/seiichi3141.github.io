@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>seiichi3141@</copyright>
-    <lastBuildDate>Tue, 19 May 2020 21:25:04 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2020 21:49:03 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.seiichirou.jp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Flutterとstate_notifierとfreezedで作るTodoアプリ</title>
+      <link>https://blog.seiichirou.jp/posts/state_notifier_todo/</link>
+      <pubDate>Wed, 10 Jun 2020 21:49:03 +0900</pubDate>
+      
+      <guid>https://blog.seiichirou.jp/posts/state_notifier_todo/</guid>
+      <description>今まではflutter_blocを使っていたんですが、state_notifierとfreezedのコンボでだいぶ記述量が減ると知って試して</description>
+    </item>
     
     <item>
       <title>CFOPメソッドメモ プライバシーポリシー</title>

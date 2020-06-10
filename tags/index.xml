@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>seiichi3141@</copyright>
-    <lastBuildDate>Mon, 07 Oct 2019 20:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2020 21:49:03 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.seiichirou.jp/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Flutter</title>
+      <link>https://blog.seiichirou.jp/tags/flutter/</link>
+      <pubDate>Wed, 10 Jun 2020 21:49:03 +0900</pubDate>
+      
+      <guid>https://blog.seiichirou.jp/tags/flutter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>freezed</title>
+      <link>https://blog.seiichirou.jp/tags/freezed/</link>
+      <pubDate>Wed, 10 Jun 2020 21:49:03 +0900</pubDate>
+      
+      <guid>https://blog.seiichirou.jp/tags/freezed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>state_notifier</title>
+      <link>https://blog.seiichirou.jp/tags/state_notifier/</link>
+      <pubDate>Wed, 10 Jun 2020 21:49:03 +0900</pubDate>
+      
+      <guid>https://blog.seiichirou.jp/tags/state_notifier/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Basics</title>
@@ -18,15 +45,6 @@
       <pubDate>Mon, 07 Oct 2019 20:00:00 +0900</pubDate>
       
       <guid>https://blog.seiichirou.jp/tags/basics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Flutter</title>
-      <link>https://blog.seiichirou.jp/tags/flutter/</link>
-      <pubDate>Mon, 07 Oct 2019 20:00:00 +0900</pubDate>
-      
-      <guid>https://blog.seiichirou.jp/tags/flutter/</guid>
       <description></description>
     </item>
     

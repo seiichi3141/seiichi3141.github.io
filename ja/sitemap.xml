@@ -3,6 +3,111 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.seiichirou.jp/categories/</loc>
+    <lastmod>2020-06-10T21:49:03+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/tags/flutter/</loc>
+    <lastmod>2020-06-10T21:49:03+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/tags/flutter/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/tags/flutter/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/categories/flutter/</loc>
+    <lastmod>2020-06-10T21:49:03+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/categories/flutter/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/categories/flutter/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/posts/state_notifier_todo/</loc>
+    <lastmod>2020-06-10T21:49:03+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/tags/freezed/</loc>
+    <lastmod>2020-06-10T21:49:03+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/posts/</loc>
+    <lastmod>2020-06-10T21:49:03+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/posts/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/tags/state_notifier/</loc>
+    <lastmod>2020-06-10T21:49:03+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/tags/</loc>
+    <lastmod>2020-06-10T21:49:03+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/</loc>
+    <lastmod>2020-06-10T21:49:03+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/"
+                />
+  </url>
+  
+  <url>
     <loc>https://blog.seiichirou.jp/apps/</loc>
     <lastmod>2020-05-19T21:25:04+09:00</lastmod>
     <xhtml:link
@@ -38,21 +143,6 @@
   </url>
   
   <url>
-    <loc>https://blog.seiichirou.jp/</loc>
-    <lastmod>2020-05-19T21:25:04+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.seiichirou.jp/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://blog.seiichirou.jp/"
-                />
-  </url>
-  
-  <url>
     <loc>https://blog.seiichirou.jp/tags/basics/</loc>
     <lastmod>2019-10-07T20:00:00+09:00</lastmod>
     <xhtml:link
@@ -68,51 +158,6 @@
   </url>
   
   <url>
-    <loc>https://blog.seiichirou.jp/categories/</loc>
-    <lastmod>2019-10-07T20:00:00+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.seiichirou.jp/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://blog.seiichirou.jp/categories/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/tags/flutter/</loc>
-    <lastmod>2019-10-07T20:00:00+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.seiichirou.jp/en/tags/flutter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://blog.seiichirou.jp/tags/flutter/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/categories/flutter/</loc>
-    <lastmod>2019-10-07T20:00:00+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.seiichirou.jp/en/categories/flutter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://blog.seiichirou.jp/categories/flutter/"
-                />
-  </url>
-  
-  <url>
     <loc>https://blog.seiichirou.jp/posts/flutter-web-github/</loc>
     <lastmod>2019-10-07T20:00:00+09:00</lastmod>
   </url>
@@ -120,36 +165,6 @@
   <url>
     <loc>https://blog.seiichirou.jp/tags/github/</loc>
     <lastmod>2019-10-07T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/posts/</loc>
-    <lastmod>2019-10-07T20:00:00+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.seiichirou.jp/en/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://blog.seiichirou.jp/posts/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/tags/</loc>
-    <lastmod>2019-10-07T20:00:00+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.seiichirou.jp/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://blog.seiichirou.jp/tags/"
-                />
   </url>
   
   <url>

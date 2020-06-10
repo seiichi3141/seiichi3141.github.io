@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html><head>
+  <meta lang="ja">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="seiichi3141" />
+  <meta name="description" content="プログラミングやFlutter関連の情報" />
+  <meta name="keywords" content="プログラミング,Flutter,Dart">
+  <title>健康優良不良プログラマ</title>
+  
+  
+  <link rel="stylesheet" href="https://blog.seiichirou.jp/sass/main.css" />
+  <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+  <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+</head><body><header class="bg-dark">
+  <div class="container">
+    <nav class="navbar navbar-dark pr-0 pl-0">
+      <a class="navbar-brand font-weight-bold" href="/">
+        <i class="fas fa-blog text-light d-inline-block align-top lead mr-3"></i>健康優良不良プログラマ
+      </a>
+      <div>
+        <a href="https://github.com/seiichi3141"><i class="fab fa-github text-light mr-1"></i></a>
+        <a href="https://www.facebook.com/seiichirou.tanaka"><i class="fab fa-facebook text-light mr-1"></i></a>
+        <a href="https://twitter.com/seiichi3141"><i class="fab fa-twitter text-light"></i></a>
+      </div>
+    </nav>
+  </div>
+</header><main role="main">
+    <div class="container">
+<article class="row">
+  <div class="pt-5 col-md-9">
+    <header>
+      <div class="row">
+        
+        
+        <div class="col-12 col-sm-4">
+          
+          <img class="img-fluid img-thumbnail" src="https://blog.seiichirou.jp/img/flutter_logo.png" alt="">
+        </div>
+        <div class="col-12 col-sm-8 mt-3 mt-sm-0">
+          
+          <p class="small mb-1">
+            <i class="fas fa-folder mr-1 text-muted"></i>
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/categories/flutter/">Flutter</a>
+            
+            
+          </p>
+          
+          <h1 class="font-weight-bold">Flutterとstate_notifierとfreezedで作るTodoアプリ</h1>
+          
+          <p class="small mb-1">
+            <i class="fas fa-tag text-muted mr-1"></i>
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/flutter/"><span class="badge badge-secondary align-middle">Flutter</span></a>
+            
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/state_notifier/"><span class="badge badge-secondary align-middle">state_notifier</span></a>
+            
+            
+            
+            <a class="text-muted" href="https://blog.seiichirou.jp/tags/freezed/"><span class="badge badge-secondary align-middle">freezed</span></a>
+            
+            
+          </p>
+          
+        </div>
+        
+      </div>
+    </header>
+    <section class="content"><p>今まではflutter_blocを使っていたんですが、state_notifierとfreezedのコンボでだいぶ記述量が減ると知って試してからすっかり気に入って、開発中のアプリもほとんど書き換えてしまいました。</p>
+<p>今回はそのstate_notifierとfreezedで簡単なTodoリストアプリを作ってその便利さ紹介できたらいいなと思っています。</p>
+<p>リポジトリは<a href="https://github.com/seiichi3141/state_notifier_todo">こちら</a>です。</p>
+<h1 id="概要">概要</h1>
+<ul>
+<li>ModelやStateにfreezedを使って手軽にimmutableやcopyWithを実現する</li>
+<li>StateNotifierを継承したControllerを実装してstateを管理する</li>
+<li>ScreenはStateを監視して表示、Controllerを介してstate操作を行う</li>
+<li>ProviderでStateやControllerの受け渡しを簡潔にする</li>
+</ul>
+<h1 id="todoリストの機能">Todoリストの機能</h1>
+<ul>
+<li>Todoを追加できる</li>
+<li>Todoの未完了-完了を切り替えられる</li>
+<li>リスト表示画面では未完了のリスト、完了のリストの表示を切り替えることができる</li>
+</ul>
+<h1 id="使用するライブラリ">使用するライブラリ</h1>
+<table>
+<thead>
+<tr>
+<th align="left">Package</th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">flutter_state_notofier</td>
+<td align="right">StateNotifierやStateNotifierProviderを使うため</td>
+</tr>
+<tr>
+<td align="left">freezed_annotation</td>
+<td align="right">freezedでコード生成するためのアノテーション</td>
+</tr>
+<tr>
+<td align="left">provider</td>
+<td align="right">Providerへのアクセスを容易にするため</td>
+</tr>
+<tr>
+<td align="left">uuid</td>
+<td align="right">TodoアイテムへのID付け</td>
+</tr>
+</tbody>
+</table>
+<pre><code>dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.3
+  flutter_state_notifier: ^0.4.2
+  freezed_annotation: ^0.7.1
+  provider: ^4.1.3
+  uuid: ^2.0.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  freezed: ^0.10.9
+  build_runner: ^1.10.0
+
+</code></pre><h1 id="モデル">モデル</h1>
+<h2 id="todo">Todo</h2>
+<p>Todoを表すModelを実装します。freezedアノテーションをつけ、コンストラクタやcopyWithなどを自動生成するようにします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:flutter/foundation.dart&#39;</span>; <span style="color:#75715e">// *.freezed.dartで必要なのでimportしておく
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:freezed_annotation/freezed_annotation.dart&#39;</span>;
+
+<span style="color:#66d9ef">part</span> <span style="color:#e6db74">&#39;todo.freezed.dart&#39;</span>;
+
+<span style="color:#960050;background-color:#1e0010">@</span>freezed
+<span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Todo</span> <span style="color:#66d9ef">with</span> _$Todo {
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">factory</span> Todo({
+    <span style="color:#66d9ef">String</span> id,  <span style="color:#75715e">// uuidで割りつける予定
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">String</span> title,
+    <span style="color:#960050;background-color:#1e0010">@</span>Default(<span style="color:#66d9ef">false</span>) <span style="color:#66d9ef">bool</span> completed,
+  }) <span style="color:#f92672">=</span> TodoData;
+}
+</code></pre></div><h1 id="ステートとコントローラ">ステートとコントローラ</h1>
+<h2 id="todosstate">TodosState</h2>
+<p>TodosStateを実装します。freezedアノテーションをつけ、データを持つTodoStateDataとローディング中を示すTodosStateLoadingの二つの状態を定義します。</p>
+<p>TodosStateのクラスをチェックし、TodosStateLoadingであればまだ読み込み中、TodosStateDataであればデータの読み込みが終わったという判断ができるようになります。</p>
+<p>TodosStateDataにはすべてのTodoが入るtodosを持っててもらいます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">part</span> <span style="color:#e6db74">&#39;todos_state.freezed.dart&#39;</span>;
+
+<span style="color:#960050;background-color:#1e0010">@</span>freezed
+<span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodosState</span> <span style="color:#66d9ef">with</span> _$TodosState {
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">factory</span> TodosState({
+    <span style="color:#960050;background-color:#1e0010">@</span>Default(<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span>[]) List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> todos,
+  }) <span style="color:#f92672">=</span> TodosStateData;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">factory</span> TodosState.loading() <span style="color:#f92672">=</span> TodosStateLoading;
+}
+</code></pre></div><h2 id="todoscontoller">TodosContoller</h2>
+<p>このTodosStateへの操作はStateNotifierを継承したTodosControllerを通してやります。TodosControllerはLocatorMixinを宣言しておきcontextにあるproviderへのアクセスを容易にしておきます。
+ここでは仮にinitStateで5秒間ウエイトを入れ、その後初期データとしていくつかのTodoをstateへ設定しています。
+本番ではここでRepositoryなりDBなりからロードすることになるはずです。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodosController</span> <span style="color:#66d9ef">extends</span> StateNotifier<span style="color:#f92672">&lt;</span>TodosState<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">with</span> LocatorMixin {
+  TodosController() <span style="color:#f92672">:</span> <span style="color:#66d9ef">super</span>(<span style="color:#66d9ef">const</span> TodosState.loading());
+
+  <span style="color:#66d9ef">final</span> _uuid <span style="color:#f92672">=</span> Uuid();
+
+  <span style="color:#960050;background-color:#1e0010">@</span>override
+  <span style="color:#66d9ef">void</span> initState() <span style="color:#66d9ef">async</span> {
+    <span style="color:#66d9ef">super</span>.initState();
+
+    <span style="color:#66d9ef">await</span> Future<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">void</span><span style="color:#f92672">&gt;</span>.delayed(<span style="color:#66d9ef">const</span> Duration(seconds: <span style="color:#ae81ff">3</span>));
+
+    <span style="color:#75715e">// 初期データを設定、TodosStateLoadingからTodoStateDataへ変わるのでローディング完了の状態となる
+</span><span style="color:#75715e"></span>    state <span style="color:#f92672">=</span> TodosState(
+      todos: [
+        Todo(id: _uuid.v4(), title: <span style="color:#e6db74">&#39;朝食を食べる&#39;</span>),
+        Todo(id: _uuid.v4(), title: <span style="color:#e6db74">&#39;ラジオ体操をやる&#39;</span>),
+        Todo(id: _uuid.v4(), title: <span style="color:#e6db74">&#39;薬を飲む&#39;</span>),
+      ],
+    );
+  }
+}
+</code></pre></div><p>また、TodosControllerではadd/toggleを外部に公開し、todoの追加、未完了/完了切り替えをできるようにします。</p>
+<p>stateはimmutableなのでメンバ変数を直接変更することはできません。なので、stateを更新するときは現在のstateからcopyWithでコピーするか、新規のstateで上書きすることになります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">  <span style="color:#66d9ef">void</span> add(<span style="color:#66d9ef">String</span> title) {
+    <span style="color:#66d9ef">final</span> currentState <span style="color:#f92672">=</span> state;
+    <span style="color:#66d9ef">if</span> (currentState <span style="color:#66d9ef">is</span> TodosStateData) {
+      <span style="color:#75715e">// todosのクローンに新しいTodoを追加してstateを更新
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">final</span> todos <span style="color:#f92672">=</span> currentState.todos.toList()
+        ..add(
+          Todo(id: _uuid.v4(), title: title),
+        );
+      state <span style="color:#f92672">=</span> currentState.copyWith(
+        todos: todos,
+      );
+    }
+  }
+
+  <span style="color:#66d9ef">void</span> toggle(Todo todo) {
+    <span style="color:#66d9ef">final</span> currentState <span style="color:#f92672">=</span> state;
+    <span style="color:#66d9ef">if</span> (currentState <span style="color:#66d9ef">is</span> TodosStateData) {
+      <span style="color:#75715e">// Todoを検索してcomplatedをtoggleし、stateを更新
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">final</span> clone <span style="color:#f92672">=</span> currentState.todos.map((t) {
+        <span style="color:#66d9ef">if</span> (t <span style="color:#f92672">==</span> todo) {
+          <span style="color:#66d9ef">return</span> t.copyWith(
+            completed: <span style="color:#f92672">!</span>t.completed,
+          );
+        }
+        <span style="color:#66d9ef">return</span> t;
+      }).toList();
+      state <span style="color:#f92672">=</span> TodosState(
+        todos: clone,
+      );
+    }
+  }
+</code></pre></div><h2 id="filteredtodosstate">FilteredTodosState</h2>
+<p>TodosStateをそのまま表示に使うこともできますが、今回はフィルタリングしたリストを表示したいと考えています。そのために画面の表示用にTodoのリストをフィルタリングした結果を持つFilteredTodosStateを実装をします。</p>
+<p>現在のフィルタリングのパラメータとしてcompleted変数を、フィルタリングされたTodoのリストとしてtodos持っててもらいます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">part</span> <span style="color:#e6db74">&#39;filtered_todos_state.freezed.dart&#39;</span>;
+
+<span style="color:#960050;background-color:#1e0010">@</span>freezed
+<span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FilteredTodosState</span> <span style="color:#66d9ef">with</span> _$FilteredTodosState {
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">factory</span> FilteredTodosState({
+    <span style="color:#960050;background-color:#1e0010">@</span>Default(<span style="color:#66d9ef">false</span>) <span style="color:#66d9ef">bool</span> completed,
+    <span style="color:#960050;background-color:#1e0010">@</span>Default(<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span>[]) List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> todos,
+  }) <span style="color:#f92672">=</span> FilteredTodosStateData;
+}
+</code></pre></div><h2 id="filteredtodoscontroller">FilteredTodosController</h2>
+<p>FilteredTodosControllerを実装します。フィルタのパラメータ変更機能を提供します。</p>
+<p>LocatorMixinを宣言するとBuildContextからStateやControllerを探してきてくれるread関数やwatch関数を使えるようになります。update関数をoverrideして使えるようにもなります。ここでwatchしたStateやControllerは、その変化を検出できるようになります。</p>
+<p>ここではTodosStateをwatchしtodosが更新されるたびにfilteredTodos関数を実行して最新の情報へアップデートするようにしました。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FilteredTodosController</span> <span style="color:#66d9ef">extends</span> StateNotifier<span style="color:#f92672">&lt;</span>FilteredTodosState<span style="color:#f92672">&gt;</span>
+    <span style="color:#66d9ef">with</span> LocatorMixin {
+  FilteredTodosController() <span style="color:#f92672">:</span> <span style="color:#66d9ef">super</span>(<span style="color:#66d9ef">const</span> FilteredTodosState());
+
+  <span style="color:#960050;background-color:#1e0010">@</span>override
+  <span style="color:#66d9ef">void</span> update(Locator watch) {
+    <span style="color:#66d9ef">super</span>.update(watch);
+
+    <span style="color:#75715e">// TodosStateを監視、stateがTodosStateDataなら更新されたtodosが渡されてくる、そのほかのstateは無視する
+</span><span style="color:#75715e"></span>    watch<span style="color:#f92672">&lt;</span>TodosState<span style="color:#f92672">&gt;</span>().maybeWhen((todos) {
+      state <span style="color:#f92672">=</span> state.copyWith(
+        completed: state.completed,
+        todos: _filteredTodos(todos, completed: state.completed),
+      );
+    }, orElse: () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">null</span>);
+  }
+
+  List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> _filteredTodos(List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> todos, {<span style="color:#66d9ef">bool</span> completed}) {
+    <span style="color:#66d9ef">return</span> todos
+        .where((todo) <span style="color:#f92672">=&gt;</span> completed <span style="color:#f92672">?</span> todo.completed <span style="color:#f92672">:</span> <span style="color:#f92672">!</span>todo.completed)
+        .toList();
+  }
+}
+</code></pre></div><p>toggle関数でstateのcompletedを変更し、Todoのリストもそれに合わせてアップデートします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">  <span style="color:#66d9ef">void</span> toggle() {
+    <span style="color:#66d9ef">final</span> completed <span style="color:#f92672">=</span> <span style="color:#f92672">!</span>state.completed;
+    read<span style="color:#f92672">&lt;</span>TodosState<span style="color:#f92672">&gt;</span>().maybeWhen((todos) {
+      state <span style="color:#f92672">=</span> state.copyWith(
+        completed: completed,
+        todos: _filteredTodos(todos, completed: completed),
+      );
+    }, orElse: () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">null</span>);
+  }
+</code></pre></div><h2 id="freezeddartの生成">*.freezed.dartの生成</h2>
+<p>build_runnerを動作させて、freezedアノテーションを付けたclassを実装する*.freezed.dartファイルを生成します。</p>
+<pre><code>flutter pub pub run build_runner build
+</code></pre><h1 id="スクリーン">スクリーン</h1>
+<h2 id="filteredtodos">FilteredTodos</h2>
+<p>フィルタリングされたTodoのリストを表示するためのWidgetを実装します。</p>
+<p>providerパッケージの機能であるcontext.watchを使って、TodosStateの監視を行います。freezedの機能のwhen関数で現在のstateによって返すWidgetを変えることができます。</p>
+<p>loadingの場合はCircularProgressIndicatorを返してローディング中だとわかるようにします。</p>
+<p>Dataのstateだった場合はローディングが終わっています。context.selectを使ってFilteredTodosStateのtodosを監視し、その内容でListViewを構築して返します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FilteredTodos</span> <span style="color:#66d9ef">extends</span> StatelessWidget {
+  <span style="color:#960050;background-color:#1e0010">@</span>override
+  Widget build(BuildContext context) {
+    <span style="color:#66d9ef">return</span> context.watch<span style="color:#f92672">&lt;</span>TodosState<span style="color:#f92672">&gt;</span>().when(
+      <span style="color:#75715e">// TodosStateDataの場合
+</span><span style="color:#75715e"></span>      (_) {
+        <span style="color:#66d9ef">final</span> todos <span style="color:#f92672">=</span> context
+            .select<span style="color:#f92672">&lt;</span>FilteredTodosState, List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;&gt;</span>((state) <span style="color:#f92672">=&gt;</span> state.todos);
+        <span style="color:#66d9ef">return</span> ListView.builder(
+          padding: <span style="color:#66d9ef">const</span> EdgeInsets.all(<span style="color:#ae81ff">16</span>),
+          itemCount: todos.length,
+          itemBuilder: (_, index) {
+            <span style="color:#66d9ef">final</span> todo <span style="color:#f92672">=</span> todos[index];
+            <span style="color:#66d9ef">return</span> _buildCard(context, todo);
+          },
+        );
+      },
+      <span style="color:#75715e">// TodosStateLoadingの場合
+</span><span style="color:#75715e"></span>      loading: () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">const</span> Center(child: CircularProgressIndicator()),
+    );
+  }
+</code></pre></div><p>ListViewのアイテムとして使うListTileには完了したかどうかを示すアイコンを表示します。今回はTodoのcompletedによって色を切り替えています。</p>
+<p>アイコンが押された時にはcontext.readでTodosControllerを見つけ出してtoggleを実行するようにしています。</p>
+<p>これにより、</p>
+<p>toggleが実行される-&gt;TodosStateが更新される-&gt;FilteredTodosControllerがそれを検知しstateを更新する-&gt;FilteredTodos Widgetがそれを検知し表示を更新する</p>
+<p>といった流れでTodosStateの変化に合わせてリストに表示されるTodoが更新されるようになります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">  Widget _buildCard(BuildContext context, Todo todo) {
+    <span style="color:#66d9ef">return</span> Card(
+      child: ListTile(
+        title: Text(todo.title),
+        trailing: IconButton(
+          icon: Icon(
+            Icons.done,
+            color: todo.completed <span style="color:#f92672">?</span> Colors.green <span style="color:#f92672">:</span> Colors.grey,
+          ),
+          onPressed: () <span style="color:#f92672">=&gt;</span> context.read<span style="color:#f92672">&lt;</span>TodosController<span style="color:#f92672">&gt;</span>().toggle(todo),
+        ),
+      ),
+    );
+  }
+}
+</code></pre></div><h2 id="filteredtodosscreen">FilteredTodosScreen</h2>
+<p>先ほど実装したFilteredTodos Widgetの表示や、未完了/完了の切り替え、新しいTodoの追加を行うための画面、FilteredTodosScreenを実装します。</p>
+<p>AppBarとFilteredTodosを構築している箇所です。</p>
+<p>AppBarにはactionsにIcons.done_allを使ったIconButtonを追加して、未完了/完了のどちらを表示しているかを表しています。FilteredTodosStateのcompletedを監視してその色を決めています。</p>
+<p>押された時にはFilteredTodosControllerのtoggleを実行させてリストを更新させます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FilteredTodosScreen</span> <span style="color:#66d9ef">extends</span> StatelessWidget {
+  <span style="color:#66d9ef">final</span> _textEditingController <span style="color:#f92672">=</span> TextEditingController();
+
+  <span style="color:#960050;background-color:#1e0010">@</span>override
+  Widget build(BuildContext context) {
+    <span style="color:#66d9ef">return</span> Scaffold(
+      appBar: _buildAppBar(context),
+      body: _buildBody(context),
+    );
+  }
+
+  PreferredSizeWidget _buildAppBar(BuildContext context) {
+    <span style="color:#66d9ef">return</span> AppBar(
+      title: <span style="color:#66d9ef">const</span> Text(<span style="color:#e6db74">&#39;Todo&#39;</span>),
+      centerTitle: <span style="color:#66d9ef">true</span>,
+      actions: [
+        IconButton(
+          icon: Icon(Icons.done_all,
+              color: context.select<span style="color:#f92672">&lt;</span>FilteredTodosState, <span style="color:#66d9ef">bool</span><span style="color:#f92672">&gt;</span>(
+                      (state) <span style="color:#f92672">=&gt;</span> state.completed)
+                  <span style="color:#f92672">?</span> Colors.white
+                  <span style="color:#f92672">:</span> Colors.grey),
+          onPressed: () {
+            context.read<span style="color:#f92672">&lt;</span>FilteredTodosController<span style="color:#f92672">&gt;</span>().toggle();
+          },
+        ),
+      ],
+    );
+  }
+
+  Widget _buildBody(BuildContext context) {
+    <span style="color:#66d9ef">return</span> Column(
+      children: [
+        Expanded(child: FilteredTodos()),
+        _buildPanel(context),
+      ],
+    );
+  }
+</code></pre></div><p>新しいTodoを追加するためのTexitFieldとFloatingActionButtonを実装しているところです。</p>
+<p>追加ボタンが押されたときに、TodosControllerのaddにTexitFieldの内容を渡して新しいTodoを追加させ、TextFieldの内容をクリアさせています。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">  Widget _buildPanel(BuildContext context) {
+    <span style="color:#66d9ef">return</span> Padding(
+      padding: <span style="color:#66d9ef">const</span> EdgeInsets.all(<span style="color:#ae81ff">16</span>),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextField(
+              controller: _textEditingController,
+              decoration: <span style="color:#66d9ef">const</span> InputDecoration(
+                hintText: <span style="color:#e6db74">&#39;タイトル&#39;</span>,
+                filled: <span style="color:#66d9ef">false</span>,
+              ),
+            ),
+          ),
+          FloatingActionButton(
+            child: Icon(Icons.add),
+            onPressed: () {
+              <span style="color:#66d9ef">var</span> title <span style="color:#f92672">=</span> _textEditingController.value.text;
+              <span style="color:#66d9ef">if</span> (title.isEmpty) {
+                title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;No Title&#39;</span>;
+              }
+              context.read<span style="color:#f92672">&lt;</span>TodosController<span style="color:#f92672">&gt;</span>().add(title);
+              _textEditingController.clear();
+            },
+          ),
+        ],
+      ),
+    );
+  }
+</code></pre></div><h1 id="プロバイダー">プロバイダー</h1>
+<h2 id="maindart">main.dart</h2>
+<p>このままMaterialAppにFilterdTodosScreenを渡して表示させようとするとcontextにStateやControllerが見当たらないと怒られてしまいます。</p>
+<p>まず、App全体で利用するだろうTodosState/TodosControllerはMaterialAppをStateNotifierProviderでWrapして使えるようします。</p>
+<p>また、FilteredTodosState/FilteredTodosControllerはそれを利用するFilteredTodosScreenをStateNotifierProviderでWrapして使えるようにしておきます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> StatelessWidget {
+  <span style="color:#960050;background-color:#1e0010">@</span>override
+  Widget build(BuildContext context) {
+    <span style="color:#66d9ef">return</span> StateNotifierProvider<span style="color:#f92672">&lt;</span>TodosController, TodosState<span style="color:#f92672">&gt;</span>(
+      create: (_) <span style="color:#f92672">=&gt;</span> TodosController(),
+      child: MaterialApp(
+        title: <span style="color:#e6db74">&#39;State Notifier Todo Demo&#39;</span>,
+        debugShowCheckedModeBanner: <span style="color:#66d9ef">false</span>,
+        home:
+            StateNotifierProvider<span style="color:#f92672">&lt;</span>FilteredTodosController, FilteredTodosState<span style="color:#f92672">&gt;</span>(
+          create: (_) <span style="color:#f92672">=&gt;</span> FilteredTodosController(),
+          child: FilteredTodosScreen(),
+        ),
+      ),
+    );
+  }
+}
+</code></pre></div><h1 id="実行">実行</h1>
+<p>実装は以上です。動かしてみましょう。</p>
+<p><img src="https://user-images.githubusercontent.com/1445649/84268675-fee84100-ab62-11ea-9fee-3f4db43b012c.gif" alt="state_notifier_todo"></p>
+<p>ちょっとわかりにくいですがFuture.delayによるローディング、Todoの追加や未完了/完了のtoggle、フィルタもうまく動いているのがわかると思います。</p>
+<h1 id="まとめ">まとめ</h1>
+<p>state_notifierとfreezedを使ってTodoリストを実装することができました。</p>
+<p>Todoのリストを管理しているおおもとはTodosState/TodosControllerです。FilteredTodosState/FilteredTodosControllerはその情報をもとに独自のパラメータを利用してリストを加工しているにすぎません。例えばこのアプリにTodo検索の機能を追加したいと考えたとき、SearchTodosState/SearchTodosControllerを追加して入力されたキーワードをもとにリストを加工してそのstateに持たせることができるでしょう。App以下であればTodosControllerを介してTodosStateを更新すれば、それを監視しているStateやScreenだけがその変化によって振る舞いを変えてくれます。</p>
+<p>freezedのおかげでModelやStateの実装も楽にできました。freezedにはjson_serializationとの連携もありますので、DBの実装もかなり楽になると思います。</p>
+<p>一度試してみてはいかがでしょうか。</p>
+</section><footer>
+  <div class="container mb-5">
+    <small>
+      <ul class="nav justify-content-center">
+        <li class="nav-item"><a class="nav-link text-muted" href="https://twitter.com/seiichi3141">seiichi3141@</a></li>
+        
+      </ul>
+    </small>
+  </div>
+</footer></div>
+  <div class="d-none d-md-block col-md-3 border-left border-right">
+    <aside class="toc pt-5">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#todo">Todo</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#todosstate">TodosState</a></li>
+    <li><a href="#todoscontoller">TodosContoller</a></li>
+    <li><a href="#filteredtodosstate">FilteredTodosState</a></li>
+    <li><a href="#filteredtodoscontroller">FilteredTodosController</a></li>
+    <li><a href="#freezeddartの生成">*.freezed.dartの生成</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#filteredtodos">FilteredTodos</a></li>
+    <li><a href="#filteredtodosscreen">FilteredTodosScreen</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#maindart">main.dart</a></li>
+  </ul>
+</nav>
+    </aside>
+  </div>
+</article>
+
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-145195127-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+</body>
+
+</html>
