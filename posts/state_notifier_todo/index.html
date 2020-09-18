@@ -7,24 +7,40 @@
   <meta name="author" content="seiichi3141" />
   <meta name="description" content="プログラミングやFlutter関連の情報" />
   <meta name="keywords" content="プログラミング,Flutter,Dart">
-  <title>健康優良不良プログラマ</title>
+  <title>Flutterとstate_notifierとfreezedで作るTodoアプリ | 健康優良不良プログラマ</title>
   
   
   <link rel="stylesheet" href="https://blog.seiichirou.jp/sass/main.css" />
   <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
   <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+  <link href="https://blog.seiichirou.jp/css/syntax.css" rel="stylesheet">
   <meta name="google-site-verification" content="hSHRu1AofaNfP4SrnmMHbbG0VYL9D17LOFaRnoUxCjc" />
 </head><body><header class="bg-dark">
   <div class="container">
-    <nav class="navbar navbar-dark pr-0 pl-0">
+    <nav class="navbar navbar-expand-lg navbar-dark pr-0 pl-0">
       <a class="navbar-brand font-weight-bold" href="/">
         <i class="fas fa-blog text-light d-inline-block align-top lead mr-3"></i>健康優良不良プログラマ
       </a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              アプリ
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/apps/aozora">Yom!青空文庫</a>
+            </div>
+          </li>
+        </ul>
+      </div>
       <div>
         <a href="https://github.com/seiichi3141"><i class="fab fa-github text-light mr-1"></i></a>
         <a href="https://www.facebook.com/seiichirou.tanaka"><i class="fab fa-facebook text-light mr-1"></i></a>
         <a href="https://twitter.com/seiichi3141"><i class="fab fa-twitter text-light"></i></a>
       </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </nav>
   </div>
 </header><main role="main">
@@ -93,182 +109,360 @@
 <table>
 <thead>
 <tr>
-<th align="left">Package</th>
-<th align="right"></th>
+<th>Package</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">flutter_state_notofier</td>
-<td align="right">StateNotifierやStateNotifierProviderを使うため</td>
+<td>flutter_state_notofier</td>
+<td>StateNotifierやStateNotifierProviderを使うため</td>
 </tr>
 <tr>
-<td align="left">freezed_annotation</td>
-<td align="right">freezedでコード生成するためのアノテーション</td>
+<td>freezed_annotation</td>
+<td>freezedでコード生成するためのアノテーション</td>
 </tr>
 <tr>
-<td align="left">provider</td>
-<td align="right">Providerへのアクセスを容易にするため</td>
+<td>provider</td>
+<td>Providerへのアクセスを容易にするため</td>
 </tr>
 <tr>
-<td align="left">uuid</td>
-<td align="right">TodoアイテムへのID付け</td>
+<td>uuid</td>
+<td>TodoアイテムへのID付け</td>
 </tr>
 </tbody>
 </table>
-<pre><code>dependencies:
-  flutter:
-    sdk: flutter
-  cupertino_icons: ^0.1.3
-  flutter_state_notifier: ^0.4.2
-  freezed_annotation: ^0.7.1
-  provider: ^4.1.3
-  uuid: ^2.0.4
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  freezed: ^0.10.9
-  build_runner: ^1.10.0
-
-</code></pre><h1 id="モデル">モデル</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">dependencies</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">flutter</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l">flutter</span><span class="w">
+</span><span class="w">  </span><span class="nt">cupertino_icons</span><span class="p">:</span><span class="w"> </span><span class="l">^0.1.3</span><span class="w">
+</span><span class="w">  </span><span class="nt">flutter_state_notifier</span><span class="p">:</span><span class="w"> </span><span class="l">^0.4.2</span><span class="w">
+</span><span class="w">  </span><span class="nt">freezed_annotation</span><span class="p">:</span><span class="w"> </span><span class="l">^0.7.1</span><span class="w">
+</span><span class="w">  </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l">^4.1.3</span><span class="w">
+</span><span class="w">  </span><span class="nt">uuid</span><span class="p">:</span><span class="w"> </span><span class="l">^2.0.4</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">dev_dependencies</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">flutter_test</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l">flutter</span><span class="w">
+</span><span class="w">  </span><span class="nt">freezed</span><span class="p">:</span><span class="w"> </span><span class="l">^0.10.9</span><span class="w">
+</span><span class="w">  </span><span class="nt">build_runner</span><span class="p">:</span><span class="w"> </span><span class="l">^1.10.0</span><span class="w">
+</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h1 id="モデル">モデル</h1>
 <h2 id="todo">Todo</h2>
 <p>Todoを表すModelを実装します。freezedアノテーションをつけ、コンストラクタやcopyWithなどを自動生成するようにします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:flutter/foundation.dart&#39;</span>; <span style="color:#75715e">// *.freezed.dartで必要なのでimportしておく
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:freezed_annotation/freezed_annotation.dart&#39;</span>;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="k">import</span> <span class="s1">&#39;package:flutter/foundation.dart&#39;</span><span class="p">;</span> <span class="c1">// *.freezed.dartで必要なのでimportしておく
+</span><span class="c1"></span><span class="k">import</span> <span class="s1">&#39;package:freezed_annotation/freezed_annotation.dart&#39;</span><span class="p">;</span>
 
-<span style="color:#66d9ef">part</span> <span style="color:#e6db74">&#39;todo.freezed.dart&#39;</span>;
+<span class="k">part</span> <span class="s1">&#39;todo.freezed.dart&#39;</span><span class="p">;</span>
 
-<span style="color:#960050;background-color:#1e0010">@</span>freezed
-<span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Todo</span> <span style="color:#66d9ef">with</span> _$Todo {
-  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">factory</span> Todo({
-    <span style="color:#66d9ef">String</span> id,  <span style="color:#75715e">// uuidで割りつける予定
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">String</span> title,
-    <span style="color:#960050;background-color:#1e0010">@</span>Default(<span style="color:#66d9ef">false</span>) <span style="color:#66d9ef">bool</span> completed,
-  }) <span style="color:#f92672">=</span> TodoData;
-}
-</code></pre></div><h1 id="ステートとコントローラ">ステートとコントローラ</h1>
+<span class="err">@</span><span class="n">freezed</span>
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Todo</span> <span class="kd">with</span> <span class="n">_$Todo</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="kd">factory</span> <span class="n">Todo</span><span class="p">({</span>
+    <span class="kt">String</span> <span class="n">id</span><span class="p">,</span>  <span class="c1">// uuidで割りつける予定
+</span><span class="c1"></span>    <span class="kt">String</span> <span class="n">title</span><span class="p">,</span>
+    <span class="err">@</span><span class="n">Default</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span> <span class="kt">bool</span> <span class="n">completed</span><span class="p">,</span>
+  <span class="p">})</span> <span class="o">=</span> <span class="n">TodoData</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="ステートとコントローラ">ステートとコントローラ</h1>
 <h2 id="todosstate">TodosState</h2>
 <p>TodosStateを実装します。freezedアノテーションをつけ、データを持つTodoStateDataとローディング中を示すTodosStateLoadingの二つの状態を定義します。</p>
 <p>TodosStateのクラスをチェックし、TodosStateLoadingであればまだ読み込み中、TodosStateDataであればデータの読み込みが終わったという判断ができるようになります。</p>
 <p>TodosStateDataにはすべてのTodoが入るtodosを持っててもらいます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">part</span> <span style="color:#e6db74">&#39;todos_state.freezed.dart&#39;</span>;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="k">part</span> <span class="s1">&#39;todos_state.freezed.dart&#39;</span><span class="p">;</span>
 
-<span style="color:#960050;background-color:#1e0010">@</span>freezed
-<span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodosState</span> <span style="color:#66d9ef">with</span> _$TodosState {
-  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">factory</span> TodosState({
-    <span style="color:#960050;background-color:#1e0010">@</span>Default(<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span>[]) List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> todos,
-  }) <span style="color:#f92672">=</span> TodosStateData;
-  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">factory</span> TodosState.loading() <span style="color:#f92672">=</span> TodosStateLoading;
-}
-</code></pre></div><h2 id="todoscontoller">TodosContoller</h2>
+<span class="err">@</span><span class="n">freezed</span>
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">TodosState</span> <span class="kd">with</span> <span class="n">_$TodosState</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="kd">factory</span> <span class="n">TodosState</span><span class="p">({</span>
+    <span class="err">@</span><span class="n">Default</span><span class="p">(</span><span class="o">&lt;</span><span class="n">Todo</span><span class="o">&gt;</span><span class="p">[])</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Todo</span><span class="o">&gt;</span> <span class="n">todos</span><span class="p">,</span>
+  <span class="p">})</span> <span class="o">=</span> <span class="n">TodosStateData</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="kd">factory</span> <span class="n">TodosState</span><span class="p">.</span><span class="n">loading</span><span class="p">()</span> <span class="o">=</span> <span class="n">TodosStateLoading</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="todoscontoller">TodosContoller</h2>
 <p>このTodosStateへの操作はStateNotifierを継承したTodosControllerを通してやります。TodosControllerはLocatorMixinを宣言しておきcontextにあるproviderへのアクセスを容易にしておきます。
 ここでは仮にinitStateで5秒間ウエイトを入れ、その後初期データとしていくつかのTodoをstateへ設定しています。
 本番ではここでRepositoryなりDBなりからロードすることになるはずです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodosController</span> <span style="color:#66d9ef">extends</span> StateNotifier<span style="color:#f92672">&lt;</span>TodosState<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">with</span> LocatorMixin {
-  TodosController() <span style="color:#f92672">:</span> <span style="color:#66d9ef">super</span>(<span style="color:#66d9ef">const</span> TodosState.loading());
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">class</span> <span class="nc">TodosController</span> <span class="kd">extends</span> <span class="n">StateNotifier</span><span class="o">&lt;</span><span class="n">TodosState</span><span class="o">&gt;</span> <span class="kd">with</span> <span class="n">LocatorMixin</span> <span class="p">{</span>
+  <span class="n">TodosController</span><span class="p">()</span> <span class="o">:</span> <span class="k">super</span><span class="p">(</span><span class="kd">const</span> <span class="n">TodosState</span><span class="p">.</span><span class="n">loading</span><span class="p">());</span>
 
-  <span style="color:#66d9ef">final</span> _uuid <span style="color:#f92672">=</span> Uuid();
+  <span class="kd">final</span> <span class="n">_uuid</span> <span class="o">=</span> <span class="n">Uuid</span><span class="p">();</span>
 
-  <span style="color:#960050;background-color:#1e0010">@</span>override
-  <span style="color:#66d9ef">void</span> initState() <span style="color:#66d9ef">async</span> {
-    <span style="color:#66d9ef">super</span>.initState();
+  <span class="err">@</span><span class="n">override</span>
+  <span class="kt">void</span> <span class="n">initState</span><span class="p">()</span> <span class="kd">async</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">.</span><span class="n">initState</span><span class="p">();</span>
 
-    <span style="color:#66d9ef">await</span> Future<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">void</span><span style="color:#f92672">&gt;</span>.delayed(<span style="color:#66d9ef">const</span> Duration(seconds: <span style="color:#ae81ff">3</span>));
+    <span class="kd">await</span> <span class="n">Future</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span><span class="p">.</span><span class="n">delayed</span><span class="p">(</span><span class="kd">const</span> <span class="n">Duration</span><span class="p">(</span><span class="nl">seconds:</span> <span class="m">3</span><span class="p">));</span>
 
-    <span style="color:#75715e">// 初期データを設定、TodosStateLoadingからTodoStateDataへ変わるのでローディング完了の状態となる
-</span><span style="color:#75715e"></span>    state <span style="color:#f92672">=</span> TodosState(
-      todos: [
-        Todo(id: _uuid.v4(), title: <span style="color:#e6db74">&#39;朝食を食べる&#39;</span>),
-        Todo(id: _uuid.v4(), title: <span style="color:#e6db74">&#39;ラジオ体操をやる&#39;</span>),
-        Todo(id: _uuid.v4(), title: <span style="color:#e6db74">&#39;薬を飲む&#39;</span>),
-      ],
-    );
-  }
-}
-</code></pre></div><p>また、TodosControllerではadd/toggleを外部に公開し、todoの追加、未完了/完了切り替えをできるようにします。</p>
+    <span class="c1">// 初期データを設定、TodosStateLoadingからTodoStateDataへ変わるのでローディング完了の状態となる
+</span><span class="c1"></span>    <span class="n">state</span> <span class="o">=</span> <span class="n">TodosState</span><span class="p">(</span>
+      <span class="nl">todos:</span> <span class="p">[</span>
+        <span class="n">Todo</span><span class="p">(</span><span class="nl">id:</span> <span class="n">_uuid</span><span class="p">.</span><span class="n">v4</span><span class="p">(),</span> <span class="nl">title:</span> <span class="s1">&#39;朝食を食べる&#39;</span><span class="p">),</span>
+        <span class="n">Todo</span><span class="p">(</span><span class="nl">id:</span> <span class="n">_uuid</span><span class="p">.</span><span class="n">v4</span><span class="p">(),</span> <span class="nl">title:</span> <span class="s1">&#39;ラジオ体操をやる&#39;</span><span class="p">),</span>
+        <span class="n">Todo</span><span class="p">(</span><span class="nl">id:</span> <span class="n">_uuid</span><span class="p">.</span><span class="n">v4</span><span class="p">(),</span> <span class="nl">title:</span> <span class="s1">&#39;薬を飲む&#39;</span><span class="p">),</span>
+      <span class="p">],</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>また、TodosControllerではadd/toggleを外部に公開し、todoの追加、未完了/完了切り替えをできるようにします。</p>
 <p>stateはimmutableなのでメンバ変数を直接変更することはできません。なので、stateを更新するときは現在のstateからcopyWithでコピーするか、新規のstateで上書きすることになります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">  <span style="color:#66d9ef">void</span> add(<span style="color:#66d9ef">String</span> title) {
-    <span style="color:#66d9ef">final</span> currentState <span style="color:#f92672">=</span> state;
-    <span style="color:#66d9ef">if</span> (currentState <span style="color:#66d9ef">is</span> TodosStateData) {
-      <span style="color:#75715e">// todosのクローンに新しいTodoを追加してstateを更新
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">final</span> todos <span style="color:#f92672">=</span> currentState.todos.toList()
-        ..add(
-          Todo(id: _uuid.v4(), title: title),
-        );
-      state <span style="color:#f92672">=</span> currentState.copyWith(
-        todos: todos,
-      );
-    }
-  }
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart">  <span class="kt">void</span> <span class="n">add</span><span class="p">(</span><span class="kt">String</span> <span class="n">title</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">final</span> <span class="n">currentState</span> <span class="o">=</span> <span class="n">state</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">currentState</span> <span class="k">is</span> <span class="n">TodosStateData</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// todosのクローンに新しいTodoを追加してstateを更新
+</span><span class="c1"></span>      <span class="kd">final</span> <span class="n">todos</span> <span class="o">=</span> <span class="n">currentState</span><span class="p">.</span><span class="n">todos</span><span class="p">.</span><span class="n">toList</span><span class="p">()</span>
+        <span class="p">..</span><span class="n">add</span><span class="p">(</span>
+          <span class="n">Todo</span><span class="p">(</span><span class="nl">id:</span> <span class="n">_uuid</span><span class="p">.</span><span class="n">v4</span><span class="p">(),</span> <span class="nl">title:</span> <span class="n">title</span><span class="p">),</span>
+        <span class="p">);</span>
+      <span class="n">state</span> <span class="o">=</span> <span class="n">currentState</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+        <span class="nl">todos:</span> <span class="n">todos</span><span class="p">,</span>
+      <span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 
-  <span style="color:#66d9ef">void</span> toggle(Todo todo) {
-    <span style="color:#66d9ef">final</span> currentState <span style="color:#f92672">=</span> state;
-    <span style="color:#66d9ef">if</span> (currentState <span style="color:#66d9ef">is</span> TodosStateData) {
-      <span style="color:#75715e">// Todoを検索してcomplatedをtoggleし、stateを更新
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">final</span> clone <span style="color:#f92672">=</span> currentState.todos.map((t) {
-        <span style="color:#66d9ef">if</span> (t <span style="color:#f92672">==</span> todo) {
-          <span style="color:#66d9ef">return</span> t.copyWith(
-            completed: <span style="color:#f92672">!</span>t.completed,
-          );
-        }
-        <span style="color:#66d9ef">return</span> t;
-      }).toList();
-      state <span style="color:#f92672">=</span> TodosState(
-        todos: clone,
-      );
-    }
-  }
-</code></pre></div><h2 id="filteredtodosstate">FilteredTodosState</h2>
+  <span class="kt">void</span> <span class="n">toggle</span><span class="p">(</span><span class="n">Todo</span> <span class="n">todo</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">final</span> <span class="n">currentState</span> <span class="o">=</span> <span class="n">state</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">currentState</span> <span class="k">is</span> <span class="n">TodosStateData</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Todoを検索してcomplatedをtoggleし、stateを更新
+</span><span class="c1"></span>      <span class="kd">final</span> <span class="n">clone</span> <span class="o">=</span> <span class="n">currentState</span><span class="p">.</span><span class="n">todos</span><span class="p">.</span><span class="n">map</span><span class="p">((</span><span class="n">t</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">t</span> <span class="o">==</span> <span class="n">todo</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="n">t</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+            <span class="nl">completed:</span> <span class="o">!</span><span class="n">t</span><span class="p">.</span><span class="n">completed</span><span class="p">,</span>
+          <span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">t</span><span class="p">;</span>
+      <span class="p">}).</span><span class="n">toList</span><span class="p">();</span>
+      <span class="n">state</span> <span class="o">=</span> <span class="n">TodosState</span><span class="p">(</span>
+        <span class="nl">todos:</span> <span class="n">clone</span><span class="p">,</span>
+      <span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="filteredtodosstate">FilteredTodosState</h2>
 <p>TodosStateをそのまま表示に使うこともできますが、今回はフィルタリングしたリストを表示したいと考えています。そのために画面の表示用にTodoのリストをフィルタリングした結果を持つFilteredTodosStateを実装をします。</p>
 <p>現在のフィルタリングのパラメータとしてcompleted変数を、フィルタリングされたTodoのリストとしてtodos持っててもらいます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">part</span> <span style="color:#e6db74">&#39;filtered_todos_state.freezed.dart&#39;</span>;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="k">part</span> <span class="s1">&#39;filtered_todos_state.freezed.dart&#39;</span><span class="p">;</span>
 
-<span style="color:#960050;background-color:#1e0010">@</span>freezed
-<span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FilteredTodosState</span> <span style="color:#66d9ef">with</span> _$FilteredTodosState {
-  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">factory</span> FilteredTodosState({
-    <span style="color:#960050;background-color:#1e0010">@</span>Default(<span style="color:#66d9ef">false</span>) <span style="color:#66d9ef">bool</span> completed,
-    <span style="color:#960050;background-color:#1e0010">@</span>Default(<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span>[]) List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> todos,
-  }) <span style="color:#f92672">=</span> FilteredTodosStateData;
-}
-</code></pre></div><h2 id="filteredtodoscontroller">FilteredTodosController</h2>
+<span class="err">@</span><span class="n">freezed</span>
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">FilteredTodosState</span> <span class="kd">with</span> <span class="n">_$FilteredTodosState</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="kd">factory</span> <span class="n">FilteredTodosState</span><span class="p">({</span>
+    <span class="err">@</span><span class="n">Default</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span> <span class="kt">bool</span> <span class="n">completed</span><span class="p">,</span>
+    <span class="err">@</span><span class="n">Default</span><span class="p">(</span><span class="o">&lt;</span><span class="n">Todo</span><span class="o">&gt;</span><span class="p">[])</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Todo</span><span class="o">&gt;</span> <span class="n">todos</span><span class="p">,</span>
+  <span class="p">})</span> <span class="o">=</span> <span class="n">FilteredTodosStateData</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="filteredtodoscontroller">FilteredTodosController</h2>
 <p>FilteredTodosControllerを実装します。フィルタのパラメータ変更機能を提供します。</p>
 <p>LocatorMixinを宣言するとBuildContextからStateやControllerを探してきてくれるread関数やwatch関数を使えるようになります。update関数をoverrideして使えるようにもなります。ここでwatchしたStateやControllerは、その変化を検出できるようになります。</p>
 <p>ここではTodosStateをwatchしtodosが更新されるたびにfilteredTodos関数を実行して最新の情報へアップデートするようにしました。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FilteredTodosController</span> <span style="color:#66d9ef">extends</span> StateNotifier<span style="color:#f92672">&lt;</span>FilteredTodosState<span style="color:#f92672">&gt;</span>
-    <span style="color:#66d9ef">with</span> LocatorMixin {
-  FilteredTodosController() <span style="color:#f92672">:</span> <span style="color:#66d9ef">super</span>(<span style="color:#66d9ef">const</span> FilteredTodosState());
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">class</span> <span class="nc">FilteredTodosController</span> <span class="kd">extends</span> <span class="n">StateNotifier</span><span class="o">&lt;</span><span class="n">FilteredTodosState</span><span class="o">&gt;</span>
+    <span class="kd">with</span> <span class="n">LocatorMixin</span> <span class="p">{</span>
+  <span class="n">FilteredTodosController</span><span class="p">()</span> <span class="o">:</span> <span class="k">super</span><span class="p">(</span><span class="kd">const</span> <span class="n">FilteredTodosState</span><span class="p">());</span>
 
-  <span style="color:#960050;background-color:#1e0010">@</span>override
-  <span style="color:#66d9ef">void</span> update(Locator watch) {
-    <span style="color:#66d9ef">super</span>.update(watch);
+  <span class="err">@</span><span class="n">override</span>
+  <span class="kt">void</span> <span class="n">update</span><span class="p">(</span><span class="n">Locator</span> <span class="n">watch</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">watch</span><span class="p">);</span>
 
-    <span style="color:#75715e">// TodosStateを監視、stateがTodosStateDataなら更新されたtodosが渡されてくる、そのほかのstateは無視する
-</span><span style="color:#75715e"></span>    watch<span style="color:#f92672">&lt;</span>TodosState<span style="color:#f92672">&gt;</span>().maybeWhen((todos) {
-      state <span style="color:#f92672">=</span> state.copyWith(
-        completed: state.completed,
-        todos: _filteredTodos(todos, completed: state.completed),
-      );
-    }, orElse: () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">null</span>);
-  }
+    <span class="c1">// TodosStateを監視、stateがTodosStateDataなら更新されたtodosが渡されてくる、そのほかのstateは無視する
+</span><span class="c1"></span>    <span class="n">watch</span><span class="o">&lt;</span><span class="n">TodosState</span><span class="o">&gt;</span><span class="p">().</span><span class="n">maybeWhen</span><span class="p">((</span><span class="n">todos</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">state</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+        <span class="nl">completed:</span> <span class="n">state</span><span class="p">.</span><span class="n">completed</span><span class="p">,</span>
+        <span class="nl">todos:</span> <span class="n">_filteredTodos</span><span class="p">(</span><span class="n">todos</span><span class="p">,</span> <span class="nl">completed:</span> <span class="n">state</span><span class="p">.</span><span class="n">completed</span><span class="p">),</span>
+      <span class="p">);</span>
+    <span class="p">},</span> <span class="nl">orElse:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kc">null</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> _filteredTodos(List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> todos, {<span style="color:#66d9ef">bool</span> completed}) {
-    <span style="color:#66d9ef">return</span> todos
-        .where((todo) <span style="color:#f92672">=&gt;</span> completed <span style="color:#f92672">?</span> todo.completed <span style="color:#f92672">:</span> <span style="color:#f92672">!</span>todo.completed)
-        .toList();
-  }
-}
-</code></pre></div><p>toggle関数でstateのcompletedを変更し、Todoのリストもそれに合わせてアップデートします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">  <span style="color:#66d9ef">void</span> toggle() {
-    <span style="color:#66d9ef">final</span> completed <span style="color:#f92672">=</span> <span style="color:#f92672">!</span>state.completed;
-    read<span style="color:#f92672">&lt;</span>TodosState<span style="color:#f92672">&gt;</span>().maybeWhen((todos) {
-      state <span style="color:#f92672">=</span> state.copyWith(
-        completed: completed,
-        todos: _filteredTodos(todos, completed: completed),
-      );
-    }, orElse: () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">null</span>);
-  }
-</code></pre></div><h2 id="freezeddartの生成">*.freezed.dartの生成</h2>
+  <span class="n">List</span><span class="o">&lt;</span><span class="n">Todo</span><span class="o">&gt;</span> <span class="n">_filteredTodos</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Todo</span><span class="o">&gt;</span> <span class="n">todos</span><span class="p">,</span> <span class="p">{</span><span class="kt">bool</span> <span class="n">completed</span><span class="p">})</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">todos</span>
+        <span class="p">.</span><span class="n">where</span><span class="p">((</span><span class="n">todo</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">completed</span> <span class="o">?</span> <span class="n">todo</span><span class="p">.</span><span class="n">completed</span> <span class="o">:</span> <span class="o">!</span><span class="n">todo</span><span class="p">.</span><span class="n">completed</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">toList</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>toggle関数でstateのcompletedを変更し、Todoのリストもそれに合わせてアップデートします。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart">  <span class="kt">void</span> <span class="n">toggle</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">final</span> <span class="n">completed</span> <span class="o">=</span> <span class="o">!</span><span class="n">state</span><span class="p">.</span><span class="n">completed</span><span class="p">;</span>
+    <span class="n">read</span><span class="o">&lt;</span><span class="n">TodosState</span><span class="o">&gt;</span><span class="p">().</span><span class="n">maybeWhen</span><span class="p">((</span><span class="n">todos</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">state</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+        <span class="nl">completed:</span> <span class="n">completed</span><span class="p">,</span>
+        <span class="nl">todos:</span> <span class="n">_filteredTodos</span><span class="p">(</span><span class="n">todos</span><span class="p">,</span> <span class="nl">completed:</span> <span class="n">completed</span><span class="p">),</span>
+      <span class="p">);</span>
+    <span class="p">},</span> <span class="nl">orElse:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kc">null</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="freezeddartの生成">*.freezed.dartの生成</h2>
 <p>build_runnerを動作させて、freezedアノテーションを付けたclassを実装する*.freezed.dartファイルを生成します。</p>
 <pre><code>flutter pub pub run build_runner build
 </code></pre><h1 id="スクリーン">スクリーン</h1>
@@ -277,144 +471,294 @@ dev_dependencies:
 <p>providerパッケージの機能であるcontext.watchを使って、TodosStateの監視を行います。freezedの機能のwhen関数で現在のstateによって返すWidgetを変えることができます。</p>
 <p>loadingの場合はCircularProgressIndicatorを返してローディング中だとわかるようにします。</p>
 <p>Dataのstateだった場合はローディングが終わっています。context.selectを使ってFilteredTodosStateのtodosを監視し、その内容でListViewを構築して返します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FilteredTodos</span> <span style="color:#66d9ef">extends</span> StatelessWidget {
-  <span style="color:#960050;background-color:#1e0010">@</span>override
-  Widget build(BuildContext context) {
-    <span style="color:#66d9ef">return</span> context.watch<span style="color:#f92672">&lt;</span>TodosState<span style="color:#f92672">&gt;</span>().when(
-      <span style="color:#75715e">// TodosStateDataの場合
-</span><span style="color:#75715e"></span>      (_) {
-        <span style="color:#66d9ef">final</span> todos <span style="color:#f92672">=</span> context
-            .select<span style="color:#f92672">&lt;</span>FilteredTodosState, List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;&gt;</span>((state) <span style="color:#f92672">=&gt;</span> state.todos);
-        <span style="color:#66d9ef">return</span> ListView.builder(
-          padding: <span style="color:#66d9ef">const</span> EdgeInsets.all(<span style="color:#ae81ff">16</span>),
-          itemCount: todos.length,
-          itemBuilder: (_, index) {
-            <span style="color:#66d9ef">final</span> todo <span style="color:#f92672">=</span> todos[index];
-            <span style="color:#66d9ef">return</span> _buildCard(context, todo);
-          },
-        );
-      },
-      <span style="color:#75715e">// TodosStateLoadingの場合
-</span><span style="color:#75715e"></span>      loading: () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">const</span> Center(child: CircularProgressIndicator()),
-    );
-  }
-</code></pre></div><p>ListViewのアイテムとして使うListTileには完了したかどうかを示すアイコンを表示します。今回はTodoのcompletedによって色を切り替えています。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">class</span> <span class="nc">FilteredTodos</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span> <span class="p">{</span>
+  <span class="err">@</span><span class="n">override</span>
+  <span class="n">Widget</span> <span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">context</span><span class="p">.</span><span class="n">watch</span><span class="o">&lt;</span><span class="n">TodosState</span><span class="o">&gt;</span><span class="p">().</span><span class="n">when</span><span class="p">(</span>
+      <span class="c1">// TodosStateDataの場合
+</span><span class="c1"></span>      <span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">final</span> <span class="n">todos</span> <span class="o">=</span> <span class="n">context</span>
+            <span class="p">.</span><span class="n">select</span><span class="o">&lt;</span><span class="n">FilteredTodosState</span><span class="p">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Todo</span><span class="o">&gt;&gt;</span><span class="p">((</span><span class="n">state</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">state</span><span class="p">.</span><span class="n">todos</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">ListView</span><span class="p">.</span><span class="n">builder</span><span class="p">(</span>
+          <span class="nl">padding:</span> <span class="kd">const</span> <span class="n">EdgeInsets</span><span class="p">.</span><span class="n">all</span><span class="p">(</span><span class="m">16</span><span class="p">),</span>
+          <span class="nl">itemCount:</span> <span class="n">todos</span><span class="p">.</span><span class="n">length</span><span class="p">,</span>
+          <span class="nl">itemBuilder:</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">final</span> <span class="n">todo</span> <span class="o">=</span> <span class="n">todos</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+            <span class="k">return</span> <span class="n">_buildCard</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">todo</span><span class="p">);</span>
+          <span class="p">},</span>
+        <span class="p">);</span>
+      <span class="p">},</span>
+      <span class="c1">// TodosStateLoadingの場合
+</span><span class="c1"></span>      <span class="nl">loading:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kd">const</span> <span class="n">Center</span><span class="p">(</span><span class="nl">child:</span> <span class="n">CircularProgressIndicator</span><span class="p">()),</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>ListViewのアイテムとして使うListTileには完了したかどうかを示すアイコンを表示します。今回はTodoのcompletedによって色を切り替えています。</p>
 <p>アイコンが押された時にはcontext.readでTodosControllerを見つけ出してtoggleを実行するようにしています。</p>
 <p>これにより、</p>
 <p>toggleが実行される-&gt;TodosStateが更新される-&gt;FilteredTodosControllerがそれを検知しstateを更新する-&gt;FilteredTodos Widgetがそれを検知し表示を更新する</p>
 <p>といった流れでTodosStateの変化に合わせてリストに表示されるTodoが更新されるようになります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">  Widget _buildCard(BuildContext context, Todo todo) {
-    <span style="color:#66d9ef">return</span> Card(
-      child: ListTile(
-        title: Text(todo.title),
-        trailing: IconButton(
-          icon: Icon(
-            Icons.done,
-            color: todo.completed <span style="color:#f92672">?</span> Colors.green <span style="color:#f92672">:</span> Colors.grey,
-          ),
-          onPressed: () <span style="color:#f92672">=&gt;</span> context.read<span style="color:#f92672">&lt;</span>TodosController<span style="color:#f92672">&gt;</span>().toggle(todo),
-        ),
-      ),
-    );
-  }
-}
-</code></pre></div><h2 id="filteredtodosscreen">FilteredTodosScreen</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart">  <span class="n">Widget</span> <span class="n">_buildCard</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">,</span> <span class="n">Todo</span> <span class="n">todo</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Card</span><span class="p">(</span>
+      <span class="nl">child:</span> <span class="n">ListTile</span><span class="p">(</span>
+        <span class="nl">title:</span> <span class="n">Text</span><span class="p">(</span><span class="n">todo</span><span class="p">.</span><span class="n">title</span><span class="p">),</span>
+        <span class="nl">trailing:</span> <span class="n">IconButton</span><span class="p">(</span>
+          <span class="nl">icon:</span> <span class="n">Icon</span><span class="p">(</span>
+            <span class="n">Icons</span><span class="p">.</span><span class="n">done</span><span class="p">,</span>
+            <span class="nl">color:</span> <span class="n">todo</span><span class="p">.</span><span class="n">completed</span> <span class="o">?</span> <span class="n">Colors</span><span class="p">.</span><span class="n">green</span> <span class="o">:</span> <span class="n">Colors</span><span class="p">.</span><span class="n">grey</span><span class="p">,</span>
+          <span class="p">),</span>
+          <span class="nl">onPressed:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="n">context</span><span class="p">.</span><span class="n">read</span><span class="o">&lt;</span><span class="n">TodosController</span><span class="o">&gt;</span><span class="p">().</span><span class="n">toggle</span><span class="p">(</span><span class="n">todo</span><span class="p">),</span>
+        <span class="p">),</span>
+      <span class="p">),</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="filteredtodosscreen">FilteredTodosScreen</h2>
 <p>先ほど実装したFilteredTodos Widgetの表示や、未完了/完了の切り替え、新しいTodoの追加を行うための画面、FilteredTodosScreenを実装します。</p>
 <p>AppBarとFilteredTodosを構築している箇所です。</p>
 <p>AppBarにはactionsにIcons.done_allを使ったIconButtonを追加して、未完了/完了のどちらを表示しているかを表しています。FilteredTodosStateのcompletedを監視してその色を決めています。</p>
 <p>押された時にはFilteredTodosControllerのtoggleを実行させてリストを更新させます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FilteredTodosScreen</span> <span style="color:#66d9ef">extends</span> StatelessWidget {
-  <span style="color:#66d9ef">final</span> _textEditingController <span style="color:#f92672">=</span> TextEditingController();
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">class</span> <span class="nc">FilteredTodosScreen</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span> <span class="p">{</span>
+  <span class="kd">final</span> <span class="n">_textEditingController</span> <span class="o">=</span> <span class="n">TextEditingController</span><span class="p">();</span>
 
-  <span style="color:#960050;background-color:#1e0010">@</span>override
-  Widget build(BuildContext context) {
-    <span style="color:#66d9ef">return</span> Scaffold(
-      appBar: _buildAppBar(context),
-      body: _buildBody(context),
-    );
-  }
+  <span class="err">@</span><span class="n">override</span>
+  <span class="n">Widget</span> <span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Scaffold</span><span class="p">(</span>
+      <span class="nl">appBar:</span> <span class="n">_buildAppBar</span><span class="p">(</span><span class="n">context</span><span class="p">),</span>
+      <span class="nl">body:</span> <span class="n">_buildBody</span><span class="p">(</span><span class="n">context</span><span class="p">),</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
 
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    <span style="color:#66d9ef">return</span> AppBar(
-      title: <span style="color:#66d9ef">const</span> Text(<span style="color:#e6db74">&#39;Todo&#39;</span>),
-      centerTitle: <span style="color:#66d9ef">true</span>,
-      actions: [
-        IconButton(
-          icon: Icon(Icons.done_all,
-              color: context.select<span style="color:#f92672">&lt;</span>FilteredTodosState, <span style="color:#66d9ef">bool</span><span style="color:#f92672">&gt;</span>(
-                      (state) <span style="color:#f92672">=&gt;</span> state.completed)
-                  <span style="color:#f92672">?</span> Colors.white
-                  <span style="color:#f92672">:</span> Colors.grey),
-          onPressed: () {
-            context.read<span style="color:#f92672">&lt;</span>FilteredTodosController<span style="color:#f92672">&gt;</span>().toggle();
-          },
-        ),
-      ],
-    );
-  }
+  <span class="n">PreferredSizeWidget</span> <span class="n">_buildAppBar</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">AppBar</span><span class="p">(</span>
+      <span class="nl">title:</span> <span class="kd">const</span> <span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Todo&#39;</span><span class="p">),</span>
+      <span class="nl">centerTitle:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nl">actions:</span> <span class="p">[</span>
+        <span class="n">IconButton</span><span class="p">(</span>
+          <span class="nl">icon:</span> <span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">done_all</span><span class="p">,</span>
+              <span class="nl">color:</span> <span class="n">context</span><span class="p">.</span><span class="n">select</span><span class="o">&lt;</span><span class="n">FilteredTodosState</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span>
+                      <span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">state</span><span class="p">.</span><span class="n">completed</span><span class="p">)</span>
+                  <span class="o">?</span> <span class="n">Colors</span><span class="p">.</span><span class="n">white</span>
+                  <span class="o">:</span> <span class="n">Colors</span><span class="p">.</span><span class="n">grey</span><span class="p">),</span>
+          <span class="nl">onPressed:</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="n">context</span><span class="p">.</span><span class="n">read</span><span class="o">&lt;</span><span class="n">FilteredTodosController</span><span class="o">&gt;</span><span class="p">().</span><span class="n">toggle</span><span class="p">();</span>
+          <span class="p">},</span>
+        <span class="p">),</span>
+      <span class="p">],</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
 
-  Widget _buildBody(BuildContext context) {
-    <span style="color:#66d9ef">return</span> Column(
-      children: [
-        Expanded(child: FilteredTodos()),
-        _buildPanel(context),
-      ],
-    );
-  }
-</code></pre></div><p>新しいTodoを追加するためのTexitFieldとFloatingActionButtonを実装しているところです。</p>
+  <span class="n">Widget</span> <span class="n">_buildBody</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Column</span><span class="p">(</span>
+      <span class="nl">children:</span> <span class="p">[</span>
+        <span class="n">Expanded</span><span class="p">(</span><span class="nl">child:</span> <span class="n">FilteredTodos</span><span class="p">()),</span>
+        <span class="n">_buildPanel</span><span class="p">(</span><span class="n">context</span><span class="p">),</span>
+      <span class="p">],</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>新しいTodoを追加するためのTexitFieldとFloatingActionButtonを実装しているところです。</p>
 <p>追加ボタンが押されたときに、TodosControllerのaddにTexitFieldの内容を渡して新しいTodoを追加させ、TextFieldの内容をクリアさせています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">  Widget _buildPanel(BuildContext context) {
-    <span style="color:#66d9ef">return</span> Padding(
-      padding: <span style="color:#66d9ef">const</span> EdgeInsets.all(<span style="color:#ae81ff">16</span>),
-      child: Row(
-        children: [
-          Expanded(
-            child: TextField(
-              controller: _textEditingController,
-              decoration: <span style="color:#66d9ef">const</span> InputDecoration(
-                hintText: <span style="color:#e6db74">&#39;タイトル&#39;</span>,
-                filled: <span style="color:#66d9ef">false</span>,
-              ),
-            ),
-          ),
-          FloatingActionButton(
-            child: Icon(Icons.add),
-            onPressed: () {
-              <span style="color:#66d9ef">var</span> title <span style="color:#f92672">=</span> _textEditingController.value.text;
-              <span style="color:#66d9ef">if</span> (title.isEmpty) {
-                title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;No Title&#39;</span>;
-              }
-              context.read<span style="color:#f92672">&lt;</span>TodosController<span style="color:#f92672">&gt;</span>().add(title);
-              _textEditingController.clear();
-            },
-          ),
-        ],
-      ),
-    );
-  }
-</code></pre></div><h1 id="プロバイダー">プロバイダー</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart">  <span class="n">Widget</span> <span class="n">_buildPanel</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Padding</span><span class="p">(</span>
+      <span class="nl">padding:</span> <span class="kd">const</span> <span class="n">EdgeInsets</span><span class="p">.</span><span class="n">all</span><span class="p">(</span><span class="m">16</span><span class="p">),</span>
+      <span class="nl">child:</span> <span class="n">Row</span><span class="p">(</span>
+        <span class="nl">children:</span> <span class="p">[</span>
+          <span class="n">Expanded</span><span class="p">(</span>
+            <span class="nl">child:</span> <span class="n">TextField</span><span class="p">(</span>
+              <span class="nl">controller:</span> <span class="n">_textEditingController</span><span class="p">,</span>
+              <span class="nl">decoration:</span> <span class="kd">const</span> <span class="n">InputDecoration</span><span class="p">(</span>
+                <span class="nl">hintText:</span> <span class="s1">&#39;タイトル&#39;</span><span class="p">,</span>
+                <span class="nl">filled:</span> <span class="kc">false</span><span class="p">,</span>
+              <span class="p">),</span>
+            <span class="p">),</span>
+          <span class="p">),</span>
+          <span class="n">FloatingActionButton</span><span class="p">(</span>
+            <span class="nl">child:</span> <span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">add</span><span class="p">),</span>
+            <span class="nl">onPressed:</span> <span class="p">()</span> <span class="p">{</span>
+              <span class="kd">var</span> <span class="n">title</span> <span class="o">=</span> <span class="n">_textEditingController</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">text</span><span class="p">;</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">title</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;No Title&#39;</span><span class="p">;</span>
+              <span class="p">}</span>
+              <span class="n">context</span><span class="p">.</span><span class="n">read</span><span class="o">&lt;</span><span class="n">TodosController</span><span class="o">&gt;</span><span class="p">().</span><span class="n">add</span><span class="p">(</span><span class="n">title</span><span class="p">);</span>
+              <span class="n">_textEditingController</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+            <span class="p">},</span>
+          <span class="p">),</span>
+        <span class="p">],</span>
+      <span class="p">),</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="プロバイダー">プロバイダー</h1>
 <h2 id="maindart">main.dart</h2>
 <p>このままMaterialAppにFilterdTodosScreenを渡して表示させようとするとcontextにStateやControllerが見当たらないと怒られてしまいます。</p>
 <p>まず、App全体で利用するだろうTodosState/TodosControllerはMaterialAppをStateNotifierProviderでWrapして使えるようします。</p>
 <p>また、FilteredTodosState/FilteredTodosControllerはそれを利用するFilteredTodosScreenをStateNotifierProviderでWrapして使えるようにしておきます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> StatelessWidget {
-  <span style="color:#960050;background-color:#1e0010">@</span>override
-  Widget build(BuildContext context) {
-    <span style="color:#66d9ef">return</span> StateNotifierProvider<span style="color:#f92672">&lt;</span>TodosController, TodosState<span style="color:#f92672">&gt;</span>(
-      create: (_) <span style="color:#f92672">=&gt;</span> TodosController(),
-      child: MaterialApp(
-        title: <span style="color:#e6db74">&#39;State Notifier Todo Demo&#39;</span>,
-        debugShowCheckedModeBanner: <span style="color:#66d9ef">false</span>,
-        home:
-            StateNotifierProvider<span style="color:#f92672">&lt;</span>FilteredTodosController, FilteredTodosState<span style="color:#f92672">&gt;</span>(
-          create: (_) <span style="color:#f92672">=&gt;</span> FilteredTodosController(),
-          child: FilteredTodosScreen(),
-        ),
-      ),
-    );
-  }
-}
-</code></pre></div><h1 id="実行">実行</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">class</span> <span class="nc">App</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span> <span class="p">{</span>
+  <span class="err">@</span><span class="n">override</span>
+  <span class="n">Widget</span> <span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">StateNotifierProvider</span><span class="o">&lt;</span><span class="n">TodosController</span><span class="p">,</span> <span class="n">TodosState</span><span class="o">&gt;</span><span class="p">(</span>
+      <span class="nl">create:</span> <span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">TodosController</span><span class="p">(),</span>
+      <span class="nl">child:</span> <span class="n">MaterialApp</span><span class="p">(</span>
+        <span class="nl">title:</span> <span class="s1">&#39;State Notifier Todo Demo&#39;</span><span class="p">,</span>
+        <span class="nl">debugShowCheckedModeBanner:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nl">home:</span>
+            <span class="n">StateNotifierProvider</span><span class="o">&lt;</span><span class="n">FilteredTodosController</span><span class="p">,</span> <span class="n">FilteredTodosState</span><span class="o">&gt;</span><span class="p">(</span>
+          <span class="nl">create:</span> <span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">FilteredTodosController</span><span class="p">(),</span>
+          <span class="nl">child:</span> <span class="n">FilteredTodosScreen</span><span class="p">(),</span>
+        <span class="p">),</span>
+      <span class="p">),</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="実行">実行</h1>
 <p>実装は以上です。動かしてみましょう。</p>
 <p><img src="https://user-images.githubusercontent.com/1445649/84268675-fee84100-ab62-11ea-9fee-3f4db43b012c.gif" alt="state_notifier_todo"></p>
 <p>ちょっとわかりにくいですがFuture.delayによるローディング、Todoの追加や未完了/完了のtoggle、フィルタもうまく動いているのがわかると思います。</p>
