@@ -297,7 +297,7 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 <h2 id="flutter-driver用にアプリを実装する">Flutter Driver用にアプリを実装する</h2>
 <p>test_driverディレクトリにスクリーンショット撮影用のアプリapp.dartを実装します。</p>
 <p>コードは<a href="https://github.com/seiichi3141/take_screenshots/blob/master/test_driver/app.dart">こちら</a></p>
-<p>アプリにはホーム画面と設定画面の二つの画面があります。それを切り替えるために一つPrivderを用意します。</p>
+<p>アプリにはホーム画面と設定画面の二つの画面があります。それを切り替えるために一つProviderを用意します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -316,7 +316,7 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 <span class="kd">final</span> <span class="n">screenProvider</span> <span class="o">=</span> <span class="n">StateProvider</span><span class="p">((</span><span class="n">_</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">Screen</span><span class="p">.</span><span class="n">home</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>Widgetで監視しているProviderを提供し、OverrideするためにProviderContainerを作っておきます。</p>
+</div><p>撮影用アプリのWidgetツリーに流すProviderを提供するProviderContainerを作っておきます。このContainerのproviderをoverrideすることでツリー配下のWidgetに影響を及ぼすことができるようになります。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -355,9 +355,9 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 <span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>テストケースからFlutterDriver.requestDataで送られてくるデータを処理するenableFlutterDriverExtension関数を実装します。</p>
+</div><p>enableFlutterDriverExtension関数を実装します。ここでテストケースからFlutterDriver.requestDataを使って送られてくるデータを処理します。</p>
 <p><a href="https://api.flutter.dev/flutter/flutter_driver_extension/enableFlutterDriverExtension.html">enableFlutterDriverExtension</a></p>
-<p>以下のコードは抜粋ですが、requestData(&lsquo;screen::settings&rsquo;)が送られたらscreenProviderをScreen.settingsでoverrideする。requestData(&lsquo;brightness::dark&rsquo;)が送られたらbrightnessProviderをBrightness.darkでoverrideするなど、スクリーンショットで撮りたい状況に合わせてProviderをoverrideできるようにしておきます。</p>
+<p>以下のコードは抜粋ですが、&lsquo;screen::settings&rsquo;というActionが送られてきたらscreenProviderをScreen.settingsでoverride。&lsquo;brightness::dark&rsquo;というActionが送られてきたらbrightnessProviderをBrightness.darkでoverride、などとスクリーンショットで撮りたい状況に合わせてProviderをoverrideできるようにしておきます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -438,7 +438,7 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
   <span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>アプリの開始です。UncotrolledProviderScopeでproviderContainerをWidgetツリーに流し込みます。</p>
+</div><p>アプリの開始。UncontrolledProviderScopeでproviderContainerをWidgetツリーに流し込みます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -502,7 +502,7 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 </div><p>これでアプリ側は準備完了です。</p>
 <h2 id="スクリーンショット撮影ユーティリティ">スクリーンショット撮影ユーティリティ</h2>
 <p>コードは<a href="https://github.com/seiichi3141/take_screenshots/blob/master/test_driver/screenshort.dart">こちら</a></p>
-<p>FlutterDriverにはスクリーンショット取得をするscreenshot関数が用意されています。これを利用しますが、アニメーション待ち、ディレクトリ作成、ファイル保存なども行いたいのでユーティリティーとして以下のような関数を用意します。</p>
+<p>FlutterDriverにはスクリーンショット取得をするscreenshot関数が用意されています。アニメーション待ち、ディレクトリ作成、ファイル保存なども行いたいのでユーティリティーとして以下のような関数を用意します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
