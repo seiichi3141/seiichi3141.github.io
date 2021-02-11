@@ -28,19 +28,19 @@
     
     <item>
       <title>CFOPメソッドメモ プライバシーポリシー</title>
-      <link>https://blog.seiichirou.jp/apps/cube_lbl_memo/privacypolicy/</link>
+      <link>https://blog.seiichirou.jp/cube_lbl_memo/privacypolicy/</link>
       <pubDate>Tue, 19 May 2020 21:25:04 +0900</pubDate>
       
-      <guid>https://blog.seiichirou.jp/apps/cube_lbl_memo/privacypolicy/</guid>
+      <guid>https://blog.seiichirou.jp/cube_lbl_memo/privacypolicy/</guid>
       <description>広告について 本アプリでは、広告配信ツールとしてAdMob(Google Inc.)を使用しており、AdMobがご利用者の情報を自動取得する場合</description>
     </item>
     
     <item>
       <title>Yom!青空文庫 プライバシーポリシー</title>
-      <link>https://blog.seiichirou.jp/apps/aozora/privacypolicy/</link>
+      <link>https://blog.seiichirou.jp/aozora/privacypolicy/</link>
       <pubDate>Tue, 19 May 2020 21:25:04 +0900</pubDate>
       
-      <guid>https://blog.seiichirou.jp/apps/aozora/privacypolicy/</guid>
+      <guid>https://blog.seiichirou.jp/aozora/privacypolicy/</guid>
       <description>Yom!青空文庫プライバシーポリシー 広告について 本アプリでは、広告配信ツールとしてAdMob(Google Inc.)を使用しており、AdMo</description>
     </item>
     
@@ -87,6 +87,33 @@
       
       <guid>https://blog.seiichirou.jp/posts/appbar-widget/</guid>
       <description>マテリアルデザインのアプリバーを実装するためのWidget。アプリバーは基本的なツールバーと、場合によってはTabBarやFlexibleS</description>
+    </item>
+    
+    <item>
+      <title>CFOPメソッドメモ</title>
+      <link>https://blog.seiichirou.jp/apps/cube_lbl_memo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.seiichirou.jp/apps/cube_lbl_memo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CFOPメソッドメモ</title>
+      <link>https://blog.seiichirou.jp/cube_lbl_memo/home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.seiichirou.jp/cube_lbl_memo/home/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Yom!青空文庫</title>
+      <link>https://blog.seiichirou.jp/aozora/home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.seiichirou.jp/aozora/home/</guid>
+      <description></description>
     </item>
     
     <item>

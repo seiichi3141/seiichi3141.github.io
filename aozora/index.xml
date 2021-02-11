@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aozoras on 健康優良不良プログラマ</title>
+    <link>https://blog.seiichirou.jp/aozora/</link>
+    <description>Recent content in Aozoras on 健康優良不良プログラマ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>seiichi3141@</copyright>
+    <lastBuildDate>Tue, 19 May 2020 21:25:04 +0900</lastBuildDate><atom:link href="https://blog.seiichirou.jp/aozora/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Yom!青空文庫 プライバシーポリシー</title>
+      <link>https://blog.seiichirou.jp/aozora/privacypolicy/</link>
+      <pubDate>Tue, 19 May 2020 21:25:04 +0900</pubDate>
+      
+      <guid>https://blog.seiichirou.jp/aozora/privacypolicy/</guid>
+      <description>Yom!青空文庫プライバシーポリシー 広告について 本アプリでは、広告配信ツールとしてAdMob(Google Inc.)を使用しており、AdMo</description>
+    </item>
+    
+    <item>
+      <title>Yom!青空文庫</title>
+      <link>https://blog.seiichirou.jp/aozora/home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.seiichirou.jp/aozora/home/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

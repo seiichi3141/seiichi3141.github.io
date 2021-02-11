@@ -28,7 +28,8 @@
               アプリ
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/apps/aozora">Yom!青空文庫</a>
+              <a class="dropdown-item" href="/aozora/home">Yom!青空文庫</a>
+              <a class="dropdown-item" href="/cube_lbl_memo/home">CFOPメソッドメモ</a>
             </div>
           </li>
         </ul>
@@ -92,20 +93,20 @@
     <section class="content"><p>今まではflutter_blocを使っていたんですが、state_notifierとfreezedのコンボでだいぶ記述量が減ると知って試してからすっかり気に入って、開発中のアプリもほとんど書き換えてしまいました。</p>
 <p>今回はそのstate_notifierとfreezedで簡単なTodoリストアプリを作ってその便利さ紹介できたらいいなと思っています。</p>
 <p>リポジトリは<a href="https://github.com/seiichi3141/state_notifier_todo">こちら</a>です。</p>
-<h1 id="概要">概要</h1>
+<h2 id="概要">概要</h2>
 <ul>
 <li>ModelやStateにfreezedを使って手軽にimmutableやcopyWithを実現する</li>
 <li>StateNotifierを継承したControllerを実装してstateを管理する</li>
 <li>ScreenはStateを監視して表示、Controllerを介してstate操作を行う</li>
 <li>ProviderでStateやControllerの受け渡しを簡潔にする</li>
 </ul>
-<h1 id="todoリストの機能">Todoリストの機能</h1>
+<h2 id="todoリストの機能">Todoリストの機能</h2>
 <ul>
 <li>Todoを追加できる</li>
 <li>Todoの未完了-完了を切り替えられる</li>
 <li>リスト表示画面では未完了のリスト、完了のリストの表示を切り替えることができる</li>
 </ul>
-<h1 id="使用するライブラリ">使用するライブラリ</h1>
+<h2 id="使用するライブラリ">使用するライブラリ</h2>
 <table>
 <thead>
 <tr>
@@ -168,8 +169,8 @@
 </span><span class="w">
 </span></code></pre></td></tr></table>
 </div>
-</div><h1 id="モデル">モデル</h1>
-<h2 id="todo">Todo</h2>
+</div><h2 id="モデル">モデル</h2>
+<h3 id="todo">Todo</h3>
 <p>Todoを表すModelを実装します。freezedアノテーションをつけ、コンストラクタやcopyWithなどを自動生成するようにします。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -203,8 +204,8 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="ステートとコントローラ">ステートとコントローラ</h1>
-<h2 id="todosstate">TodosState</h2>
+</div><h2 id="ステートとコントローラ">ステートとコントローラ</h2>
+<h3 id="todosstate">TodosState</h3>
 <p>TodosStateを実装します。freezedアノテーションをつけ、データを持つTodoStateDataとローディング中を示すTodosStateLoadingの二つの状態を定義します。</p>
 <p>TodosStateのクラスをチェックし、TodosStateLoadingであればまだ読み込み中、TodosStateDataであればデータの読み込みが終わったという判断ができるようになります。</p>
 <p>TodosStateDataにはすべてのTodoが入るtodosを持っててもらいます。</p>
@@ -232,7 +233,7 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="todoscontoller">TodosContoller</h2>
+</div><h3 id="todoscontoller">TodosContoller</h3>
 <p>このTodosStateへの操作はStateNotifierを継承したTodosControllerを通してやります。TodosControllerはLocatorMixinを宣言しておきcontextにあるproviderへのアクセスを容易にしておきます。
 ここでは仮にinitStateで5秒間ウエイトを入れ、その後初期データとしていくつかのTodoをstateへ設定しています。
 本番ではここでRepositoryなりDBなりからロードすることになるはずです。</p>
@@ -354,7 +355,7 @@
   <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="filteredtodosstate">FilteredTodosState</h2>
+</div><h3 id="filteredtodosstate">FilteredTodosState</h3>
 <p>TodosStateをそのまま表示に使うこともできますが、今回はフィルタリングしたリストを表示したいと考えています。そのために画面の表示用にTodoのリストをフィルタリングした結果を持つFilteredTodosStateを実装をします。</p>
 <p>現在のフィルタリングのパラメータとしてcompleted変数を、フィルタリングされたTodoのリストとしてtodos持っててもらいます。</p>
 <div class="highlight"><div class="chroma">
@@ -381,7 +382,7 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="filteredtodoscontroller">FilteredTodosController</h2>
+</div><h3 id="filteredtodoscontroller">FilteredTodosController</h3>
 <p>FilteredTodosControllerを実装します。フィルタのパラメータ変更機能を提供します。</p>
 <p>LocatorMixinを宣言するとBuildContextからStateやControllerを探してきてくれるread関数やwatch関数を使えるようになります。update関数をoverrideして使えるようにもなります。ここでwatchしたStateやControllerは、その変化を検出できるようになります。</p>
 <p>ここではTodosStateをwatchしtodosが更新されるたびにfilteredTodos関数を実行して最新の情報へアップデートするようにしました。</p>
@@ -462,11 +463,11 @@
   <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="freezeddartの生成">*.freezed.dartの生成</h2>
+</div><h3 id="freezeddartの生成">*.freezed.dartの生成</h3>
 <p>build_runnerを動作させて、freezedアノテーションを付けたclassを実装する*.freezed.dartファイルを生成します。</p>
 <pre><code>flutter pub pub run build_runner build
-</code></pre><h1 id="スクリーン">スクリーン</h1>
-<h2 id="filteredtodos">FilteredTodos</h2>
+</code></pre><h2 id="スクリーン">スクリーン</h2>
+<h3 id="filteredtodos">FilteredTodos</h3>
 <p>フィルタリングされたTodoのリストを表示するためのWidgetを実装します。</p>
 <p>providerパッケージの機能であるcontext.watchを使って、TodosStateの監視を行います。freezedの機能のwhen関数で現在のstateによって返すWidgetを変えることができます。</p>
 <p>loadingの場合はCircularProgressIndicatorを返してローディング中だとわかるようにします。</p>
@@ -560,7 +561,7 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="filteredtodosscreen">FilteredTodosScreen</h2>
+</div><h3 id="filteredtodosscreen">FilteredTodosScreen</h3>
 <p>先ほど実装したFilteredTodos Widgetの表示や、未完了/完了の切り替え、新しいTodoの追加を行うための画面、FilteredTodosScreenを実装します。</p>
 <p>AppBarとFilteredTodosを構築している箇所です。</p>
 <p>AppBarにはactionsにIcons.done_allを使ったIconButtonを追加して、未完了/完了のどちらを表示しているかを表しています。FilteredTodosStateのcompletedを監視してその色を決めています。</p>
@@ -713,8 +714,8 @@
   <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="プロバイダー">プロバイダー</h1>
-<h2 id="maindart">main.dart</h2>
+</div><h2 id="プロバイダー">プロバイダー</h2>
+<h3 id="maindart">main.dart</h3>
 <p>このままMaterialAppにFilterdTodosScreenを渡して表示させようとするとcontextにStateやControllerが見当たらないと怒られてしまいます。</p>
 <p>まず、App全体で利用するだろうTodosState/TodosControllerはMaterialAppをStateNotifierProviderでWrapして使えるようします。</p>
 <p>また、FilteredTodosState/FilteredTodosControllerはそれを利用するFilteredTodosScreenをStateNotifierProviderでWrapして使えるようにしておきます。</p>
@@ -758,11 +759,11 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="実行">実行</h1>
+</div><h2 id="実行">実行</h2>
 <p>実装は以上です。動かしてみましょう。</p>
 <p><img src="https://user-images.githubusercontent.com/1445649/84268675-fee84100-ab62-11ea-9fee-3f4db43b012c.gif" alt="state_notifier_todo"></p>
 <p>ちょっとわかりにくいですがFuture.delayによるローディング、Todoの追加や未完了/完了のtoggle、フィルタもうまく動いているのがわかると思います。</p>
-<h1 id="まとめ">まとめ</h1>
+<h2 id="まとめ">まとめ</h2>
 <p>state_notifierとfreezedを使ってTodoリストを実装することができました。</p>
 <p>Todoのリストを管理しているおおもとはTodosState/TodosControllerです。FilteredTodosState/FilteredTodosControllerはその情報をもとに独自のパラメータを利用してリストを加工しているにすぎません。例えばこのアプリにTodo検索の機能を追加したいと考えたとき、SearchTodosState/SearchTodosControllerを追加して入力されたキーワードをもとにリストを加工してそのstateに持たせることができるでしょう。App以下であればTodosControllerを介してTodosStateを更新すれば、それを監視しているStateやScreenだけがその変化によって振る舞いを変えてくれます。</p>
 <p>freezedのおかげでModelやStateの実装も楽にできました。freezedにはjson_serializationとの連携もありますので、DBの実装もかなり楽になると思います。</p>
@@ -781,26 +782,73 @@
     <aside class="toc pt-5">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#todo">Todo</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#todosstate">TodosState</a></li>
-    <li><a href="#todoscontoller">TodosContoller</a></li>
-    <li><a href="#filteredtodosstate">FilteredTodosState</a></li>
-    <li><a href="#filteredtodoscontroller">FilteredTodosController</a></li>
-    <li><a href="#freezeddartの生成">*.freezed.dartの生成</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#filteredtodos">FilteredTodos</a></li>
-    <li><a href="#filteredtodosscreen">FilteredTodosScreen</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#maindart">main.dart</a></li>
+    <li><a href="#概要">概要</a></li>
+    <li><a href="#todoリストの機能">Todoリストの機能</a></li>
+    <li><a href="#使用するライブラリ">使用するライブラリ</a></li>
+    <li><a href="#モデル">モデル</a>
+      <ul>
+        <li><a href="#todo">Todo</a></li>
+      </ul>
+    </li>
+    <li><a href="#ステートとコントローラ">ステートとコントローラ</a>
+      <ul>
+        <li><a href="#todosstate">TodosState</a></li>
+        <li><a href="#todoscontoller">TodosContoller</a></li>
+        <li><a href="#filteredtodosstate">FilteredTodosState</a></li>
+        <li><a href="#filteredtodoscontroller">FilteredTodosController</a></li>
+        <li><a href="#freezeddartの生成">*.freezed.dartの生成</a></li>
+      </ul>
+    </li>
+    <li><a href="#スクリーン">スクリーン</a>
+      <ul>
+        <li><a href="#filteredtodos">FilteredTodos</a></li>
+        <li><a href="#filteredtodosscreen">FilteredTodosScreen</a></li>
+      </ul>
+    </li>
+    <li><a href="#プロバイダー">プロバイダー</a>
+      <ul>
+        <li><a href="#maindart">main.dart</a></li>
+      </ul>
+    </li>
+    <li><a href="#実行">実行</a></li>
+    <li><a href="#まとめ">まとめ</a></li>
   </ul>
 </nav>
+      <div class="mt-4 pl-2">
+        <h6>Flutterで作ってます</h6>
+        <div class="media mt-3">
+          <a href="/aozora/home">
+            <div class="appicon rounded mr-2">
+              <img src="/aozora/icon.png">
+            </div>
+            </a>
+          <div class="appmedia media-body">
+            <a href="/aozora/home" class="text-dark"><h6 class="mt-0"><strong>Yom!青空文庫</strong></h6></a>
+            <a target="_blank" href='https://apps.apple.com/jp/app/yom-%E9%9D%92%E7%A9%BA%E6%96%87%E5%BA%AB/id1530145482'>
+              <img width="81px" height="24px" src='https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2020-09-03&kind=iossoftware&bubble=ios_apps'/>
+            </a>
+            <a target="_blank" href='https://play.google.com/store/apps/details?id=jp.seiichirou.aozora'>
+              <img alt='Google Play で手に入れよう' width="81px" height="24px" src='/img/ja_badge_web_generic.png'/>
+            </a>
+          </div>
+        </div>
+        <div class="media mt-3">
+          <a href="/cube_lbl_memo/home">
+            <div class="appicon rounded mr-2">
+              <img src="/cube_lbl_memo/icon.png">
+            </div>
+          </a>
+          <div class="appmedia media-body">
+            <a href="/cube_lbl_memo/home" class="text-dark"><h6 class="mt-0"><strong>CFOPメソッドメモ</strong></h6></a>
+            <a target="_blank" href='https://apps.apple.com/jp/app/%E3%83%AB%E3%83%BC%E3%83%93%E3%83%83%E3%82%AF%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%96%E3%81%AE%E8%A7%A3%E6%B3%95-cfop%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%83%A1%E3%83%A2/id1544644116'>
+              <img width="81px" height="24px" src='https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2020-09-03&kind=iossoftware&bubble=ios_apps'/>
+            </a>
+            <a target="_blank" href='https://play.google.com/store/apps/details?id=jp.seiichirou.cube_lbl_memo'>
+              <img alt='Google Play で手に入れよう' width="81px" height="24px" src='/img/ja_badge_web_generic.png'/>
+            </a>
+          </div>
+        </div>
+        </div>
     </aside>
   </div>
 </article>

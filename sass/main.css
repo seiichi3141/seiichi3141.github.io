@@ -7007,7 +7007,7 @@ ul.nav > li > a:hover {
 .toc {
   position: sticky;
   top: 0;
-  height: calc(100vh - 3rem);
+  height: calc(100vh);
   overflow-y: auto; }
 
 #TableOfContents ul {
@@ -7073,3 +7073,15 @@ header h1 {
 
 div.flutter_web > iframe {
   border: none; }
+
+.appicon {
+  width: 56px;
+  height: 56px;
+  overflow: hidden; }
+  .appicon img {
+    width: 60px;
+    height: 60px;
+    margin: -2px 0 0 -2px; }
+
+.appmedia h6 {
+  font-size: 0.9rem; }

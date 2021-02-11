@@ -123,37 +123,22 @@
   </url>
   
   <url>
-    <loc>https://blog.seiichirou.jp/apps/</loc>
+    <loc>https://blog.seiichirou.jp/aozora/</loc>
     <lastmod>2020-05-19T21:25:04+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.seiichirou.jp/en/apps/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://blog.seiichirou.jp/apps/"
-                />
   </url>
   
   <url>
-    <loc>https://blog.seiichirou.jp/apps/cube_lbl_memo/privacypolicy/</loc>
+    <loc>https://blog.seiichirou.jp/cube_lbl_memo/privacypolicy/</loc>
     <lastmod>2020-05-19T21:25:04+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.seiichirou.jp/en/apps/cube_lbl_memo/privacypolicy/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://blog.seiichirou.jp/apps/cube_lbl_memo/privacypolicy/"
-                />
   </url>
   
   <url>
-    <loc>https://blog.seiichirou.jp/apps/aozora/privacypolicy/</loc>
+    <loc>https://blog.seiichirou.jp/cube_lbl_memo/</loc>
+    <lastmod>2020-05-19T21:25:04+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/aozora/privacypolicy/</loc>
     <lastmod>2020-05-19T21:25:04+09:00</lastmod>
   </url>
   
@@ -285,6 +270,42 @@
                 hreflang="ja"
                 href="https://blog.seiichirou.jp/tags/tabbar/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/apps/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/apps/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/apps/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/apps/cube_lbl_memo/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/apps/cube_lbl_memo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/apps/cube_lbl_memo/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/cube_lbl_memo/home/</loc>
+  </url>
+  
+  <url>
+    <loc>https://blog.seiichirou.jp/aozora/home/</loc>
   </url>
   
   <url>
