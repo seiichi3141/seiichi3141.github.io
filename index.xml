@@ -7,16 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>seiichi3141@</copyright>
-    <lastBuildDate>Thu, 15 Apr 2021 21:25:04 +0900</lastBuildDate><atom:link href="https://blog.seiichirou.jp/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Youtube用 参加型コンテンツ順番待ちアプリ プライバシーポリシー</title>
-      <link>https://blog.seiichirou.jp/youtubeprocession/privacypolicy/</link>
-      <pubDate>Thu, 15 Apr 2021 21:25:04 +0900</pubDate>
-      
-      <guid>https://blog.seiichirou.jp/youtubeprocession/privacypolicy/</guid>
-      <description>Youtube用 参加型コンテンツ順番待ちアプリ プライバシーポリシー アプリケーションが利用するデータについて 本アプリでは、チャンネル登録情報な</description>
-    </item>
-    
+    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://blog.seiichirou.jp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Riverpodならアプリのスクリーンショットも楽になるかも</title>
       <link>https://blog.seiichirou.jp/posts/auto_screenshot/</link>
@@ -36,21 +27,12 @@
     </item>
     
     <item>
-      <title>CFOPメソッドメモ プライバシーポリシー</title>
-      <link>https://blog.seiichirou.jp/cube_lbl_memo/privacypolicy/</link>
+      <title>Yom!青空文庫</title>
+      <link>https://blog.seiichirou.jp/apps/aozora/</link>
       <pubDate>Tue, 19 May 2020 21:25:04 +0900</pubDate>
       
-      <guid>https://blog.seiichirou.jp/cube_lbl_memo/privacypolicy/</guid>
-      <description>広告について 本アプリでは、広告配信ツールとしてAdMob(Google Inc.)を使用しており、AdMobがご利用者の情報を自動取得する場合</description>
-    </item>
-    
-    <item>
-      <title>Yom!青空文庫 プライバシーポリシー</title>
-      <link>https://blog.seiichirou.jp/aozora/privacypolicy/</link>
-      <pubDate>Tue, 19 May 2020 21:25:04 +0900</pubDate>
-      
-      <guid>https://blog.seiichirou.jp/aozora/privacypolicy/</guid>
-      <description>Yom!青空文庫プライバシーポリシー・利用規約 広告について 本アプリでは、広告配信ツールとしてAdMob(Google Inc.)を使用しており</description>
+      <guid>https://blog.seiichirou.jp/apps/aozora/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -105,42 +87,6 @@
       
       <guid>https://blog.seiichirou.jp/apps/cube_lbl_memo/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>CFOPメソッドメモ</title>
-      <link>https://blog.seiichirou.jp/cube_lbl_memo/home/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.seiichirou.jp/cube_lbl_memo/home/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Yom!青空文庫</title>
-      <link>https://blog.seiichirou.jp/aozora/home/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.seiichirou.jp/aozora/home/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Yom!青空文庫</title>
-      <link>https://blog.seiichirou.jp/apps/aozora/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.seiichirou.jp/apps/aozora/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Youtube用 参加型コンテンツ順番待ちアプリ</title>
-      <link>https://blog.seiichirou.jp/youtubeprocession/home/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.seiichirou.jp/youtubeprocession/home/</guid>
-      <description>Youtube用 参加型コンテンツ順番待ちアプリ Youtubeライブの参加型コンテンツの順番待ちを管理するのためのアプリです。本アプリを利用す</description>
     </item>
     
   </channel>

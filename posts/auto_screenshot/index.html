@@ -14,7 +14,21 @@
   <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
   <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
   <link href="https://blog.seiichirou.jp/css/syntax.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <meta name="google-site-verification" content="hSHRu1AofaNfP4SrnmMHbbG0VYL9D17LOFaRnoUxCjc" />
+  
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RP80Q2EE1S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RP80Q2EE1S');
+</script>
+    
+  
 </head><body><header class="bg-dark">
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark pr-0 pl-0">
@@ -23,21 +37,22 @@
       </a>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              アプリ
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/aozora/home">Yom!青空文庫</a>
-              <a class="dropdown-item" href="/cube_lbl_memo/home">CFOPメソッドメモ</a>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link" href="/portfolio">ポートフォリオ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/apps/aozora">Yom!青空文庫</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/apps/cube_lbl_memo">CFOP</a>
           </li>
         </ul>
       </div>
       <div>
-        <a href="https://github.com/seiichi3141"><i class="fab fa-github text-light mr-1"></i></a>
-        <a href="https://www.facebook.com/seiichirou.tanaka"><i class="fab fa-facebook text-light mr-1"></i></a>
-        <a href="https://twitter.com/seiichi3141"><i class="fab fa-twitter text-light"></i></a>
+        <a href="https://github.com/seiichi3141"><i class="fab fa-lg fa-github text-light mr-2"></i></a>
+        <a href="https://www.facebook.com/seiichirou.tanaka"><i class="fab fa-lg fa-facebook text-light mr-2"></i></a>
+        <a href="https://twitter.com/seiichi3141"><i class="fab fa-lg fa-twitter text-light mr-2"></i></a>
+        <a href="https://www.instagram.com/seiichi3141"><i class="fab fa-lg fa-instagram text-light"></i></a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -101,19 +116,19 @@
 <h2 id="flutterのバージョン">Flutterのバージョン</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">% flutter --version
-Flutter 1.25.0-8.1.pre • channel beta • https://github.com/flutter/flutter.git
-Framework • revision 8f89f6505b <span class="o">(</span><span class="m">8</span> days ago<span class="o">)</span> • 2020-12-15 15:07:52 -0800
-Engine • revision 92ae191c17
-Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class="o">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">% flutter --version
+</span></span><span class="line"><span class="cl">Flutter 1.25.0-8.1.pre • channel beta • https://github.com/flutter/flutter.git
+</span></span><span class="line"><span class="cl">Framework • revision 8f89f6505b <span class="o">(</span><span class="m">8</span> days ago<span class="o">)</span> • 2020-12-15 15:07:52 -0800
+</span></span><span class="line"><span class="cl">Engine • revision 92ae191c17
+</span></span><span class="line"><span class="cl">Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="サンプルアプリについて">サンプルアプリについて</h2>
 <p>リポジトリは<a href="https://github.com/seiichi3141/take_screenshots.git">ここ</a></p>
@@ -130,7 +145,7 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 <p>riverpodやflutter_driverを追加しています。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -144,39 +159,39 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">dependencies</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">flutter</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l">flutter</span><span class="w">
-</span><span class="w">  </span><span class="nt">cupertino_icons</span><span class="p">:</span><span class="w"> </span><span class="l">^1.0.0</span><span class="w">
-</span><span class="w">  </span><span class="nt">flutter_riverpod</span><span class="p">:</span><span class="w"> </span><span class="l">^0.12.1</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="nt">dev_dependencies</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">flutter_test</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l">flutter</span><span class="w">
-</span><span class="w">  </span><span class="nt">flutter_driver</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l">flutter</span><span class="w">
-</span><span class="w">  </span><span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="l">any</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">dependencies</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">flutter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l">flutter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">cupertino_icons</span><span class="p">:</span><span class="w"> </span><span class="l">^1.0.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">flutter_riverpod</span><span class="p">:</span><span class="w"> </span><span class="l">^0.12.1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">dev_dependencies</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">flutter_test</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l">flutter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">flutter_driver</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l">flutter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="l">any</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="providers">Providers</h3>
 <p>Primary Swatch, Brightness, CounterをStateProviderで管理します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">final</span> <span class="n">primarySwatchProvider</span> <span class="o">=</span> <span class="n">StateProvider</span><span class="p">((</span><span class="n">_</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">Colors</span><span class="p">.</span><span class="n">blue</span><span class="p">);</span>
-<span class="kd">final</span> <span class="n">brightnessProvider</span> <span class="o">=</span> <span class="n">StateProvider</span><span class="p">((</span><span class="n">_</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">Brightness</span><span class="p">.</span><span class="n">light</span><span class="p">);</span>
-<span class="kd">final</span> <span class="n">counterProvider</span> <span class="o">=</span> <span class="n">StateProvider</span><span class="p">((</span><span class="n">_</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="m">0</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">final</span> <span class="n">primarySwatchProvider</span> <span class="o">=</span> <span class="n">StateProvider</span><span class="p">((</span><span class="n">_</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">Colors</span><span class="p">.</span><span class="n">blue</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kd">final</span> <span class="n">brightnessProvider</span> <span class="o">=</span> <span class="n">StateProvider</span><span class="p">((</span><span class="n">_</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">Brightness</span><span class="p">.</span><span class="n">light</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kd">final</span> <span class="n">counterProvider</span> <span class="o">=</span> <span class="n">StateProvider</span><span class="p">((</span><span class="n">_</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="m">0</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="consumer">Consumer</h3>
 <p>ConsumerでStateProviderを監視(watch)することでStateに変更があるたびにMaterialAppをRebuildしてくれるようになります。MaterialAppのテーマ変更はアニメーションがおまけでついてきます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -196,30 +211,30 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">class</span> <span class="nc">MyApp</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span> <span class="p">{</span>
-  <span class="err">@</span><span class="n">override</span>
-  <span class="n">Widget</span> <span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">Consumer</span><span class="p">(</span>
-      <span class="nl">builder:</span> <span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">watch</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">MaterialApp</span><span class="p">(</span>
-          <span class="nl">title:</span> <span class="s1">&#39;Screenshot Demo&#39;</span><span class="p">,</span>
-          <span class="nl">debugShowCheckedModeBanner:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nl">theme:</span> <span class="n">ThemeData</span><span class="p">(</span>
-            <span class="nl">primarySwatch:</span> <span class="n">watch</span><span class="p">(</span><span class="n">primarySwatchProvider</span><span class="p">).</span><span class="n">state</span><span class="p">,</span>
-            <span class="nl">brightness:</span> <span class="n">watch</span><span class="p">(</span><span class="n">brightnessProvider</span><span class="p">).</span><span class="n">state</span><span class="p">,</span>
-          <span class="p">),</span>
-          <span class="nl">home:</span> <span class="n">MyHomePage</span><span class="p">(),</span>
-        <span class="p">);</span>
-      <span class="p">},</span>
-    <span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">MyApp</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="err">@</span><span class="n">override</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Widget</span> <span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Consumer</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="nl">builder:</span> <span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">watch</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">MaterialApp</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">          <span class="nl">title:</span> <span class="s1">&#39;Screenshot Demo&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nl">debugShowCheckedModeBanner:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nl">theme:</span> <span class="n">ThemeData</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="nl">primarySwatch:</span> <span class="n">watch</span><span class="p">(</span><span class="n">primarySwatchProvider</span><span class="p">).</span><span class="n">state</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nl">brightness:</span> <span class="n">watch</span><span class="p">(</span><span class="n">brightnessProvider</span><span class="p">).</span><span class="n">state</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="nl">home:</span> <span class="n">MyHomePage</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>カウンター表示もこの通りConsumerで囲って監視します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -229,38 +244,38 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">Consumer</span><span class="p">(</span>
-  <span class="nl">builder:</span> <span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">watch</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">Text</span><span class="p">(</span>
-      <span class="s1">&#39;</span><span class="si">${</span><span class="n">watch</span><span class="p">(</span><span class="n">counterProvider</span><span class="p">).</span><span class="n">state</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-      <span class="nl">style:</span> <span class="n">Theme</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">context</span><span class="p">).</span><span class="n">textTheme</span><span class="p">.</span><span class="n">headline4</span><span class="p">,</span>
-    <span class="p">);</span>
-  <span class="p">},</span>
-<span class="p">),</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="n">Consumer</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="nl">builder:</span> <span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">watch</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Text</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="s1">&#39;</span><span class="si">${</span><span class="n">watch</span><span class="p">(</span><span class="n">counterProvider</span><span class="p">).</span><span class="n">state</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nl">style:</span> <span class="n">Theme</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">context</span><span class="p">).</span><span class="n">textTheme</span><span class="p">.</span><span class="n">headline4</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">),</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="stateの変更">Stateの変更</h3>
 <p>FloatingActionButtonのAddボタンが押された時にcounterProviderのstateを更新します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="nl">floatingActionButton:</span> <span class="n">FloatingActionButton</span><span class="p">(</span>
-  <span class="nl">onPressed:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="n">context</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">counterProvider</span><span class="p">).</span><span class="n">state</span><span class="o">++</span><span class="p">,</span>
-  <span class="nl">tooltip:</span> <span class="s1">&#39;Increment&#39;</span><span class="p">,</span>
-  <span class="nl">child:</span> <span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">add</span><span class="p">),</span>
-<span class="p">),</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="nl">floatingActionButton:</span> <span class="n">FloatingActionButton</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="nl">onPressed:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="n">context</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">counterProvider</span><span class="p">).</span><span class="n">state</span><span class="o">++</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nl">tooltip:</span> <span class="s1">&#39;Increment&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nl">child:</span> <span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">add</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">),</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>設定画面では例えばSwitchの切り替えでbrightnessProviderのstateを変更します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -273,18 +288,18 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="k">return</span> <span class="n">SwitchListTile</span><span class="p">(</span>
-  <span class="nl">title:</span> <span class="kd">const</span> <span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Dark Mode&#39;</span><span class="p">),</span>
-  <span class="nl">value:</span> <span class="n">watch</span><span class="p">(</span><span class="n">brightnessProvider</span><span class="p">).</span><span class="n">state</span> <span class="o">==</span> <span class="n">Brightness</span><span class="p">.</span><span class="n">dark</span><span class="p">,</span>
-  <span class="nl">onChanged:</span> <span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">context</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">brightnessProvider</span><span class="p">).</span><span class="n">state</span> <span class="o">=</span> <span class="n">Brightness</span><span class="p">.</span><span class="n">dark</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="n">context</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">brightnessProvider</span><span class="p">).</span><span class="n">state</span> <span class="o">=</span> <span class="n">Brightness</span><span class="p">.</span><span class="n">light</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-<span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="k">return</span> <span class="n">SwitchListTile</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="nl">title:</span> <span class="kd">const</span> <span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Dark Mode&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="nl">value:</span> <span class="n">watch</span><span class="p">(</span><span class="n">brightnessProvider</span><span class="p">).</span><span class="n">state</span> <span class="o">==</span> <span class="n">Brightness</span><span class="p">.</span><span class="n">dark</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nl">onChanged:</span> <span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">context</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">brightnessProvider</span><span class="p">).</span><span class="n">state</span> <span class="o">=</span> <span class="n">Brightness</span><span class="p">.</span><span class="n">dark</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">context</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">brightnessProvider</span><span class="p">).</span><span class="n">state</span> <span class="o">=</span> <span class="n">Brightness</span><span class="p">.</span><span class="n">light</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>今回はこのアプリのスクリーンショットを撮るのを目的とします。</p>
 <h2 id="スクリーンショット撮影の流れ">スクリーンショット撮影の流れ</h2>
@@ -301,7 +316,7 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 <p>アプリにはホーム画面と設定画面の二つの画面があります。それを切り替えるために一つProviderを用意します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -309,18 +324,18 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">enum</span> <span class="n">Screen</span> <span class="p">{</span>
-  <span class="n">home</span><span class="p">,</span>
-  <span class="n">settings</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="kd">final</span> <span class="n">screenProvider</span> <span class="o">=</span> <span class="n">StateProvider</span><span class="p">((</span><span class="n">_</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">Screen</span><span class="p">.</span><span class="n">home</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="n">enum</span> <span class="n">Screen</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">home</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">settings</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">final</span> <span class="n">screenProvider</span> <span class="o">=</span> <span class="n">StateProvider</span><span class="p">((</span><span class="n">_</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">Screen</span><span class="p">.</span><span class="n">home</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>撮影用アプリのWidgetツリーに流すProviderを提供するProviderContainerを作っておきます。このContainerのproviderをoverrideすることでツリー配下のWidgetに影響を及ぼすことができるようになります。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -338,30 +353,30 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">final</span> <span class="n">providerContainer</span> <span class="o">=</span> <span class="n">ProviderContainer</span><span class="p">(</span>
-  <span class="nl">overrides:</span> <span class="p">[</span>
-    <span class="n">screenProvider</span><span class="p">.</span><span class="n">overrideWithValue</span><span class="p">(</span>
-      <span class="n">StateController</span><span class="p">(</span><span class="n">Screen</span><span class="p">.</span><span class="n">home</span><span class="p">),</span>
-    <span class="p">),</span>
-    <span class="n">primarySwatchProvider</span><span class="p">.</span><span class="n">overrideWithValue</span><span class="p">(</span>
-      <span class="n">StateController</span><span class="p">(</span><span class="n">Colors</span><span class="p">.</span><span class="n">blue</span><span class="p">),</span>
-    <span class="p">),</span>
-    <span class="n">brightnessProvider</span><span class="p">.</span><span class="n">overrideWithValue</span><span class="p">(</span>
-      <span class="n">StateController</span><span class="p">(</span><span class="n">Brightness</span><span class="p">.</span><span class="n">light</span><span class="p">),</span>
-    <span class="p">),</span>
-    <span class="n">counterProvider</span><span class="p">.</span><span class="n">overrideWithValue</span><span class="p">(</span>
-      <span class="n">StateController</span><span class="p">(</span><span class="m">0</span><span class="p">),</span>
-    <span class="p">),</span>
-  <span class="p">],</span>
-<span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">final</span> <span class="n">providerContainer</span> <span class="o">=</span> <span class="n">ProviderContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="nl">overrides:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="n">screenProvider</span><span class="p">.</span><span class="n">overrideWithValue</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="n">StateController</span><span class="p">(</span><span class="n">Screen</span><span class="p">.</span><span class="n">home</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">primarySwatchProvider</span><span class="p">.</span><span class="n">overrideWithValue</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="n">StateController</span><span class="p">(</span><span class="n">Colors</span><span class="p">.</span><span class="n">blue</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">brightnessProvider</span><span class="p">.</span><span class="n">overrideWithValue</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="n">StateController</span><span class="p">(</span><span class="n">Brightness</span><span class="p">.</span><span class="n">light</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">counterProvider</span><span class="p">.</span><span class="n">overrideWithValue</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="n">StateController</span><span class="p">(</span><span class="m">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>enableFlutterDriverExtension関数を実装します。ここでテストケースからFlutterDriver.requestDataを使って送られてくるデータを処理します。</p>
 <p><a href="https://api.flutter.dev/flutter/flutter_driver_extension/enableFlutterDriverExtension.html">enableFlutterDriverExtension</a></p>
 <p>以下のコードは抜粋ですが、&lsquo;screen::settings&rsquo;というActionが送られてきたらscreenProviderをScreen.settingsでoverride。&lsquo;brightness::dark&rsquo;というActionが送られてきたらbrightnessProviderをBrightness.darkでoverride、などとスクリーンショットで撮りたい状況に合わせてProviderをoverrideできるようにしておきます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -400,49 +415,49 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 </span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart">  <span class="n">enableFlutterDriverExtension</span><span class="p">(</span>
-    <span class="nl">handler:</span> <span class="p">(</span><span class="n">action</span><span class="p">)</span> <span class="kd">async</span> <span class="p">{</span>
-      <span class="k">switch</span> <span class="p">(</span><span class="n">action</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">case</span> <span class="s1">&#39;screen::settings&#39;</span><span class="o">:</span>
-          <span class="n">providerContainer</span><span class="p">.</span><span class="n">updateOverrides</span><span class="p">([</span>
-            <span class="n">screenProvider</span><span class="p">.</span><span class="n">overrideWithValue</span><span class="p">(</span>
-              <span class="n">StateController</span><span class="p">(</span><span class="n">Screen</span><span class="p">.</span><span class="n">settings</span><span class="p">),</span>
-            <span class="p">),</span>
-          <span class="p">]);</span>
-          <span class="k">break</span><span class="p">;</span>
-        <span class="k">case</span> <span class="s1">&#39;brightness::dark&#39;</span><span class="o">:</span>
-          <span class="n">providerContainer</span><span class="p">.</span><span class="n">updateOverrides</span><span class="p">([</span>
-            <span class="n">brightnessProvider</span><span class="p">.</span><span class="n">overrideWithValue</span><span class="p">(</span>
-              <span class="n">StateController</span><span class="p">(</span><span class="n">Brightness</span><span class="p">.</span><span class="n">dark</span><span class="p">),</span>
-            <span class="p">),</span>
-          <span class="p">]);</span>
-          <span class="k">break</span><span class="p">;</span>
-        <span class="k">case</span> <span class="s1">&#39;primarySwatch::yellow&#39;</span><span class="o">:</span>
-          <span class="n">providerContainer</span><span class="p">.</span><span class="n">updateOverrides</span><span class="p">([</span>
-            <span class="n">primarySwatchProvider</span><span class="p">.</span><span class="n">overrideWithValue</span><span class="p">(</span>
-              <span class="n">StateController</span><span class="p">(</span><span class="n">Colors</span><span class="p">.</span><span class="n">yellow</span><span class="p">),</span>
-            <span class="p">),</span>
-          <span class="p">]);</span>
-          <span class="k">break</span><span class="p">;</span>
-        <span class="k">case</span> <span class="s1">&#39;counter::large&#39;</span><span class="o">:</span>
-          <span class="n">providerContainer</span><span class="p">.</span><span class="n">updateOverrides</span><span class="p">([</span>
-            <span class="n">counterProvider</span><span class="p">.</span><span class="n">overrideWithValue</span><span class="p">(</span>
-              <span class="n">StateController</span><span class="p">(</span><span class="m">99999999</span><span class="p">),</span>
-            <span class="p">),</span>
-          <span class="p">]);</span>
-          <span class="k">break</span><span class="p">;</span>
-        <span class="k">default</span><span class="o">:</span>
-          <span class="k">break</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-    <span class="p">},</span>
-  <span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl">  <span class="n">enableFlutterDriverExtension</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nl">handler:</span> <span class="p">(</span><span class="n">action</span><span class="p">)</span> <span class="kd">async</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">switch</span> <span class="p">(</span><span class="n">action</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="s1">&#39;screen::settings&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">          <span class="n">providerContainer</span><span class="p">.</span><span class="n">updateOverrides</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">            <span class="n">screenProvider</span><span class="p">.</span><span class="n">overrideWithValue</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">              <span class="n">StateController</span><span class="p">(</span><span class="n">Screen</span><span class="p">.</span><span class="n">settings</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="p">]);</span>
+</span></span><span class="line"><span class="cl">          <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="s1">&#39;brightness::dark&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">          <span class="n">providerContainer</span><span class="p">.</span><span class="n">updateOverrides</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">            <span class="n">brightnessProvider</span><span class="p">.</span><span class="n">overrideWithValue</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">              <span class="n">StateController</span><span class="p">(</span><span class="n">Brightness</span><span class="p">.</span><span class="n">dark</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="p">]);</span>
+</span></span><span class="line"><span class="cl">          <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="s1">&#39;primarySwatch::yellow&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">          <span class="n">providerContainer</span><span class="p">.</span><span class="n">updateOverrides</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">            <span class="n">primarySwatchProvider</span><span class="p">.</span><span class="n">overrideWithValue</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">              <span class="n">StateController</span><span class="p">(</span><span class="n">Colors</span><span class="p">.</span><span class="n">yellow</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="p">]);</span>
+</span></span><span class="line"><span class="cl">          <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="s1">&#39;counter::large&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">          <span class="n">providerContainer</span><span class="p">.</span><span class="n">updateOverrides</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">            <span class="n">counterProvider</span><span class="p">.</span><span class="n">overrideWithValue</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">              <span class="n">StateController</span><span class="p">(</span><span class="m">99999999</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="p">]);</span>
+</span></span><span class="line"><span class="cl">          <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">default</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">          <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>アプリの開始。UncontrolledProviderScopeでproviderContainerをWidgetツリーに流し込みます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -471,34 +486,34 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart">  <span class="n">runApp</span><span class="p">(</span>
-    <span class="n">UncontrolledProviderScope</span><span class="p">(</span>
-      <span class="nl">container:</span> <span class="n">providerContainer</span><span class="p">,</span>
-      <span class="nl">child:</span> <span class="n">Consumer</span><span class="p">(</span>
-        <span class="nl">builder:</span> <span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">watch</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="p">{</span>
-          <span class="n">Widget</span> <span class="n">screen</span><span class="p">;</span>
-          <span class="k">switch</span> <span class="p">(</span><span class="n">watch</span><span class="p">(</span><span class="n">screenProvider</span><span class="p">).</span><span class="n">state</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">case</span> <span class="n">Screen</span><span class="p">.</span><span class="nl">settings:</span>
-              <span class="n">screen</span> <span class="o">=</span> <span class="n">SettingsScreen</span><span class="p">();</span>
-              <span class="k">break</span><span class="p">;</span>
-            <span class="k">default</span><span class="o">:</span>
-              <span class="n">screen</span> <span class="o">=</span> <span class="n">MyHomePage</span><span class="p">();</span>
-              <span class="k">break</span><span class="p">;</span>
-          <span class="p">}</span>
-          <span class="k">return</span> <span class="n">MaterialApp</span><span class="p">(</span>
-            <span class="nl">title:</span> <span class="s1">&#39;Screenshot Demo&#39;</span><span class="p">,</span>
-            <span class="nl">debugShowCheckedModeBanner:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="nl">theme:</span> <span class="n">ThemeData</span><span class="p">(</span>
-              <span class="nl">primarySwatch:</span> <span class="n">watch</span><span class="p">(</span><span class="n">primarySwatchProvider</span><span class="p">).</span><span class="n">state</span><span class="p">,</span>
-              <span class="nl">brightness:</span> <span class="n">watch</span><span class="p">(</span><span class="n">brightnessProvider</span><span class="p">).</span><span class="n">state</span><span class="p">,</span>
-            <span class="p">),</span>
-            <span class="nl">home:</span> <span class="n">screen</span><span class="p">,</span>
-          <span class="p">);</span>
-        <span class="p">},</span>
-      <span class="p">),</span>
-    <span class="p">),</span>
-  <span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl">  <span class="n">runApp</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">UncontrolledProviderScope</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="nl">container:</span> <span class="n">providerContainer</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nl">child:</span> <span class="n">Consumer</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nl">builder:</span> <span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">watch</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="n">Widget</span> <span class="n">screen</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="k">switch</span> <span class="p">(</span><span class="n">watch</span><span class="p">(</span><span class="n">screenProvider</span><span class="p">).</span><span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">case</span> <span class="n">Screen</span><span class="p">.</span><span class="nl">settings:</span>
+</span></span><span class="line"><span class="cl">              <span class="n">screen</span> <span class="o">=</span> <span class="n">SettingsScreen</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">              <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">default</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">              <span class="n">screen</span> <span class="o">=</span> <span class="n">MyHomePage</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">              <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">          <span class="k">return</span> <span class="n">MaterialApp</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="nl">title:</span> <span class="s1">&#39;Screenshot Demo&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nl">debugShowCheckedModeBanner:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nl">theme:</span> <span class="n">ThemeData</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">              <span class="nl">primarySwatch:</span> <span class="n">watch</span><span class="p">(</span><span class="n">primarySwatchProvider</span><span class="p">).</span><span class="n">state</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="nl">brightness:</span> <span class="n">watch</span><span class="p">(</span><span class="n">brightnessProvider</span><span class="p">).</span><span class="n">state</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="nl">home:</span> <span class="n">screen</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>これでアプリ側は準備完了です。</p>
 <h2 id="スクリーンショット撮影ユーティリティ">スクリーンショット撮影ユーティリティ</h2>
@@ -506,7 +521,7 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 <p>FlutterDriverにはスクリーンショット取得をするscreenshot関数が用意されています。アニメーション待ち、ディレクトリ作成、ファイル保存なども行いたいのでユーティリティーとして以下のような関数を用意します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -520,19 +535,19 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">Future</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">takeScreenshot</span><span class="p">(</span><span class="n">FlutterDriver</span> <span class="n">driver</span><span class="p">,</span> <span class="kt">String</span> <span class="n">path</span><span class="p">)</span> <span class="kd">async</span> <span class="p">{</span>
-  <span class="n">print</span><span class="p">(</span><span class="s1">&#39;will take screenshot </span><span class="si">$</span><span class="n">path</span><span class="s1">&#39;</span><span class="p">);</span>
-  <span class="kd">await</span> <span class="n">driver</span><span class="p">.</span><span class="n">waitUntilNoTransientCallbacks</span><span class="p">();</span>
-  <span class="kd">final</span> <span class="n">pixels</span> <span class="o">=</span> <span class="kd">await</span> <span class="n">driver</span><span class="p">.</span><span class="n">screenshot</span><span class="p">();</span>
-  <span class="kd">final</span> <span class="n">dir</span> <span class="o">=</span> <span class="n">Directory</span><span class="p">(</span><span class="s1">&#39;.screenshots&#39;</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">dir</span><span class="p">.</span><span class="n">existsSync</span><span class="p">())</span> <span class="p">{</span>
-    <span class="n">dir</span><span class="p">.</span><span class="n">createSync</span><span class="p">();</span>
-  <span class="p">}</span>
-  <span class="kd">final</span> <span class="n">file</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">dir</span><span class="p">.</span><span class="n">path</span><span class="p">,</span> <span class="n">path</span><span class="p">));</span>
-  <span class="kd">await</span> <span class="n">file</span><span class="p">.</span><span class="n">writeAsBytes</span><span class="p">(</span><span class="n">pixels</span><span class="p">);</span>
-  <span class="n">print</span><span class="p">(</span><span class="s1">&#39;wrote </span><span class="si">$</span><span class="n">file</span><span class="s1">&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="n">Future</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">takeScreenshot</span><span class="p">(</span><span class="n">FlutterDriver</span> <span class="n">driver</span><span class="p">,</span> <span class="kt">String</span> <span class="n">path</span><span class="p">)</span> <span class="kd">async</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="s1">&#39;will take screenshot </span><span class="si">$</span><span class="n">path</span><span class="s1">&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">await</span> <span class="n">driver</span><span class="p">.</span><span class="n">waitUntilNoTransientCallbacks</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">final</span> <span class="n">pixels</span> <span class="o">=</span> <span class="kd">await</span> <span class="n">driver</span><span class="p">.</span><span class="n">screenshot</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">final</span> <span class="n">dir</span> <span class="o">=</span> <span class="n">Directory</span><span class="p">(</span><span class="s1">&#39;.screenshots&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">dir</span><span class="p">.</span><span class="n">existsSync</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dir</span><span class="p">.</span><span class="n">createSync</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">final</span> <span class="n">file</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">dir</span><span class="p">.</span><span class="n">path</span><span class="p">,</span> <span class="n">path</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">await</span> <span class="n">file</span><span class="p">.</span><span class="n">writeAsBytes</span><span class="p">(</span><span class="n">pixels</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="s1">&#39;wrote </span><span class="si">$</span><span class="n">file</span><span class="s1">&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="テストケースを実装する">テストケースを実装する</h2>
 <p>コードは<a href="https://github.com/seiichi3141/take_screenshots/blob/master/test_driver/app_test.dart">こちら</a></p>
@@ -540,7 +555,7 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 <p>以下は初期画面を撮影するケースです。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -562,33 +577,33 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">group</span><span class="p">(</span><span class="s1">&#39;screenshots&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="n">FlutterDriver</span> <span class="n">driver</span><span class="p">;</span>
-
-    <span class="n">setUpAll</span><span class="p">(()</span> <span class="kd">async</span> <span class="p">{</span>
-      <span class="n">driver</span> <span class="o">=</span> <span class="kd">await</span> <span class="n">FlutterDriver</span><span class="p">.</span><span class="n">connect</span><span class="p">();</span>
-    <span class="p">});</span>
-
-    <span class="n">tearDownAll</span><span class="p">(()</span> <span class="kd">async</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">driver</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">await</span> <span class="n">driver</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
-      <span class="p">}</span>
-    <span class="p">});</span>
-
-    <span class="n">test</span><span class="p">(</span><span class="s1">&#39;home light&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="kd">async</span> <span class="p">{</span>
-      <span class="kd">await</span> <span class="n">driver</span><span class="p">.</span><span class="n">requestData</span><span class="p">(</span><span class="s1">&#39;brightness::light&#39;</span><span class="p">);</span>
-      <span class="kd">await</span> <span class="n">takeScreenshot</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="s1">&#39;home_light.png&#39;</span><span class="p">);</span>
-    <span class="p">});</span>
-  <span class="p">});</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">group</span><span class="p">(</span><span class="s1">&#39;screenshots&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">FlutterDriver</span> <span class="n">driver</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">setUpAll</span><span class="p">(()</span> <span class="kd">async</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">driver</span> <span class="o">=</span> <span class="kd">await</span> <span class="n">FlutterDriver</span><span class="p">.</span><span class="n">connect</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">tearDownAll</span><span class="p">(()</span> <span class="kd">async</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">driver</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">await</span> <span class="n">driver</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">test</span><span class="p">(</span><span class="s1">&#39;home light&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="kd">async</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">await</span> <span class="n">driver</span><span class="p">.</span><span class="n">requestData</span><span class="p">(</span><span class="s1">&#39;brightness::light&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">await</span> <span class="n">takeScreenshot</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="s1">&#39;home_light.png&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>他にも例えばダークモードで特定のカウンタの状況を写したい場合、設定画面を写したい場合など柔軟に撮影が可能です。</p>
 <p>カウンターが99999999の状態を写したい場合など、実際にタップ操作で起こすのが困難なケースでもRiverpodでstateを管理していればすぐに実現可能です。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -601,28 +616,28 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart">    <span class="n">test</span><span class="p">(</span><span class="s1">&#39;home dark large counter&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="kd">async</span> <span class="p">{</span>
-      <span class="kd">await</span> <span class="n">driver</span><span class="p">.</span><span class="n">requestData</span><span class="p">(</span><span class="s1">&#39;brightness::dark&#39;</span><span class="p">);</span>
-      <span class="kd">await</span> <span class="n">driver</span><span class="p">.</span><span class="n">requestData</span><span class="p">(</span><span class="s1">&#39;counter::large&#39;</span><span class="p">);</span>
-      <span class="kd">await</span> <span class="n">takeScreenshot</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="s1">&#39;home_dark_large_counter.png&#39;</span><span class="p">);</span>
-    <span class="p">});</span>
-
-    <span class="n">test</span><span class="p">(</span><span class="s1">&#39;settings dark&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="kd">async</span> <span class="p">{</span>
-      <span class="kd">await</span> <span class="n">driver</span><span class="p">.</span><span class="n">requestData</span><span class="p">(</span><span class="s1">&#39;brightness::dark&#39;</span><span class="p">);</span>
-      <span class="kd">await</span> <span class="n">driver</span><span class="p">.</span><span class="n">requestData</span><span class="p">(</span><span class="s1">&#39;screen::settings&#39;</span><span class="p">);</span>
-      <span class="kd">await</span> <span class="n">takeScreenshot</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="s1">&#39;settings_dark.png&#39;</span><span class="p">);</span>
-    <span class="p">});</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl">    <span class="n">test</span><span class="p">(</span><span class="s1">&#39;home dark large counter&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="kd">async</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">await</span> <span class="n">driver</span><span class="p">.</span><span class="n">requestData</span><span class="p">(</span><span class="s1">&#39;brightness::dark&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">await</span> <span class="n">driver</span><span class="p">.</span><span class="n">requestData</span><span class="p">(</span><span class="s1">&#39;counter::large&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">await</span> <span class="n">takeScreenshot</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="s1">&#39;home_dark_large_counter.png&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">test</span><span class="p">(</span><span class="s1">&#39;settings dark&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="kd">async</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">await</span> <span class="n">driver</span><span class="p">.</span><span class="n">requestData</span><span class="p">(</span><span class="s1">&#39;brightness::dark&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">await</span> <span class="n">driver</span><span class="p">.</span><span class="n">requestData</span><span class="p">(</span><span class="s1">&#39;screen::settings&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">await</span> <span class="n">takeScreenshot</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="s1">&#39;settings_dark.png&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="flutter-driverを実行">Flutter Driverを実行</h2>
 <p>シミュレータを起動し、以下のコマンドでDriverを実行します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">% flutter driver --target<span class="o">=</span>test_driver/app.dart
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">% flutter driver --target<span class="o">=</span>test_driver/app.dart
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>以下は撮影をしている様子です。スクリーンが変わっていきます。</p>
 <iframe width="214" height="463" src="https://www.youtube.com/embed/3m6JVwjGpZM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -633,22 +648,16 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
 <p>Widgetに与えるデータによって見た目が変わる要素をRiverpodで管理できていればスクリーンショットも撮りやすい。</p>
 <p>UIをフレキシブルに変えられるFlutterだからこそ、リリースするアプリのスクリーンショットはいつでも簡単に撮影できるようにしておくとリリース時の手間も大きく減らせると思います。</p>
 </section>
-    <div class="d-none d-lg-block text-center pt-4">
-      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=293&l=ur1&category=kindleunlimited&banner=05G450N240N3CHYBN2R2&f=ifr&linkID=5e9ec36dd4e47d426416b54c6aeb7b1a&t=seiichi31410a-22&tracking_id=seiichi31410a-22" width="640" height="100" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-    </div>
-    <div class="d-lg-none text-center mb-4">
-      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=294&l=ur1&category=kindleunlimited&banner=1D102G5E4DY0DNM0T382&f=ifr&linkID=14d8320d5f69f5d113b2907f35f1ae8a&t=seiichi31410a-22&tracking_id=seiichi31410a-22" width="320" height="100" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-    </div>
     <div class="border p-3">
       Flutterを使ったアプリをリリースしてます。良ければ使ってみてください。
       <div class="media mt-2">
-        <a href="/aozora/home">
+        <a href="/apps/aozora">
           <div class="appicon-lg rounded mr-2">
-            <img src="/aozora/icon.png">
+            <img src="/apps/aozora/icon.png">
           </div>
         </a>
         <div class="appmedia media-body">
-          <a href="/aozora/home" class="text-dark"><h5 class="mt-0"><strong>Yom!青空文庫</strong></h5></a>
+          <a href="/apps/aozora" class="text-dark"><h5 class="mt-0"><strong>Yom!青空文庫</strong></h5></a>
           <a target="_blank" href='https://apps.apple.com/jp/app/yom-%E9%9D%92%E7%A9%BA%E6%96%87%E5%BA%AB/id1530145482'>
             <img width="135px" height="40px" src='/img/badge-lrg.svg'/>
           </a>
@@ -668,9 +677,6 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
   </div>
 </footer></div>
   <div class="d-none d-md-block col-md-3 border-left border-right">
-    <div class="text-center pt-5">
-      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=21&l=ur1&category=kindleunlimited&banner=178KN9KSS2XDCENS02G2&f=ifr&linkID=130ffecdcbdb1dc9f096b6603e1a2413&t=seiichi31410a-22&tracking_id=seiichi31410a-22" width="125" height="125" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-    </div>
     <aside class="toc pt-5">
       <nav id="TableOfContents">
   <ul>
@@ -695,13 +701,13 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
       <div class="mt-4 pl-2">
         <h6>Flutterで作ってます</h6>
         <div class="media mt-3">
-          <a href="/aozora/home">
+          <a href="/apps/aozora">
             <div class="appicon rounded mr-2">
-              <img src="/aozora/icon.png">
+              <img src="/apps/aozora/icon.png">
             </div>
           </a>
           <div class="appmedia media-body">
-            <a href="/aozora/home" class="text-dark"><h6 class="mt-0"><strong>Yom!青空文庫</strong></h6></a>
+            <a href="/apps/aozora" class="text-dark"><h6 class="mt-0"><strong>Yom!青空文庫</strong></h6></a>
             <a target="_blank" href='https://apps.apple.com/jp/app/yom-%E9%9D%92%E7%A9%BA%E6%96%87%E5%BA%AB/id1530145482'>
               <img width="81px" height="24px" src='/img/badge-lrg.svg'/>
             </a>
@@ -711,13 +717,13 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
           </div>
         </div>
         <div class="media mt-3">
-          <a href="/cube_lbl_memo/home">
+          <a href="/apps/cube_lbl_memo">
             <div class="appicon rounded mr-2">
-              <img src="/cube_lbl_memo/icon.png">
+              <img src="/apps/cube_lbl_memo/icon.png">
             </div>
           </a>
           <div class="appmedia media-body">
-            <a href="/cube_lbl_memo/home" class="text-dark"><h6 class="mt-0"><strong>CFOPメソッドメモ</strong></h6></a>
+            <a href="/apps/cube_lbl_memo" class="text-dark"><h6 class="mt-0"><strong>CFOPメソッドメモ</strong></h6></a>
             <a target="_blank" href='https://apps.apple.com/jp/app/%E3%83%AB%E3%83%BC%E3%83%93%E3%83%83%E3%82%AF%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%96%E3%81%AE%E8%A7%A3%E6%B3%95-cfop%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%83%A1%E3%83%A2/id1544644116'>
               <img width="81px" height="24px" src='/img/badge-lrg.svg'/>
             </a>
@@ -742,20 +748,6 @@ Tools • Dart 2.12.0 <span class="o">(</span>build 2.12.0-133.2.beta<span class
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-  
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-145195127-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-  
 </body>
 
 </html>

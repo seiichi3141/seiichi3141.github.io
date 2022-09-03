@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/youtubeprocession/</loc>
-    <lastmod>2021-04-15T21:25:04+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/youtubeprocession/privacypolicy/</loc>
-    <lastmod>2021-04-15T21:25:04+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/</loc>
-    <lastmod>2021-04-15T21:25:04+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.seiichirou.jp/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://blog.seiichirou.jp/"
-                />
-  </url>
-  
   <url>
     <loc>https://blog.seiichirou.jp/categories/</loc>
     <lastmod>2020-12-20T00:00:00+09:00</lastmod>
@@ -40,9 +14,7 @@
                 hreflang="ja"
                 href="https://blog.seiichirou.jp/categories/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/tags/flutter/</loc>
     <lastmod>2020-12-20T00:00:00+09:00</lastmod>
     <xhtml:link
@@ -55,9 +27,7 @@
                 hreflang="ja"
                 href="https://blog.seiichirou.jp/tags/flutter/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/categories/flutter/</loc>
     <lastmod>2020-12-20T00:00:00+09:00</lastmod>
     <xhtml:link
@@ -70,9 +40,7 @@
                 hreflang="ja"
                 href="https://blog.seiichirou.jp/categories/flutter/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/posts/</loc>
     <lastmod>2020-12-20T00:00:00+09:00</lastmod>
     <xhtml:link
@@ -85,24 +53,16 @@
                 hreflang="ja"
                 href="https://blog.seiichirou.jp/posts/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/tags/riverpod/</loc>
     <lastmod>2020-12-20T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/posts/auto_screenshot/</loc>
     <lastmod>2020-12-20T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/tags/screenshot/</loc>
     <lastmod>2020-12-20T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/tags/</loc>
     <lastmod>2020-12-20T00:00:00+09:00</lastmod>
     <xhtml:link
@@ -115,44 +75,45 @@
                 hreflang="ja"
                 href="https://blog.seiichirou.jp/tags/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://blog.seiichirou.jp/</loc>
+    <lastmod>2020-12-20T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/"
+                />
+  </url><url>
     <loc>https://blog.seiichirou.jp/posts/state_notifier_todo/</loc>
     <lastmod>2020-06-10T21:49:03+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/tags/freezed/</loc>
     <lastmod>2020-06-10T21:49:03+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/tags/state_notifier/</loc>
     <lastmod>2020-06-10T21:49:03+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/aozora/</loc>
+  </url><url>
+    <loc>https://blog.seiichirou.jp/apps/</loc>
     <lastmod>2020-05-19T21:25:04+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/cube_lbl_memo/privacypolicy/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.seiichirou.jp/en/apps/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://blog.seiichirou.jp/apps/"
+                />
+  </url><url>
+    <loc>https://blog.seiichirou.jp/apps/aozora/</loc>
     <lastmod>2020-05-19T21:25:04+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/cube_lbl_memo/</loc>
-    <lastmod>2020-05-19T21:25:04+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/aozora/privacypolicy/</loc>
-    <lastmod>2020-05-19T21:25:04+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/tags/basics/</loc>
     <lastmod>2019-10-07T20:00:00+09:00</lastmod>
     <xhtml:link
@@ -165,19 +126,13 @@
                 hreflang="ja"
                 href="https://blog.seiichirou.jp/tags/basics/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/posts/flutter-web-github/</loc>
     <lastmod>2019-10-07T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/tags/github/</loc>
     <lastmod>2019-10-07T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/tags/widget/</loc>
     <lastmod>2019-10-07T20:00:00+09:00</lastmod>
     <xhtml:link
@@ -190,19 +145,13 @@
                 hreflang="ja"
                 href="https://blog.seiichirou.jp/tags/widget/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/posts/dynamic-theme/</loc>
     <lastmod>2019-10-04T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/tags/theme/</loc>
     <lastmod>2019-10-04T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/tags/appbar/</loc>
     <lastmod>2019-10-03T20:00:00+09:00</lastmod>
     <xhtml:link
@@ -215,14 +164,10 @@
                 hreflang="ja"
                 href="https://blog.seiichirou.jp/tags/appbar/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/posts/appbar-widget-gradient/</loc>
     <lastmod>2019-10-03T20:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/tags/column/</loc>
     <lastmod>2019-10-02T20:00:00+09:00</lastmod>
     <xhtml:link
@@ -235,9 +180,7 @@
                 hreflang="ja"
                 href="https://blog.seiichirou.jp/tags/column/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/posts/column-widget/</loc>
     <lastmod>2019-10-02T20:00:00+09:00</lastmod>
     <xhtml:link
@@ -250,9 +193,7 @@
                 hreflang="ja"
                 href="https://blog.seiichirou.jp/posts/column-widget/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/posts/appbar-widget/</loc>
     <lastmod>2019-10-01T20:00:00+09:00</lastmod>
     <xhtml:link
@@ -265,9 +206,7 @@
                 hreflang="ja"
                 href="https://blog.seiichirou.jp/posts/appbar-widget/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/tags/tabbar/</loc>
     <lastmod>2019-10-01T20:00:00+09:00</lastmod>
     <xhtml:link
@@ -280,23 +219,7 @@
                 hreflang="ja"
                 href="https://blog.seiichirou.jp/tags/tabbar/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/apps/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.seiichirou.jp/en/apps/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://blog.seiichirou.jp/apps/"
-                />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.seiichirou.jp/apps/cube_lbl_memo/</loc>
     <xhtml:link
                 rel="alternate"
@@ -309,21 +232,4 @@
                 href="https://blog.seiichirou.jp/apps/cube_lbl_memo/"
                 />
   </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/cube_lbl_memo/home/</loc>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/aozora/home/</loc>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/apps/aozora/</loc>
-  </url>
-  
-  <url>
-    <loc>https://blog.seiichirou.jp/youtubeprocession/home/</loc>
-  </url>
-  
 </urlset>
